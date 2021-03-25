@@ -1,0 +1,397 @@
+:root {
+    --azul:#009fe3 ;
+    --rojo:#e9454c;
+  }
+
+  
+#solicitud{
+    position: absolute;
+    top:20%;
+    left:10%;
+    padding: 2%;
+    width: 30%;
+    height: 60%;
+    display:none;
+}
+
+#logotipo{
+    transition-duration: 2s;
+    position:absolute;
+    top:38%;
+    left:10%;
+    background-image:url('./imagenes/logoblanco.png');
+    background-size:100% 100%;
+    width:25%;
+    height: 40%;
+    animation:mover 1s infinite linear;
+}
+@keyframes mover{
+    0%{
+        height: 40%;
+    }
+    50%{
+        height: 39.5%;
+    }
+    100%{
+        height: 40%;
+    }
+}
+#log{
+    padding:2%;
+    position:absolute;
+    top:32%;
+    left:50%;
+    width: 46%;
+    height: 65%;
+
+    
+}
+#contenedor{
+    top:0;
+    left:0;
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url('./imagenes/fondo.png');
+    background-size:100% 100%;
+}
+
+.cajatxt{
+    background:none;
+    border: solid 4px var(--azul);
+    width: 80%;
+    height: 7%;
+    padding:2%;
+    font-size: 16pt;
+    border-radius: 100px;
+}
+.bt{
+    margin-left:12%;
+    width: 60%;
+    height:15%; 
+    background-color: var(--rojo);
+    color:white;
+    font-size: 16pt;
+    border-radius: 100px;
+    border:none;
+    box-shadow: 2px 2px 8px #999;
+}
+#nav{
+    position: absolute;
+    left:66%;
+    top:10%;
+    width:29%;
+ 
+}
+.bt2{
+    background: none;
+    border:none;
+    color:yellow;
+    border-bottom:solid 2px yellow;
+    font-size:20pt;
+    margin-left:15%;
+}
+#tit{
+    position: absolute;
+    color:white;
+    top:68%;
+    left:14%;
+    transform: scale(1.7);
+}
+#gota1{
+    position: absolute;
+    width:10%;
+    height: 20%;
+    top:2%;
+    left:47%;
+    background-color:var(--rojo);
+    border-radius: 100px;
+    transform: scale(0.7);
+    animation: m1 10s infinite linear;
+    box-shadow: 2px 2px 8px #999;
+}
+@keyframes m1{
+    0%{
+    top:2%;
+    left:47%; 
+    }
+    50%{
+        top:6%;
+        left:49%; 
+    }
+    100%{
+        top:2%;
+        left:47%; 
+        }
+
+}
+
+#gota2{
+    position: absolute;
+    width:10%;
+    height:20%;
+    top:25%;
+    left:-5%;
+    background-color:var(--rojo);
+    border-radius: 100px;
+    transform: scale(0.7);
+    animation: m2 15s infinite linear;
+    box-shadow: 2px 2px 8px #999;
+}
+
+
+@keyframes m2{
+    0%{
+        top:25%;
+        left:-5%;
+    }
+    50%{
+        top:24%;
+    left:1%;
+    }
+    100%{
+        top:25%;
+        left:-5%;
+        }
+
+}
+
+#gota3{
+    position: absolute;
+    width:10%;
+    height:20%;
+    top:29%;
+    left:87%;
+    background-color:var(--rojo);
+    border-radius: 100px;
+    transform: scale(0.4);
+    animation: m3 15s infinite linear;
+    box-shadow: 2px 2px 8px #999;
+}
+@keyframes m3{
+    0%{
+        top:29%;
+        left:89%;
+    }
+    50%{
+        top:30%;
+        left:87%;
+    }
+    100%{
+        top:29%;
+        left:87%;
+        }
+
+}
+
+
+
+/*
+diseño movil responsibo 
+Luis Fuentes 25/08/2021
+
+*/
+
+@media screen and (max-width: 650px) {
+  
+
+    :root {
+        --azul:#009fe3 ;
+        --rojo:#e9454c;
+      }
+    
+      
+    #solicitud{
+        position: absolute;
+        padding: 2%;
+        height: 60%;
+        top:41%;
+        left:10%;
+        width: 90%;
+        display:none;
+    }
+    
+    #logotipo{
+        transition-duration: 2s;
+        position:absolute;
+        top:25%;
+        left:41%;
+        background-image:url('./imagenes/logoblanco.png');
+        background-size:100% 100%;
+        width:25%;
+        height: 13%;
+        animation:mover 1s infinite linear;
+    }
+    @keyframes mover{
+        0%{
+            height: 13%;
+        }
+        50%{
+            height: 12.5%;
+        }
+        100%{
+            height: 13%;
+        }
+    }
+    #log{
+        padding:2%;
+        position:absolute;
+        top:32%;
+        left:10%;
+        width: 90%;
+        height: 45%;
+    
+        
+    }
+    #contenedor{
+        top:0;
+        left:0;
+        position:fixed;
+        width: 100%;
+        height: 100%;
+        background-image: url('./imagenes/fondo-cel.jpg');
+        background-size:100% 100%;
+    }
+    
+    .cajatxt{
+        background:none;
+        border: solid 4px var(--azul);
+        width: 85%;
+        height: 7%;
+        padding:2%;
+        font-size: 16pt;
+        border-radius: 100px;
+    }
+    .bt{
+        margin-left:12%;
+        width: 60%;
+        height:15%; 
+        background-color: var(--azul );
+        color:white;
+        font-size: 12pt;
+        border-radius: 100px;
+        border:none;
+        box-shadow: 2px 2px 8px #999;
+    }
+    .bt:hover{
+        background-color: var(--rojo);  
+
+    }
+
+    #nav{
+        position: absolute;
+        left:50%;
+        top:8%;
+        width:45%;
+     
+    }
+    .bt2{
+        background: none;
+        border:none;
+        color:yellow;
+        border-bottom:solid 2px yellow;
+        font-size:14pt;
+        margin-left:5%;
+    }
+    #tit{
+        position: absolute;
+        color:#e9454c;
+        top:31%;
+        left:23%;
+        transform: scale(0.7);
+    }
+    #gota1{
+        position: absolute;
+        width:10%;
+        height: 6%;
+        top:2%;
+        left:15%;
+        background-color:var(--rojo);
+        border-radius: 100px;
+        transform: scale(0.7);
+        animation: m1 10s infinite linear;
+        box-shadow: 2px 2px 8px #999;
+    }
+    @keyframes m1{
+        0%{
+        top:2%;
+        left:15%; 
+        }
+        50%{
+            top:6%;
+            left:18%; 
+        }
+        100%{
+            top:2%;
+            left:15%; 
+            }
+    
+    }
+    
+    #gota2{
+        position: absolute;
+        width:25%;
+        height:15%;
+        top:55%;
+        left:-5%;
+        background-color:var(--rojo);
+        border-radius: 100px;
+        transform: scale(0.7);
+        animation: m2 15s infinite linear;
+        box-shadow: 2px 2px 8px #999;
+    }
+    
+    
+    @keyframes m2{
+        0%{
+            top:25%;
+            left:-5%;
+        }
+        50%{
+            top:24%;
+        left:1%;
+        }
+        100%{
+            top:25%;
+            left:-5%;
+            }
+    
+    }
+    
+    #gota3{
+        position: absolute;
+        width:35%;
+        height:20%;
+        top:89%;
+        left:20%;
+        background-color:var(--rojo);
+        border-radius: 100px;
+        transform: scale(0.4);
+        animation: m3 15s infinite linear;
+        box-shadow: 2px 2px 8px #999;
+    }
+    @keyframes m3{
+        0%{
+            top:89%;
+            left:20%;
+        }
+        50%{
+            top:83%;
+            left:23%;
+        }
+        100%{
+            top:89%;
+            left:20%;
+            }
+    
+    }
+    
+
+
+
+  }
+
+  /*
+
+fin de telefonia
+  */
