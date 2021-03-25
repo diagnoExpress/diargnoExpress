@@ -15,7 +15,7 @@ if ($con->verificarUsuario($_POST['us'],$_POST['cla'])==1){
 }
 
 //rene ruano 24/03/2021  
-//recepcion de datos para guardar
+//recepcion de datos para guardar nube clever claoud
 if(isset($_POST['f2'])){
 echo $_POST['user'];
 echo $_POST['pass'];

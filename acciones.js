@@ -37,7 +37,7 @@ function registro(){
 }
   /*
     luis fuetnes 25/08/2021
-    funcionabilidad de animacion solo en modo Destop
+    funcionabilidad de animacion solo en modo Destop  para resto
     
     */
 function logg(){

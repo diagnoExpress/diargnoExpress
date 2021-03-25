@@ -1,4 +1,7 @@
+
 <?php
+
+//luis fuentes 21/03/2021
 class conexion{
     private $servidor;
     private $usuario;
