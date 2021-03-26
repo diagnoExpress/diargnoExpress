@@ -15,7 +15,6 @@ function mensaje(){
        alert("las claves no coinciden");
    }
     
-   
       
     }
 
