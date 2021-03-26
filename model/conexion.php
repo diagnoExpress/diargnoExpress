@@ -55,7 +55,7 @@ function verificarUsuario($a,$b){
     }
 
     function guardarUsuario($user, $pass, $dir){
-        mysqli_query($this->conectar,"insert into usuarios (id_us, correo_us, clave, dire, id_role) values (4,'$user', '$pass','$dir',2)" );
+        mysqli_query($this->conectar,"insert into usuarios (correo_us, clave, dire, id_role) values ('$user', '$pass','$dir',2)" );
 
     }
 

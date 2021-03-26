@@ -38,8 +38,8 @@
 <form id="solicitud" action="./controller/C_login.php" method="POST">
 
 <input type="text" placeholder="usuario" class="cajatxt" name="user"><br><br>
-<input type="password" placeholder="clave" class="cajatxt" name="cla" id="cave1" required><br><br>
-<input type="password" placeholder="confirmar clave" class="cajatxt" name="cla2" onchange="mensaje()" id="clave2" required><br><br>
+<input type="password" placeholder="clave" class="cajatxt" name="pass" id="cave1" required><br><br>
+<input type="password" placeholder="confirmar clave" class="cajatxt" name="conpass" onchange="mensaje()" id="clave2" required><br><br>
 <input type="text" placeholder="Direccion" class="cajatxt" name="dir"><br><br>
 <input type="submit" value="Enviar Soliciud" class="bt" name="f2"><br><br>
 </form>
