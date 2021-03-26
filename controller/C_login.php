@@ -22,5 +22,6 @@ echo $_POST['pass'];
 echo $_POST['conpass'];
 echo $_POST['dir'];
 $con->guardarUsuario($_POST['user'],$_POST['pass'],$_POST['dir']);
+header('location:../index.php');
 }
 ?>
