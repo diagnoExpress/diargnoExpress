@@ -9,7 +9,6 @@
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="logo.png">
 <link rel="apple-touch-startup-image" href="logo.png">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
 <link rel="icon" type="image/png" href="logo.png" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="mobile-web-app-capable" content="yes">
