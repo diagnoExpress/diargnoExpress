@@ -13,7 +13,7 @@ echo $_POST['us'];
 echo $_POST['cla'];
 if ($con->verificarUsuario($_POST['us'],$_POST['cla'])==1){
     $con->cerrarConexion();
-    header('location:../view/V_menu.html');
+    header('location:../view/V_usu_externos.html');
 }else{
     header('location:../index.php');
     $con->cerrarConexion();

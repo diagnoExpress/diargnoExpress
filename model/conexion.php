@@ -59,12 +59,14 @@ function verificarUsuario($a,$b){
         
     }
 
+    function cerrarConexion(){
+        mysqli_close($this->conectar);
+    
+    }
+
 }
 
-function cerrarConexion(){
-    mysqli_close($this->conectar);
 
-}
 
 
 ?>
