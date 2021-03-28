@@ -66,39 +66,130 @@
           <div class="card-body">
             <h5 class="card-title">Datos solicitante</h5>
             <p class="card-text">llene el formulario con la siguiente informacion</p>
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">@</span>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            <!--formulario de  expedientes exter  27/03/2021-->
+  <form action="../controller/C_Expedientes.php" method="POST">
+              <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">No. Expediente</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Expediente" name = "ex">
+            </div>
+
+            
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Nombre </label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese Nombre "required name="nombre">
+            </div>
+
+            
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese Apellido" name="ap">
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Direccion</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese direccion" required name="dir" >
+            </div>
+
+
+
+
+            
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">DPI numeracion de 13 digitos</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="DPI"required name="dpi">
+            </div>
+
+            
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">NIT no utilizar guiones</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="NIT" name="nit">
+            </div>
+
+            
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Seleccione el Departamento</label>
+              <!-- esto sireve para agregar el tipo de estilo -->
+              <select class="form-select" aria-label="Default select example"required name="dep"> 
+                <option value = "Guatemala">Guatemala</option>
+                <option value = "Guatemala">Alta Verapaz </option>
+                <option value = "Guatemala">Baja Verapaz</option>
+                <option value = "Guatemala">Chimaltenango</option>
+                <option value = "Guatemala">Chiquimula</option>
+                <option value = "Guatemala">El Progreso</option>
+                <option value = "Guatemala">Escuintla</option>
+                <option value = "Guatemala">Huehuetenango</option>
+                <option value = "Guatemala">Izabal</option>
+                <option value = "Guatemala">Jalapa</option>
+                <option value = "Guatemala">Jutiapa</option>
+                <option value = "Guatemala">Peten</option>
+                <option value = "Guatemala">Quetzaltengo</option>
+                <option value = "Guatemala">Quiche</option>
+                <option value = "Guatemala">Retalhuleu</option>
+                <option value = "Guatemala">Sacatepequez</option>
+                <option value = "Guatemala">San Marcos</option>
+                <option value = "Guatemala">Santa Rosa</option>
+                <option value = "Guatemala">Solola</option>
+                <option value = "Guatemala">Suchitepequez</option>
+                <option value = "Guatemala">Totonicapan</option>
+                <option value = "Guatemala">Zacapa</option>
+
+               </select> 
+              </div>
+
+            
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Fecha de creacion  </label>
+              <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="Fecha"required name="fec">
             </div>
             
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-              <span class="input-group-text" id="basic-addon2">@example.com</span>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Diagnostico</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" "required name="diag">
             </div>
             
-            <label for="basic-url" class="form-label">Your vanity URL</label>
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Descripcion de diagnostico</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required name="des"></textarea  >
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Archivo</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Archivo" name="ar">
             </div>
             
-            <div class="input-group mb-3">
-              <span class="input-group-text">$</span>
-              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-              <span class="input-group-text">.00</span>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Enfermedad</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enfermedad"required name="enf">
             </div>
             
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-              <span class="input-group-text">@</span>
-              <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Nombre Doctor</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Doctor"required name="doctor">
             </div>
             
-            <div class="input-group">
-              <span class="input-group-text">With textarea</span>
-              <textarea class="form-control" aria-label="With textarea"></textarea>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Clinica Referida</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Clinica"required name="clinic">
             </div>
-         
+            
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Numero de Telefonos</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Telefono" name="tel">
+            </div>
+            
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Email</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Correo"required name="cor">
+            </div>
+            
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Codigo usuario</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Codigo"required name="cod">
+            </div>
+              <input type="submit" value="registra"><!--esto sirve para para aplicar required-->
+
+</form>
+           <!--fin de formulario--> 
          
           </div>
         </div>

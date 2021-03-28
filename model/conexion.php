@@ -64,9 +64,17 @@ function verificarUsuario($a,$b){
     
     }
 
+    //rene ruano 27/03/2021 funcion guardar expediente usuario externo
+ 
+    function guardarExpedienteUsuarioExterno($nombre, $apellido, $direccion, $dpi, $nit,$departamento, $fechaCreacion, $diagnostico, $descripcion, $archivo, $enfermedad, $doctor, $clinica, $telefono, $emails, $correlativo){
+        mysqli_query($this->conectar, "INSERT INTO expedientes(nombre, apellido, direccion, dpi, nit, departamento, fec_creacion, diagnostico, descripcion, archivo, enfermedad, doctor, clinica, telefono, emails, id_us) VALUES  ('$nombre', '$apellido', '$direccion', '$dpi', '$nit', '$departamento', '$fechaCreacion', '$diagnostico', '$descripcion', '$archivo', '$enfermedad', '$doctor', '$clinica', '$telefono', '$emails','$correlativo')");
+    }
 }
 
-
-
-
+/*
+function guardarExpedienteUsuarioExterno(){
+mysqli_query($this->conectar,"INSERT INTO expedientes(nombre, apellido, direccion, dpi, nit, departamento, fec_creacion, diagnostico, descripcion, archivo, enfermedad, doctor, clinica, telefono, emails, id_us) VALUES ('duglas','hernandez','villas','12214','2112','guatemala','2021/03/27','higado', 'dijfalkdf','c.jpg','epatitis','jose','zona ','2155','luis@gmail.com','2')");  
+}
+}
+*/
 ?>
