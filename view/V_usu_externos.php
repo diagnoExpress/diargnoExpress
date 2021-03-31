@@ -6,29 +6,31 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-  </head>
+<script src="../acciones.js"></script>
+<link rel="stylesheet" type="text/css" href="../tema.css">  
+</head>
 
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">DiagnoExpress</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e9454c;color:white;" >
+      <div class="container-fluid" style="background-color: #e9454c;color:white;">
+        <a class="navbar-brand" href="#" style="background-color: #e9454c;color:white;">DiagnoExpress</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color:white;color:white;" >
+          <span class="navbar-toggler-icon" style="background-color:white;color:white;"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: #e9454c;color:white;">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="background-color: #e9454c;color:white;">
             
-            <li class="nav-item">
-              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <li class="nav-item",style="background-color: #e9454c;color:white;">
+              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" >
                 expedientes
                </a>
            
             </li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+          <form class="d-flex" style="background-color: #e9454c;color:white;">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+            <button class="btn btn-outline-success" type="submit" style="background-color: #009fe3;color:white;">Search</button>
           </form>
         </div>
       </div>
@@ -40,7 +42,7 @@
 
    
     
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width:80%;">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width:100%;">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasExampleLabel">Expediente Medico del usuario</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -55,13 +57,11 @@
             Operaciones con Expedientes
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Crear Expedientes</a></li>
-            <li><a class="dropdown-item" href="#">Modificar Expedientes</a></li>
-            <li><a class="dropdown-item" href="#">Elimnar Expedientes </a></li>
+            <li onclick="most()"><a class="dropdown-item" href="#" >Crear Expedientes</a></li>
           </ul>
 <br><br><br>
         </div>
-        <div class="card text-white bg-danger mb-3" style="max-width: 95%;">
+        <div class="card text-white bg-danger mb-3" style="max-width: 100%;display:none;background-color: #e9454c;" id="ff1">
           <div class="card-header">Datos de Expediente</div>
           <div class="card-body">
             <h5 class="card-title">Datos solicitante</h5>
@@ -70,7 +70,7 @@
   <form action="../controller/C_Expedientes.php" method="POST">
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">No. Expediente</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Expediente" name = "ex">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Expediente" name="ex">
             </div>
 
             
@@ -184,8 +184,13 @@
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Codigo usuario</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Codigo"required name="cod">
-            </div>
+              <?php
+              session_cache_expire(30);
+              $cache_expire = session_cache_expire();              
+              session_start();
+              echo '<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Codigo"required name="cod" value="'. $_SESSION["id_usuario"]  . '">';
+            ?>
+              </div>
               <input type="submit" value="registra"><!--esto sirve para para aplicar required-->
 
 </form>

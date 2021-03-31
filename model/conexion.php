@@ -35,15 +35,9 @@ function conectar(){
     }
 }
 //extracion de datos 
-function extraer(){
-$tabla=mysqli_query($this->conectar,'select * from usuarios');
-while($fila=mysqli_fetch_array($tabla)){
-    echo "nombre :" . $fila['correo_us'] . "<br>";
-    echo "Direccion: " . $fila['dire'] . "<br>";
-    echo "<br><br><hr></hr>";
-}
-echo "<br><br><br><br>nuemro de usruario registrados ";
-return mysqli_num_rows($tabla);
+function extraerUsuaro($a,$b){
+$dato=mysqli_query($this->conectar,"select * from usuarios where correo_us='$a' and clave='$b'");
+return $dato;
 }
 /*
 rene ruano 24/03/2021  
@@ -71,10 +65,4 @@ function verificarUsuario($a,$b){
     }
 }
 
-/*
-function guardarExpedienteUsuarioExterno(){
-mysqli_query($this->conectar,"INSERT INTO expedientes(nombre, apellido, direccion, dpi, nit, departamento, fec_creacion, diagnostico, descripcion, archivo, enfermedad, doctor, clinica, telefono, emails, id_us) VALUES ('duglas','hernandez','villas','12214','2112','guatemala','2021/03/27','higado', 'dijfalkdf','c.jpg','epatitis','jose','zona ','2155','luis@gmail.com','2')");  
-}
-}
-*/
 ?>

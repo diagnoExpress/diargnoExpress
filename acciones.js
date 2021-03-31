@@ -50,3 +50,7 @@ function logg(){
     document.getElementById("logotipo").style.height="40%";
     }
 }
+
+function most(){
+document.getElementById("ff1").style.display="block";
+}

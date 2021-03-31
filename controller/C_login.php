@@ -1,4 +1,7 @@
 <?php
+session_cache_expire(30);
+$cache_expire = session_cache_expire(); 
+session_start();
 require_once('../model/conexion.php');
 $con = new conexion();
 $con->conectar();
@@ -9,11 +12,16 @@ $con->conectar();
 //rene ruano 24/03/2021  
 //creacion de isset if 
 if(isset($_POST['f1'])){
-echo $_POST['us'];
-echo $_POST['cla'];
 if ($con->verificarUsuario($_POST['us'],$_POST['cla'])==1){
-    $con->cerrarConexion();
-    header('location:../view/V_usu_externos.html');
+    
+  $tabla=$con->extraerUsuaro($_POST['us'],$_POST['cla']);
+  $con->cerrarConexion();
+
+  while($fila=mysqli_fetch_array($tabla)){
+    $_SESSION["id_usuario"] = $fila['id_us'] ;
+    $_SESSION["usuario"] = $fila['correo_us'] ;
+}
+ header('location:../view/V_usu_externos.php');
 }else{
     header('location:../index.php');
     $con->cerrarConexion();
