@@ -53,16 +53,30 @@ function verificarUsuario($a,$b){
         
     }
 
-    function cerrarConexion(){
+    function +{
         mysqli_close($this->conectar);
     
     }
+
+    function ExSolicitud(){
+       // $dato=mysqli_query($this->conectar,"select * from tipo_solicitud");
+        return "<option>hola</option>";
+        }
+
+
 
     //rene ruano 27/03/2021 funcion guardar expediente usuario externo
  
     function guardarExpedienteUsuarioExterno($nombre, $apellido, $direccion, $dpi, $nit,$departamento, $fechaCreacion, $diagnostico, $descripcion, $archivo, $enfermedad, $doctor, $clinica, $telefono, $emails, $correlativo){
         mysqli_query($this->conectar, "INSERT INTO expedientes(nombre, apellido, direccion, dpi, nit, departamento, fec_creacion, diagnostico, descripcion, archivo, enfermedad, doctor, clinica, telefono, emails, id_us) VALUES  ('$nombre', '$apellido', '$direccion', '$dpi', '$nit', '$departamento', '$fechaCreacion', '$diagnostico', '$descripcion', '$archivo', '$enfermedad', '$doctor', '$clinica', '$telefono', '$emails','$correlativo')");
     }
+  
+
+
+
+
+
+
 }
 
 ?>
