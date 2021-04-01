@@ -75,6 +75,11 @@ function verificarUsuario($a,$b){
     function guardarExpedienteUsuarioExterno($nombre, $apellido, $direccion, $dpi, $nit,$departamento, $fechaCreacion, $diagnostico, $descripcion, $archivo, $enfermedad, $doctor, $clinica, $telefono, $emails, $correlativo){
         mysqli_query($this->conectar, "INSERT INTO expedientes(nombre, apellido, direccion, dpi, nit, departamento, fec_creacion, diagnostico, descripcion, archivo, enfermedad, doctor, clinica, telefono, emails, id_us) VALUES  ('$nombre', '$apellido', '$direccion', '$dpi', '$nit', '$departamento', '$fechaCreacion', '$diagnostico', '$descripcion', '$archivo', '$enfermedad', '$doctor', '$clinica', '$telefono', '$emails','$correlativo')");
     }
+    
+    //rene ruano 1/04/2021 funcion guardar solicitud
+    function guardarSolicitud($numSol, $tipoSol, $tipoSolicit, $descripSol){
+        mysqli_query($this->conectar,"insert into solicitudes(num_solicitud, tipo_solicitud, tipo_solicitante, descripcion, num_expediente) values ('$numSol', '$tipoSol', '$tipoSolicit', '$descripSol',1)" );  
+    }
   
 
 

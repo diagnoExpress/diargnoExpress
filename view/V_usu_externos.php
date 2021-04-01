@@ -78,15 +78,17 @@
   <div class="card-body">
     <h5 class="card-title">Primary card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-<form>
+
+<form action="../controller/C_solicitudes.php" method="POST">
+
     <div class="mb-4">
                     <label for="exampleFormControlInput3" class="form-label">Numero Solicitud</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput3" placeholder=" "required name="num">
+                    <input type="text" class="form-control" id="exampleFormControlInput3" placeholder=" "required name="nSolicitud">
     </div>
 
     <div class="mb-5">
                     <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitante</label>
-                    <select class="form-select" aria-label="Default select example"required name="sol"> 
+                    <select class="form-select" aria-label="Default select example"required name="tSolicitud"> 
                     <?php
                        require_once('../controller/C_solicitudes.php');
                        extraerTipoUsuario('tipo_solicitante');
@@ -94,10 +96,9 @@
                        </select> 
         </div>
 
-
         <div class="mb-5">
                     <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitud</label>
-                    <select class="form-select" aria-label="Default select example"required name="soli"> 
+                    <select class="form-select" aria-label="Default select example"required name="tSolicitante"> 
                     <?php
                        require_once('../controller/C_solicitudes.php');
                        extraerTipoUsuario('tipo_solicitud');
@@ -108,9 +109,13 @@
 
         <div class="mb-6">   
                     <label for="exampleFormControlTextarea2" class="form-label">Descripcion de la Solicitud</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea2" rows="8" required name="desc"></textarea  >
+                    <textarea class="form-control" id="exampleFormControlTextarea2" rows="8" required name="dSolicitud"></textarea>
         </div>
+            <input type="submit" value="siguiente" name="sig">
+            <input type="button" value="cancelar"><br>
+
 </form>
+
   </div>
 </div>
 <!--fin card-->
@@ -118,13 +123,6 @@
 
   </div>
 </div>
-
-
-
-
-
-
-
 
 <!-- crear solicitudes-->
     

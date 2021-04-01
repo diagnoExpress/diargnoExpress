@@ -1,6 +1,6 @@
 <?php
 
-//rene ruano 27/03/2021
+//rene ruano guardar expedientes usuario externo 27/03/2021
 require_once('../model/conexion.php');
 $con = new conexion();
 $con->conectar();
