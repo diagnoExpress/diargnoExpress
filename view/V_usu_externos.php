@@ -49,73 +49,82 @@
 
 <!-- crear solicitudes-->
 
-
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample1" aria-labelledby="offcanvasExampleLabel"  style="width:100%">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample1" aria-labelledby="offcanvasExampleLabel" style="width:100%;">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Crear Solicitudes</h5>
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">SOLICITUDES</h5>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
     <div>
-      Creacion, Consulta de solicitudes
+    Creacion, Consulta de solicitudes
     </div>
     <div class="dropdown mt-3">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-        Solicitudes
+       Menu Solicitudes
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="#">Crear Solicitud</a></li>
-        <li><a class="dropdown-item" href="#">Consulta Solicitud</a></li>
-        <li><a class="dropdown-item" href="#">Ingreso ??</a></li>
+      <li><a class="dropdown-item" href="#">Crear Solicitud</a></li>
+              <li><a class="dropdown-item" href="#">Consulta Solicitud</a></li>
+              <li><a class="dropdown-item" href="#">Ingreso ??</a></li>
       </ul>
     </div>
-      <br><br>
+<br><br>
+<!--card-->
 
-    <div class="card text-white bg-danger mb-3" style="max-width: 95%;">
-  <div class="card-header">Datos para la Solicitud</div>
+
+
+<div class="card text-white bg-primary mb-3" style="max-width: 95%;">
+  <div class="card-header">Header</div>
   <div class="card-body">
-    <h5 class="card-title">SOLICITUD</h5>
-    <p class="card-text">Creacion, Consulta de solicitudes a trabajar</p>
-  
-  <!--card-->
+    <h5 class="card-title">Primary card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<form>
+    <div class="mb-4">
+                    <label for="exampleFormControlInput3" class="form-label">Numero Solicitud</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput3" placeholder=" "required name="num">
+    </div>
 
-  <div class="mb-4">
-              <label for="exampleFormControlInput3" class="form-label">Numero Solicitud</label>
-              <input type="text" class="form-control" id="exampleFormControlInput3" placeholder=" "required name="num">
-            </div>
+    <div class="mb-5">
+                    <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitante</label>
+                    <select class="form-select" aria-label="Default select example"required name="sol"> 
+                    <?php
+                       require_once('../controller/C_solicitudes.php');
+                       extraerTipoUsuario('tipo_solicitante');
+                       ?>  
+                       </select> 
+        </div>
 
-  <div class="mb-5">
-              <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitante</label>
-              <select class="form-select" aria-label="Default select example"required name="sol"> 
-              <?php
-                 require_once('../controller/C_solicitudes.php');
-                 extraerTipoUsuario('tipo_solicitante');
-                 ?>  
-                 </select> 
-              </div>
-  
-              <div class="mb-5">
-              <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitud</label>
-              <select class="form-select" aria-label="Default select example"required name="soli"> 
-              <?php
-                 require_once('../controller/C_solicitudes.php');
-                 extraerTipoUsuario('tipo_solicitud');
-                 ?>    
-              </select> 
-              </div> 
 
-              <div class="mb-6">   
-              <label for="exampleFormControlTextarea2" class="form-label">Descripcion de la Solicitud</label>
-              <textarea class="form-control" id="exampleFormControlTextarea2" rows="8" required name="desc"></textarea  >
-              </div>
-           
-             
- <!--fin card--> 
-  
+        <div class="mb-5">
+                    <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitud</label>
+                    <select class="form-select" aria-label="Default select example"required name="soli"> 
+                    <?php
+                       require_once('../controller/C_solicitudes.php');
+                       extraerTipoUsuario('tipo_solicitud');
+                       ?>    
+                    </select> 
+        </div> 
+
+
+        <div class="mb-6">   
+                    <label for="exampleFormControlTextarea2" class="form-label">Descripcion de la Solicitud</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea2" rows="8" required name="desc"></textarea  >
+        </div>
+</form>
   </div>
+</div>
+<!--fin card-->
+
 
   </div>
 </div>
+
+
+
+
+
+
+
 
 <!-- crear solicitudes-->
     
@@ -146,7 +155,7 @@
             
             <!--Erick Guerra / Edgar Patzan 24/03/2021-->
             <!--formulario de expedientes exter  24/03/2021-->
-  <form action="../controller/C_Expedientes.php" method="POST">
+            <form action="../controller/C_Expedientes.php" method="POST">
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">No. Expediente</label>
               <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Expediente" name="ex">
@@ -266,7 +275,7 @@
               </div>
               <input type="submit" value="registra"><!--esto sirve para para aplicar required-->
 
-</form>
+      </form>
            <!--fin de formulario--> 
       
           <div>
