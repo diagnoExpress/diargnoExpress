@@ -1,16 +1,17 @@
 <?php
 require_once('../model/conexion.php');
-$con = new conexion();
-$con->conectar();
 
-$con->cerrarConexion();
+
+//$con->cerrarConexion();
 function listarTipoSolicitud(){ 
+ $con = new conexion();
+$con->conectar();
 $tabla=$con->ExSolicitud();
-echo $tabla;
-//
- // while ($fila=mysqli_fetch_array($tabla)){
- //echo  '<option value = '. $fila['id_solicitud']  . '>' . $fila['tipo'] . '</option>';
- // }
+while ($fila=mysqli_fetch_array($tabla)){
+echo '<option value = '. $fila['id_solicitud']  . '>' . $fila['tipo'] . '</option>';
+ }
+ $con->cerrarConexion();
 }
+
 
 ?>
