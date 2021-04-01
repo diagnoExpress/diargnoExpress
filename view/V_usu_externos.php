@@ -31,7 +31,7 @@
                </a>
        
                <li class="nav-item",style="background-color: #e9454c;color:white;">
-              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" >
+              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample1" role="button" aria-controls="offcanvasExample" >
                 Solicitudes
                </a>
        
@@ -46,6 +46,78 @@
       </div>
     </nav>
 
+
+<!-- crear solicitudes-->
+
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample1" aria-labelledby="offcanvasExampleLabel"  style="width:100%">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Crear Solicitudes</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Creacion, Consulta de solicitudes
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+        Solicitudes
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Crear Solicitud</a></li>
+        <li><a class="dropdown-item" href="#">Consulta Solicitud</a></li>
+        <li><a class="dropdown-item" href="#">Ingreso ??</a></li>
+      </ul>
+    </div>
+      <br><br>
+
+    <div class="card text-white bg-danger mb-3" style="max-width: 95%;">
+  <div class="card-header">Datos para la Solicitud</div>
+  <div class="card-body">
+    <h5 class="card-title">SOLICITUD</h5>
+    <p class="card-text">Creacion, Consulta de solicitudes a trabajar</p>
+  
+  <!--card-->
+
+  <div class="mb-4">
+              <label for="exampleFormControlInput3" class="form-label">Numero Solicitud</label>
+              <input type="text" class="form-control" id="exampleFormControlInput3" placeholder=" "required name="num">
+            </div>
+
+  <div class="mb-5">
+              <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitante</label>
+              <select class="form-select" aria-label="Default select example"required name="sol"> 
+              <?php
+                 require_once('../controller/C_solicitudes.php');
+                 extraerTipoUsuario('tipo_solicitante');
+                 ?>  
+                 </select> 
+              </div>
+  
+              <div class="mb-5">
+              <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitud</label>
+              <select class="form-select" aria-label="Default select example"required name="soli"> 
+              <?php
+                 require_once('../controller/C_solicitudes.php');
+                 extraerTipoUsuario('tipo_solicitud');
+                 ?>    
+              </select> 
+              </div> 
+
+              <div class="mb-6">   
+              <label for="exampleFormControlTextarea2" class="form-label">Descripcion de la Solicitud</label>
+              <textarea class="form-control" id="exampleFormControlTextarea2" rows="8" required name="desc"></textarea  >
+              </div>
+           
+             
+ <!--fin card--> 
+  
+  </div>
+
+  </div>
+</div>
+
+<!-- crear solicitudes-->
     
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width:100%;">
       <div class="offcanvas-header">
@@ -197,33 +269,11 @@
 </form>
            <!--fin de formulario--> 
       
-          <!--inicio de formulario TipoSolicitante,  Erick Guerra 1/04/2021--> 
-          
-          <div class="mb-4">
-              <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitante</label>
-              <select class="form-select" aria-label="Default select example"required name="sol"> 
-                <option value = "In-UsuarioInterno">IN-UsuarioInterno</option>
-                <option value = "Ex-UsuarioExterno">EX-UsuarioExterno</option>
-                 </select> 
-              </div>
-
-              <div class="mb-5">
-              <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitud</label>
-              <select class="form-select" aria-label="Default select example"required name="soli"> 
-               <?php
-                 require_once('../controller/C_solicitudes.php');
-                 listarTipoSolicitud();
-               ?>
-                 </select> 
-              </div> 
-       
-</form>
-        <!--fin de formulario-->
-
-          </div>
+          <div>
         </div>
         </div>
       </div>
     </div>
+
   </body>
 </html>

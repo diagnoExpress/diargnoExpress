@@ -3,15 +3,16 @@ require_once('../model/conexion.php');
 
 
 //$con->cerrarConexion();
-function listarTipoSolicitud(){ 
+function extraerTipoUsuario($tab){ 
  $con = new conexion();
 $con->conectar();
-$tabla=$con->ExSolicitud();
+$tabla=$con->extraerTipoUsuario($tab);
 while ($fila=mysqli_fetch_array($tabla)){
 echo '<option value = '. $fila['id_solicitud']  . '>' . $fila['tipo'] . '</option>';
  }
  $con->cerrarConexion();
 }
+
 
 
 ?>

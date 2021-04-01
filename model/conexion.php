@@ -53,14 +53,19 @@ function verificarUsuario($a,$b){
         
     }
 
-    function +{
+    function cerrarConexion(){
         mysqli_close($this->conectar);
     
     }
 
+    function extraerTipoUsuario($tabla){
+        $datos=mysqli_query($this->conectar, "select * from ". $tabla);
+        return $datos;
+    }
+
     function ExSolicitud(){
-       // $dato=mysqli_query($this->conectar,"select * from tipo_solicitud");
-        return "<option>hola</option>";
+     $dato=mysqli_query($this->conectar,"select * from tipo_solicitud");
+        return $dato;
         }
 
 
