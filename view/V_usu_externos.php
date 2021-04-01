@@ -14,7 +14,11 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e9454c;color:white;" >
       <div class="container-fluid" style="background-color: #e9454c;color:white;">
-        <a class="navbar-brand" href="#" style="background-color: #e9454c;color:white;">DiagnoExpress</a>
+
+      <?php
+        session_start();
+       echo '<a class="navbar-brand" href="#" style="background-color: #e9454c;color:white;">' . $_SESSION["usuario"] . '</a>';
+       ?> 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color:white;color:white;" >
           <span class="navbar-toggler-icon" style="background-color:white;color:white;"></span>
         </button>
@@ -25,7 +29,13 @@
               <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" >
                 expedientes
                </a>
-           
+       
+               <li class="nav-item",style="background-color: #e9454c;color:white;">
+              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" >
+                Solicitudes
+               </a>
+       
+
             </li>
           </ul>
           <form class="d-flex" style="background-color: #e9454c;color:white;">
@@ -36,11 +46,6 @@
       </div>
     </nav>
 
-
-
-
-
-   
     
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width:100%;">
       <div class="offcanvas-header">
@@ -66,7 +71,9 @@
           <div class="card-body">
             <h5 class="card-title">Datos solicitante</h5>
             <p class="card-text">llene el formulario con la siguiente informacion</p>
-            <!--formulario de  expedientes exter  27/03/2021-->
+            
+            <!--Erick Guerra / Edgar Patzan 24/03/2021-->
+            <!--formulario de expedientes exter  24/03/2021-->
   <form action="../controller/C_Expedientes.php" method="POST">
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">No. Expediente</label>
@@ -91,9 +98,6 @@
             </div>
 
 
-
-
-            
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">DPI numeracion de 13 digitos</label>
               <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="DPI"required name="dpi">
@@ -162,12 +166,12 @@
               <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enfermedad"required name="enf">
             </div>
             
-            <div class="mb-3">
+            <div class="mb-4">
               <label for="exampleFormControlInput1" class="form-label">Nombre Doctor</label>
               <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Doctor"required name="doctor">
             </div>
             
-            <div class="mb-3">
+            <div class="mb-4">
               <label for="exampleFormControlInput1" class="form-label">Clinica Referida</label>
               <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Clinica"required name="clinic">
             </div>
@@ -184,10 +188,7 @@
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Codigo usuario</label>
-              <?php
-              session_cache_expire(30);
-              $cache_expire = session_cache_expire();              
-              session_start();
+              <?php             
               echo '<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Codigo"required name="cod" value="'. $_SESSION["id_usuario"]  . '">';
             ?>
               </div>
@@ -195,7 +196,30 @@
 
 </form>
            <!--fin de formulario--> 
-         
+      
+          <!--inicio de formulario TipoSolicitante,  Erick Guerra 1/04/2021--> 
+          
+          <div class="mb-4">
+              <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitante</label>
+              <select class="form-select" aria-label="Default select example"required name="sol"> 
+                <option value = "In-UsuarioInterno">IN-UsuarioInterno</option>
+                <option value = "Ex-UsuarioExterno">EX-UsuarioExterno</option>
+                 </select> 
+              </div>
+
+              <div class="mb-5">
+              <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitud</label>
+              <select class="form-select" aria-label="Default select example"required name="soli"> 
+               <?php
+                 require_once('../controller/C_solicitudes.php');
+                 listarTipoSolicitud();
+               ?>
+                 </select> 
+              </div> 
+       
+</form>
+        <!--fin de formulario-->
+
           </div>
         </div>
         </div>

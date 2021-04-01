@@ -19,8 +19,10 @@ if ($con->verificarUsuario($_POST['us'],$_POST['cla'])==1){
 
   while($fila=mysqli_fetch_array($tabla)){
     $_SESSION["id_usuario"] = $fila['id_us'] ;
-    $_SESSION["usuario"] = $fila['correo_us'] ;
+$_SESSION["usuario"] = $fila['correo_us'] ;
 }
+$con->cerrarConexion();
+
  header('location:../view/V_usu_externos.php');
 }else{
     header('location:../index.php');
