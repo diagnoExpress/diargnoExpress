@@ -81,6 +81,15 @@
 
 <form action="../controller/C_solicitudes.php" method="POST">
 
+<input type="button" value="buscar expediene" onclick="busExp()"> 
+        <div id="resexp">
+       <?php
+       require_once('../controller/C_busExp.php');
+       ?> 
+
+        </div>
+
+
     <div class="mb-4">
                     <label for="exampleFormControlInput3" class="form-label">Numero Solicitud</label>
                     <input type="text" class="form-control" id="exampleFormControlInput3" placeholder=" "required name="nSolicitud">
@@ -111,6 +120,8 @@
                     <label for="exampleFormControlTextarea2" class="form-label">Descripcion de la Solicitud</label>
                     <textarea class="form-control" id="exampleFormControlTextarea2" rows="8" required name="dSolicitud"></textarea>
         </div>
+      
+
             <input type="submit" value="siguiente" name="sig">
             <input type="button" value="cancelar"><br>
 
@@ -281,6 +292,5 @@
         </div>
       </div>
     </div>
-
   </body>
 </html>
