@@ -3,12 +3,16 @@
     --rojo:#e9454c;
   }
 
-
-
-
-  table, th, td {
-    border: 3px solid black;
+  #radiod{
+      display:none;
+      position:fixed;
+      top:20%;
+      left:35%;
+      width:20%;
+      background:white;
   }
+
+
   
 #solicitud{
     position: absolute;

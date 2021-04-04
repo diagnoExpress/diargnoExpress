@@ -69,12 +69,12 @@
 <form action="../controller/C_suportContac.php" method="POST">
 
     <div class="mb-3">
-                    <label for="exampleFormControlInput3" class="form-label">SM Solicitud Medica</label>
-                    <label for="exampleFormControlInput3" class="form-label">ET Examen Externo</label>
+                    <label for="exampleFormControlInput3" class="form-label">FP-Factura</label>
+                    <label for="exampleFormControlInput3" class="form-label">HO-Hoja de Oficio</label>
                     <select class="form-select" aria-label="Default select example"required name="solMed">
                     
-                    <option value = "Guatemala">SM</option> 
-                    <option value = "Guatemala">EM</option>
+                    <option value = "FP-Factura">Factura</option> 
+                    <option value = "HO-Hoja de Oficio">Hoja de Oficio</option>
                     </select>
                     
     </div>

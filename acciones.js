@@ -56,5 +56,11 @@ document.getElementById("ff1").style.display="block";
 }
 
 function verimg(archivo){
-    alert(archivo);
+document.getElementById("radiod").style.display="block";
+document.getElementById("pit").src="../archivos/" + archivo;
+}
+
+function cer(){
+    document.getElementById("radiod").style.display="none";
+    document.getElementById("pit").src="..";
 }
