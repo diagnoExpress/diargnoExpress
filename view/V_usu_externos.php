@@ -34,9 +34,17 @@
               <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample1" role="button" aria-controls="offcanvasExample" >
                 Solicitudes
                </a>
-       
+            </li>
+            
+            <li class="nav-item",style="background-color: #e9454c;color:white;">
+              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample2" role="button" aria-controls="offcanvasExample" >
+                Soporte Contacto
+               </a>
 
             </li>
+
+
+
           </ul>
           <form class="d-flex" style="background-color: #e9454c;color:white;">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
@@ -45,6 +53,71 @@
         </div>
       </div>
     </nav>
+
+<!-- crear soporte y contacto Douglas Hernandez-->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample2" aria-labelledby="offcanvasExampleLabel" style="width:100%;">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">SOPORTE Y CONTACTO</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <!-- INICIO DE CARD-->
+  <div class="card text-white bg-primary mb-3" style="max-width: 95%;">
+  <div class="card-header">SOPORTE Y CONTACTO</div>
+  <div class="card-body">
+    <h5 class="card-title">Primary card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+<form action="../controller/C_solicitudes.php" method="POST">
+
+    <div class="mb-3">
+                    <label for="exampleFormControlInput3" class="form-label">SM Solicitud Medica</label>
+                    <label for="exampleFormControlInput3" class="form-label">ET Examen Externo</label>
+                    <select class="form-select" aria-label="Default select example"required name="ninguno"> 
+                    <option value = "Guatemala">SM</option> 
+                    <option value = "Guatemala">EM</option>
+                    </select>
+                    
+    </div>
+
+    <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Ingrese Numero de Soporte</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese Numero soporte"required name="dpi">             
+            </div>
+
+    <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Telefonos</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese numero de telefono"required name="dpi">
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Correo</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese correo"required name="dpi">
+            </div>     
+
+            <input type="submit" value="siguiente" name="sig">
+            <input type="button" value="cancelar">
+            <input type="button" value="Atras"><br>
+
+</form>
+
+  </div>
+</div>
+
+
+
+  <!-- FIN DE CARD-->
+  </div>
+  
+<!--fin soporte --->
+
+
+
+
+
+
+
+
+
 
 
 <!-- crear solicitudes-->
