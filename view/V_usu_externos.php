@@ -25,19 +25,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: #e9454c;color:white;">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="background-color: #e9454c;color:white;">
             
-            <li class="nav-item",style="background-color: #e9454c;color:white;">
-              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" >
+            <li class="nav-item" style="background-color: #e9454c;color:white;">
+              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" style="margin-left:5px;" >
                 expedientes
                </a>
        
-               <li class="nav-item",style="background-color: #e9454c;color:white;">
-              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample1" role="button" aria-controls="offcanvasExample" >
+               <li class="nav-item" style="background-color: #e9454c;color:white;">
+              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample1" role="button" aria-controls="offcanvasExample" style="margin-left:5px;">
                 Solicitudes
                </a>
             </li>
-            
-            <li class="nav-item",style="background-color: #e9454c;color:white;">
-              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample2" role="button" aria-controls="offcanvasExample" >
+            <li class="nav-item" style="background-color: #e9454c;color:white;">
+              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample2" role="button" aria-controls="offcanvasExample" style="margin-left:5px;" >
                 Soporte Contacto
                </a>
 
@@ -67,12 +66,13 @@
     <h5 class="card-title">Primary card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
-<form action="../controller/C_solicitudes.php" method="POST">
+<form action="../controller/C_suportContac.php" method="POST">
 
     <div class="mb-3">
                     <label for="exampleFormControlInput3" class="form-label">SM Solicitud Medica</label>
                     <label for="exampleFormControlInput3" class="form-label">ET Examen Externo</label>
-                    <select class="form-select" aria-label="Default select example"required name="ninguno"> 
+                    <select class="form-select" aria-label="Default select example"required name="solMed">
+                    
                     <option value = "Guatemala">SM</option> 
                     <option value = "Guatemala">EM</option>
                     </select>
@@ -81,17 +81,17 @@
 
     <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Ingrese Numero de Soporte</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese Numero soporte"required name="dpi">             
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese Numero soporte"required name="numsop">             
             </div>
 
     <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Telefonos</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese numero de telefono"required name="dpi">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese numero de telefono"required name="numtel">
             </div>
 
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Correo</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese correo"required name="dpi">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese correo"required name="correo">
             </div>     
 
             <input type="submit" value="siguiente" name="sig">
@@ -237,7 +237,7 @@
             
             <!--Erick Guerra / Edgar Patzan 24/03/2021-->
             <!--formulario de expedientes exter  24/03/2021-->
-            <form action="../controller/C_Expedientes.php" method="POST">
+            <form action="../controller/C_Expedientes.php" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">No. Expediente</label>
               <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Expediente" name="ex">
@@ -321,7 +321,7 @@
 
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Archivo</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Archivo" name="ar">
+              <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="Archivo" name="ar">
             </div>
             
             <div class="mb-3">

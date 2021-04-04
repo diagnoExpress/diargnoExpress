@@ -87,6 +87,10 @@ function verificarUsuario($a,$b){
         return $dato;
         }
 
+        function guardarSuportContac($id,$usuario,$tipo,$num_su,$num_tel,$correo,$idus){
+            mysqi_query($this->conectar, "INSERT INTO soporteExterno(id_soporte,usuario,tipo,num_soporte,num_tel,correo,id_us)VALUES ('$id','$usuario','$tipo','$num_su','$num_tel','$correo','$idus')");
+            
+        }
 
 }
 

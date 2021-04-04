@@ -55,7 +55,6 @@ function most(){
 document.getElementById("ff1").style.display="block";
 }
 
-function busExp(){
-    alert('etracions');
- 
+function verimg(archivo){
+    alert(archivo);
 }
