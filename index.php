@@ -10,6 +10,7 @@ creacion de vista
 //rene
 
 ECHO "LUIS";
+echo "Erick Guerra";
 require_once('./view/V_login.php');
 
 
