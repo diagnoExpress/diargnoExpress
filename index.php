@@ -11,6 +11,7 @@ creacion de vista
 
 ECHO "LUIS";
 echo "Erick Guerra";
+ECHO "LO LOGRAMOS";
 require_once('./view/V_login.php');
 
 
