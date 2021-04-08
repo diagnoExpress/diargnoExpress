@@ -17,9 +17,9 @@ function mensaje(){
     
       
     }
-
+       
     /*
-    luis fuetnes 25/08/2021
+    ""luis fuetnes 25/08/2021
     funcionabilidad de animacion solo en modo Destop
     
     */

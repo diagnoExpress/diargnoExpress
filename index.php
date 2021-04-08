@@ -1,20 +1,6 @@
-
-
 <?php
 
-/*
-creacion de vista 
-*/
-//dj
-//olis
-//rene
-
+//creacion de vista 
 
 require_once('./view/V_login.php');
-
-
-//olis
-
-
-//Edgar
 ?>
