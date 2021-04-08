@@ -34,10 +34,10 @@ function conectar(){
         
     }
 }
-//extracion de datos 
+ 
 
 
-
+//extracion de datos de usuarios
 function extraerUsuaro($a,$b){
 $dato=mysqli_query($this->conectar,"select * from usuarios where correo_us='$a' and clave='$b'");
 return $dato;
@@ -94,6 +94,13 @@ function verificarUsuario($a,$b){
             mysqli_query($this->conectar, "INSERT INTO soporteExterno(usuario,tipo,num_soporte,num_tel,correo,id_us)VALUES ('$usuario','$tipo','$num_su','$num_tel','$correo','$idus')");
             
         }
+
+
+    //funcion extraer estados
+    function extraerEstados(){
+    $dato=mysqli_query($this->conectar,"select * from estados");
+    return $dato;
+    }
 
 }
 
