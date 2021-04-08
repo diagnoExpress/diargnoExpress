@@ -34,14 +34,14 @@ function conectar(){
         
     }
 }
-<<<<<<< HEAD
+
  
 
 
 //extracion de datos de usuarios
-=======
+
 //extracion de datos 
->>>>>>> 11d4a586ab9dfe68a5d46469a3b0f67c70f0eeb3
+
 function extraerUsuaro($a,$b){
 $dato=mysqli_query($this->conectar,"select * from usuarios where correo_us='$a' and clave='$b'");
 return $dato;

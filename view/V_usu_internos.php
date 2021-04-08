@@ -55,45 +55,56 @@
 
 
     <!--cuerpo de la pagina-->
-<div id="cuerpo">
-<div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Accordion Item #1
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+    <br>
+    <div class="card border-danger mb-3" style="max-width:80%;margin-left:10%">
+  <div class="card-header">Filtros De Busqueda</div>
+  <div class="card-body text-dark">
+    <h5 class="card-title">Seleccionar filtros</h5>
+    <p class="card-text">las busquedas se realizaran por la filtros seleccionados y que contengan un criterio de busquea no puede quedas vacio </p>
+
+<!--divicion de filtros-->
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <!--filltros de busqueda-->
+<div class="card" style="width: 100%">
+  <div class="card-header">
+  Filtros
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+    <div class="input-group">
+    <div class="input-group-text" id="btnGroupAddon">Cod Solicitud</div>
+    <input type="text" class="form-control" placeholder="0000-00-00-0000000" aria-label="Input group example" aria-describedby="btnGroupAddon"> <a href="#" class="btn btn-primary">+</a>
+  </div>
+    </li>
+    <li class="list-group-item">
+    <div class="input-group">
+    <div class="input-group-text" id="btnGroupAddon">No Expediente</div>
+    <input type="text" class="form-control" placeholder="0000" aria-label="Input group example" aria-describedby="btnGroupAddon"> <a href="#" class="btn btn-primary">+</a>
+  </div>
+    </li>
+    <li class="list-group-item">A third item</li>
+  </ul>
+</div>
+<!--fin filtros de busquda-->
       </div>
     </div>
   </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>
 </div>
+
+<!--fin divicion de filtros-->
+  </div>
 </div>
 
 <!--cuerpo de la pagina-->
