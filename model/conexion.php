@@ -35,9 +35,6 @@ function conectar(){
     }
 }
 //extracion de datos 
-
-
-
 function extraerUsuaro($a,$b){
 $dato=mysqli_query($this->conectar,"select * from usuarios where correo_us='$a' and clave='$b'");
 return $dato;
@@ -81,7 +78,7 @@ function verificarUsuario($a,$b){
     
     //rene ruano 1/04/2021 funcion guardar solicitud
     function guardarSolicitud($numSol, $tipoSol, $tipoSolicit, $descripSol){
-        mysqli_query($this->conectar,"insert into solicitudes(num_solicitud, tipo_solicitud, tipo_solicitante, descripcion, num_expediente) values ('$numSol', '$tipoSol', '$tipoSolicit', '$descripSol',1)" );  
+        mysqli_query($this->conectar,"insert into solicitudes(num_solicitud, tipo_solicitud, tipo_solicitante, descripcion, num_expediente, id_estados) values ('$numSol', '$tipoSol', '$tipoSolicit', '$descripSol',1,1)" );  
     }
 
     //rene ruano 1/04/2021 funcion para extraer expdientes
