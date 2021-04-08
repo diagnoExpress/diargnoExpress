@@ -23,5 +23,4 @@ echo $_POST['tSolicitante']. "<br>";
 echo $_POST['dSolicitud']. "<br>";
 $con->guardarSolicitud($_POST['nSolicitud'], $_POST['tSolicitud'], $_POST['tSolicitante'], $_POST['dSolicitud']);
     }
-
 ?>
