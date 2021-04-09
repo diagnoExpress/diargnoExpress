@@ -1,3 +1,6 @@
+let solicitud="fsolicitud";
+let Expedientes="fexpediente";
+let soportes="fsoporte"
 function mensaje(){
 
     /*
@@ -63,4 +66,18 @@ document.getElementById("pit").src="../archivos/" + archivo;
 function cer(){
     document.getElementById("radiod").style.display="none";
     document.getElementById("pit").src="..";
+}
+
+
+function AddFiltros(atriburo,datos,ff){
+    if(ff=="fsol"){
+        document.getElementById('ff1').style.display="none";
+    }
+    if(ff=="fexp"){
+        document.getElementById('ff2').style.display="none";
+    }
+    if(ff=="fsop"){
+        document.getElementById('ff3').style.display="none";
+    }
+    lfiltros.innerHTML= lfiltros.innerHTML + datos+  "<input type='text' value='" + atriburo +"' id='"+ datos +"' required disabled><input type='button' onlclik='cerrar(solicitud)' value='x' class='btn btn-danger'><br>";
 }
