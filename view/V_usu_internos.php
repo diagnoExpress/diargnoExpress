@@ -42,7 +42,12 @@
 
             </li>
 
+            <li class="nav-item" style="background-color: #e9454c;color:white;" onclick="mosfill()" >
+              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="" role="button" aria-controls="offcanvasExample" style="margin-left:5px;" >
+                Mantenimiento Solicitudes
+               </a>
 
+            </li>
 
           </ul>
           <form class="d-flex" style="background-color: #e9454c;color:white;">
@@ -56,8 +61,8 @@
 
     <!--cuerpo de la pagina-->
     <br>
-    <div class="card border-danger mb-3" style="max-width:98%;margin-left:1%">
-  <div class="card-header">Filtros De Busqueda</div>
+    <div class="card border-danger mb-3" style="max-width:98%;margin-left:1%;display:none;" id="fillb">
+  <div class="card-header">Filtros De Busqueda <input type='button' value='cerrar filltros' class="btn btn-danger" onclick="cerfill()"></div>
   <div class="card-body text-dark">
     <h5 class="card-title">Seleccionar filtros</h5>
     <p class="card-text">las busquedas se realizaran por la filtros seleccionados y que contengan un criterio de busquea no puede quedas vacio </p>
@@ -91,56 +96,56 @@
     <input type="text" class="form-control" placeholder="0000-00-00-00-000000" aria-label="Input group example" aria-describedby="btnGroupAddon" id="fsop"> <a  class="btn btn-primary" onclick="AddFiltros(fsop.value,soportes,'fsop')">+</a>
   </div>
     </li>
-    <li class="list-group-item">
+    <li class="list-group-item" id="ff4">
     <div class="input-group">
     <div class="input-group-text" id="btnGroupAddon">Usuario </div>
-    <input type="text" class="form-control" placeholder="correo" aria-label="Input group example" aria-describedby="btnGroupAddon"> <a href="#" class="btn btn-primary">+</a>
+    <input type="email" class="form-control" placeholder="correo" aria-label="Input group example" aria-describedby="btnGroupAddon" id="fcor"> <a href="#" class="btn btn-primary" onclick="AddFiltros(fcor.value,correos,'fcor')">+</a>
   </div>
     </li>
     
     </li>
-    <li class="list-group-item">
+    <li class="list-group-item" id="ff5">
     <div class="input-group">
     <div class="input-group-text" id="btnGroupAddon">Fecha incio </div>
-    <input type="date" class="form-control" placeholder="correo" aria-label="Input group example" aria-describedby="btnGroupAddon"> <a href="#" class="btn btn-primary">+</a>
+    <input type="date" class="form-control" placeholder="correo" aria-label="Input group example" aria-describedby="btnGroupAddon" id="fini"> <a href="#" class="btn btn-primary" onclick="AddFiltros(fini.value,inicio,'fini')">+</a>
   </div>
     </li>
     
 
     </li>
-    <li class="list-group-item">
+    <li class="list-group-item" id="ff6">
     <div class="input-group">
     <div class="input-group-text" id="btnGroupAddon">Fecha Fin</div>
-    <input type="date" class="form-control" placeholder="correo" aria-label="Input group example" aria-describedby="btnGroupAddon"> <a href="#" class="btn btn-primary">+</a>
+    <input type="date" class="form-control" placeholder="correo" aria-label="Input group example" aria-describedby="btnGroupAddon" id="ffin"> <a href="#" class="btn btn-primary" onclick="AddFiltros(ffin.value,fin,'ffin')">+</a>
   </div>
     </li>
     
     </li>
-    <li class="list-group-item">
+    <li class="list-group-item" id="ff7">
     <div class="input-group">
     <div class="input-group-text" id="btnGroupAddon">Nit</div>
-    <input type="text" class="form-control" placeholder="correo" aria-label="Input group example" aria-describedby="btnGroupAddon"> <a href="#" class="btn btn-primary">+</a>
+    <input type="text" class="form-control" placeholder="0000000" aria-label="Input group example" aria-describedby="btnGroupAddon" id="fnit"> <a href="#" class="btn btn-primary" onclick="AddFiltros(fnit.value,nits,'fnit')">+</a>
   </div>
     </li>
     
     </li>
-    <li class="list-group-item">
+    <li class="list-group-item" id="ff8">
     <div class="input-group">
     <div class="input-group-text" id="btnGroupAddon">tipo solicitud</div>
-    <select class="form-control"  aria-label="Input group example" aria-describedby="btnGroupAddon"> 
+    <select class="form-control"  aria-label="Input group example" aria-describedby="btnGroupAddon" id="ftsol"> 
     <option value="MM">Muestra Medica</option>
     <option value="LQ">Laboratorio</option>
     </select>
-    <a href="#" class="btn btn-primary">+</a>
+    <a  class="btn btn-primary" onclick="AddFiltros(ftsol.value,tisolid,'ftsol')">+</a>
   </div>
     </li>
 
 
 
-    <li class="list-group-item">
+    <li class="list-group-item" id="ff9">
     <div class="input-group">
-    <div class="input-group-text" id="btnGroupAddon">tipo solicitud</div>
-    <select class="form-control"  aria-label="Input group example" aria-describedby="btnGroupAddon"> 
+    <div class="input-group-text" id="btnGroupAddon">estado solicitud</div>
+    <select class="form-control"  aria-label="Input group example" aria-describedby="btnGroupAddon" id="festado"> 
     <option value="1">Creado</option>
     <option value="2">Enviado</option>
     <option value="2">Enviado</option>
@@ -150,7 +155,7 @@
     <option value="2">Espera</option>
     <option value="2">Revision</option>
     </select>
-    <a href="#" class="btn btn-primary">+</a>
+    <a href="#" class="btn btn-primary" onclick="AddFiltros(festado.value,estodos,'festado')">+</a>
   </div>
     </li>
   </ul>

@@ -1,6 +1,12 @@
-let solicitud="fsolicitud";
-let Expedientes="fexpediente";
-let soportes="fsoporte"
+const solicitud="fsolicitud";
+const Expedientes="fexpediente";
+let soportes="fsoporte";
+let correos="fcorreo";
+let inicio="finicio";
+let fin="finfecha";
+let nits="fnit";
+let tisolid="ftiposolicitud";
+let estodos="fstados";
 function mensaje(){
 
     /*
@@ -79,5 +85,36 @@ function AddFiltros(atriburo,datos,ff){
     if(ff=="fsop"){
         document.getElementById('ff3').style.display="none";
     }
+
+    if(ff=="fcor"){
+        document.getElementById('ff4').style.display="none";
+    }
+
+    if(ff=="fini"){
+        document.getElementById('ff5').style.display="none";
+    }
+    if(ff=="ffin"){
+        document.getElementById('ff6').style.display="none";
+    }
+
+    if(ff=="fnit"){
+        document.getElementById('ff7').style.display="none";
+    }
+    if(ff=="ftsol"){
+        document.getElementById('ff8').style.display="none";
+    }
+
+    if(ff=="festado"){
+        document.getElementById('ff9').style.display="none";
+    }
+
     lfiltros.innerHTML= lfiltros.innerHTML + datos+  "<input type='text' value='" + atriburo +"' id='"+ datos +"' required disabled><input type='button' onlclik='cerrar(solicitud)' value='x' class='btn btn-danger'><br>";
+}
+
+function mosfill(){
+    document.getElementById('fillb').style.display="block";;
+}
+
+function cerfill(){
+    document.getElementById('fillb').style.display="none";
 }
