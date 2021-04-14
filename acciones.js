@@ -61,7 +61,7 @@ function logg(){
 }
 
 function most(){
-document.getElementById("ff1").style.display="block";
+document.getElementById("ffr1").style.display="block";
 }
 
 function verimg(archivo){

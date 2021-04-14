@@ -229,7 +229,7 @@
           </ul>
 <br><br><br>
         </div>
-        <div class="card text-white bg-danger mb-3" style="max-width: 100%;display:none;background-color: #e9454c;" id="ff1">
+        <div class="card text-white bg-danger mb-3" style="max-width: 100%;display:none;background-color: #e9454c;" id="ffr1">
           <div class="card-header">Datos de Expediente</div>
           <div class="card-body">
             <h5 class="card-title">Datos solicitante</h5>
@@ -240,36 +240,36 @@
             <form action="../controller/C_Expedientes.php" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">No. Expediente</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Expediente" name="ex">
+              <input type="text" class="form-control"  placeholder="Expediente" name="ex">
             </div>
 
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Nombre </label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese Nombre "required name="nombre">
+              <input type="text" class="form-control"  placeholder="Ingrese Nombre "required name="nombre">
             </div>
 
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese Apellido" name="ap">
+              <input type="text" class="form-control"  placeholder="Ingrese Apellido" name="ap">
             </div>
 
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Direccion</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese direccion" required name="dir" >
+              <input type="text" class="form-control"  placeholder="Ingrese direccion" required name="dir" >
             </div>
 
 
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">DPI numeracion de 13 digitos</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="DPI"required name="dpi">
+              <input type="text" class="form-control"  placeholder="DPI"required name="dpi">
             </div>
 
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">NIT no utilizar guiones</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="NIT" name="nit">
+              <input type="text" class="form-control"  placeholder="NIT" name="nit">
             </div>
 
             
@@ -306,53 +306,53 @@
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Fecha de creacion  </label>
-              <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="Fecha"required name="fec">
+              <input type="date" class="form-control"  placeholder="Fecha"required name="fec">
             </div>
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Diagnostico</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" "required name="diag">
+              <input type="text" class="form-control"  placeholder=" "required name="diag">
             </div>
             
             <div class="mb-3">
               <label for="exampleFormControlTextarea1" class="form-label">Descripcion de diagnostico</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required name="des"></textarea  >
+              <textarea class="form-control"  rows="3" required name="des"></textarea  >
             </div>
 
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Archivo</label>
-              <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="Archivo" name="ar">
+              <input type="file" class="form-control"  placeholder="Archivo" name="ar">
             </div>
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Enfermedad</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enfermedad"required name="enf">
+              <input type="text" class="form-control"  placeholder="Enfermedad"required name="enf">
             </div>
             
             <div class="mb-4">
               <label for="exampleFormControlInput1" class="form-label">Nombre Doctor</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Doctor"required name="doctor">
+              <input type="text" class="form-control"  placeholder="Doctor"required name="doctor">
             </div>
             
             <div class="mb-4">
               <label for="exampleFormControlInput1" class="form-label">Clinica Referida</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Clinica"required name="clinic">
+              <input type="text" class="form-control"  placeholder="Clinica"required name="clinic">
             </div>
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Numero de Telefonos</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Telefono" name="tel">
+              <input type="text" class="form-control" placeholder="Telefono" name="tel">
             </div>
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Email</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Correo"required name="cor">
+              <input type="email" class="form-control"  placeholder="Correo"required name="cor">
             </div>
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Codigo usuario</label>
               <?php             
-              echo '<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Codigo"required name="cod" value="'. $_SESSION["id_usuario"]  . '">';
+              echo '<input type="text" class="form-control"  placeholder="Codigo"required name="cod" value="'. $_SESSION["id_usuario"]  . '">';
             ?>
               </div>
               <input type="submit" value="registra"><!--esto sirve para para aplicar required-->
