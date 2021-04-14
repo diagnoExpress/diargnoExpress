@@ -9,8 +9,7 @@
 <body>
     <?php
     echo "datos enviados";
-
-
+    echo $_POST['fsolicitud'];
 
     ?>
 </body>

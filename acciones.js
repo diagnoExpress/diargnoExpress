@@ -108,7 +108,7 @@ function AddFiltros(atriburo,datos,ff){
         document.getElementById('ff9').style.display="none";
     }
 
-    lfiltros.innerHTML= lfiltros.innerHTML + datos+  "<input type='text' value='" + atriburo +"' id='"+ datos +"' required disabled><input type='button' onlclik='cerrar(solicitud)' value='x' class='btn btn-danger'><br>";
+    lfiltros.innerHTML= lfiltros.innerHTML + datos +  "<input type='text' value='" + atriburo +"' id='"+ datos +"' name='" + datos + "' required disabled><input type='button' onlclik='cerrar(solicitud)' value='x' class='btn btn-danger'><br>";
 }
 
 function mosfill(){
