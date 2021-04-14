@@ -172,19 +172,17 @@
 
 
  <div class="card text-dark bg-light mb-3" style="max-width: 100%;">
+ <form action="../controller/C_filtros.php" method="POST">
   <div class="card-header">Filtros a aplicar</div>
+  
   <div class="card-body" id="lfiltros">
-  <form action="../controller/C_filtros.php" method="POST">
+ 
     <h5 class="card-title">lista de filtros</h5>
    
   </div>
   <input type="submit" value="enviar" class="btn btn-primary">
 </form>
 </div>
-        
-        
-        
-        <a href="#" class="btn btn-primary">buscar</a>
       </div>
     </div>
   </div>
