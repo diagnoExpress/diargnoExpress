@@ -8,6 +8,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 <script src="../acciones.js"></script>
 <link rel="stylesheet" type="text/css" href="../tema.css">  
+<script src="https://code.jquery.com/jquery-3.3.0.min.js"></script>
+
 </head>
 
 
@@ -170,9 +172,9 @@
         <h5 class="card-title">Filtros agregados para la Busqueda </h5>
         <p class="card-text">los valores se usaran como referencia para la busqueda de solicitudes</p>
 
-
+<div id="pelon">pelon</div>
  <div class="card text-dark bg-light mb-3" style="max-width: 100%;">
- <form action="../controller/C_filtros.php" method="POST">
+ <form action="../controller/C_filtros.php" method="GET">
   <div class="card-header">Filtros a aplicar</div>
   
   <div class="card-body" id="lfiltros">

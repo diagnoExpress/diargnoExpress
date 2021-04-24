@@ -109,6 +109,17 @@ function AddFiltros(atriburo,datos,ff){
     }
 
     lfiltros.innerHTML= lfiltros.innerHTML + datos +  "<input type='text' value='" + atriburo +"' id='"+ datos +"' name='" + datos + "' required disabled><input type='button' onlclik='cerrar(solicitud)' value='x' class='btn btn-danger'><br>";
+
+    var code= $("#fsolicitud").val();
+    var variable_post=document;
+    
+    $.post("../controller/C_filtros.php",{solicitud:code},function(data){
+    $("#pelon").html(data);
+    });
+
+    alert ("Resustados de la busqueda");
+
+
 }
 
 function mosfill(){
