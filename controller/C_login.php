@@ -23,7 +23,7 @@ $_SESSION["usuario"] = $fila['correo_us'] ;
 }
 $con->cerrarConexion();
 
- header('location:../view/V_usu_externos.php');
+ header('location:../view/V_usu_internos.php');
 }else{
     header('location:../index.php');
     $con->cerrarConexion();
@@ -34,11 +34,10 @@ $con->cerrarConexion();
 //recepcion de datos para guardar nube clever claoud
 if(isset($_POST['f2'])){
 echo $_POST['user'];
-echo $_POST['pass'];
-echo $_POST['conpass'];
-echo $_POST['dir'];
-$con->guardarUsuario($_POST['user'],$_POST['pass'],$_POST['dir']);
+$_SESSION["id_usuario"] = 'Externo';
+$_SESSION["usuario"] = $_POST['user'];
+$con->guardarUsuario($_POST['user']);
 $con->cerrarConexion();
-header('location:../index.php');
+header('location:../view/V_usu_externos.php');
 }
 ?>

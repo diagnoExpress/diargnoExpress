@@ -13,10 +13,10 @@ class conexion{
     //constructor
     public function __construct()
     {
-        $this->servidor ="bzfbbfrcs3qo3w6nhjpb-mysql.services.clever-cloud.com" ;
-        $this->usuario ="uccpbmxtbvvnfqtc" ;
-        $this->clave="9pgDnYdW7PYOGGDpmASY";
-        $this->db="bzfbbfrcs3qo3w6nhjpb";
+        $this->servidor ="b6dpmzgps2e460gdzocd-mysql.services.clever-cloud.com" ;
+        $this->usuario ="urd254y6xslbel1s" ;
+        $this->clave="G6Gti9v1vkVffjbOBhhn";
+        $this->db="b6dpmzgps2e460gdzocd";
     }
 
     //funcion de conxino mysqli
@@ -55,8 +55,8 @@ function verificarUsuario($a,$b){
     return mysqli_num_rows($dato);
     }
 
-    function guardarUsuario($user, $pass, $dir){
-        mysqli_query($this->conectar,"insert into usuarios (correo_us, clave, dire, id_role) values ('$user', '$pass','$dir',2)" );
+    function guardarUsuario($user){
+        mysqli_query($this->conectar,"insert into usuarios (correo_us, id_role) values ('$user',1)" );
         
     }
 

@@ -172,7 +172,7 @@
         <h5 class="card-title">Filtros agregados para la Busqueda </h5>
         <p class="card-text">los valores se usaran como referencia para la busqueda de solicitudes</p>
 
-<div id="pelon">pelon</div>
+
  <div class="card text-dark bg-light mb-3" style="max-width: 100%;">
  <form action="../controller/C_filtros.php" method="GET">
   <div class="card-header">Filtros a aplicar</div>
@@ -196,7 +196,7 @@
 
 <!--cuerpo de la pagina-->
 
-
+<div id="pelon">pelon</div>
 <!-- crear soporte y contacto Douglas Hernandez-->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample2" aria-labelledby="offcanvasExampleLabel" style="width:100%;">
   <div class="offcanvas-header">
@@ -220,10 +220,10 @@
                     <option value = "FP-Factura">Factura</option> 
                     <option value = "HO-Hoja de Oficio">Hoja de Oficio</option>
                     </select>
-                    
-    </div>
+                                        
+                        </div>
 
-    <div class="mb-3">
+                        <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Ingrese Numero de Soporte</label>
               <input type="text" class="form-control" placeholder="Ingrese Numero soporte"required name="numsop">             
             </div>

@@ -1,5 +1,5 @@
     <?php
     echo "datos enviados";
-    echo $_POST["solicitud"];
+    echo $_POST["solicitud"] . "datos encontrados";
    
     ?>
