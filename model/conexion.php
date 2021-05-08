@@ -70,6 +70,13 @@ function verificarUsuario($a,$b){
         return $datos;
     }
 
+    function Extraersoliciutd($sentencia){
+        $datos=mysqli_query($this->conectar, $sentencia);
+        return $datos;
+    }
+
+
+
     function ExSolicitud(){
      $dato=mysqli_query($this->conectar,"select * from tipo_solicitud");
         return $dato;
