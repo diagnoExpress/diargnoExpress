@@ -165,7 +165,7 @@
 
     <div class="mb-4">
                     <label for="exampleFormControlInput3" class="form-label">Numero Solicitud</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput3" placeholder=" "required name="nSolicitud">
+                    <input type="text" class="form-control" id="exampleFormControlInput3" placeholder=" " required name="nSolicitud" onchange="validacion_CodSolicitud()">
     </div>
 
     <div class="mb-5">
@@ -240,7 +240,7 @@
             <form action="../controller/C_Expedientes.php" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">No. Expediente</label>
-              <input type="text" class="form-control"  placeholder="Expediente" name="ex">
+              <input type="text" class="form-control"  placeholder="Expediente" name="ex"  onchange="validacion_Nexpediente()">
             </div>
 
             

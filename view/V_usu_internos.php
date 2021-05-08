@@ -309,7 +309,7 @@
 
     <div class="mb-4">
                     <label for="exampleFormControlInput3" class="form-label">Numero Solicitud</label>
-                    <input type="text" class="form-control"  placeholder=" "required name="nSolicitud">
+                    <input type="text" class="form-control"  placeholder=" "required name="nSolicitud" onchange="validacion_CodSolicitud()"  id="Codsolicitud">
     </div>
 
     <div class="mb-5">
@@ -384,7 +384,7 @@
             <form action="../controller/C_Expedientes.php" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">No. Expediente</label>
-              <input type="text" class="form-control"  placeholder="Expediente" name="ex">
+              <input type="text" class="form-control"  placeholder="Expediente" name="ex" id="Cods" onchange="validacion_Nexpediente()">
             </div>
 
             
@@ -407,7 +407,7 @@
 
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">DPI numeracion de 13 digitos</label>
-              <input type="text" class="form-control"  placeholder="DPI"required name="dpi">
+              <input type="text" class="form-control"  placeholder="DPI"required name="dpi" onchange="valdpi()" id="ndpi">
             </div>
 
             
