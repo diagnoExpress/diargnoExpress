@@ -129,3 +129,82 @@ function mosfill(){
 function cerfill(){
     document.getElementById('fillb').style.display="none";
 }
+
+
+
+function valdpi() { 
+    var m = document.getElementById("ndpi").value;
+    var expreg = /^[0-9]{13}$/;
+    
+    if(expreg.test(m))
+      alert("el numero de DPI  es CORRECTO"); 
+    else 
+      alert("el el numero de DPI NO es correcto CONSTA DE 13 DIGITOS "); 
+  }
+   
+  
+  
+  
+  function validacion_Nexpediente() { 
+    var m = document.getElementById("Cods").value;
+    var expreg = /[\d]{4}[-]([\d]){2}[-][\d]{2}[-][\d]{2}[-][\d]{7}$/;
+    
+    if(expreg.test(m))
+      alert("el codigo de expediente  es correcto"); 
+    else 
+      alert("el codigo de expediente NO es correcto debe ser en formato estructura 9999-88-77-66-5555555 "); 
+  }
+   
+  
+  function validacion_CodSolicitud() { 
+    var m = document.getElementById("Codsolicitud").value;
+    var expreg = /^[A-Z][A-Z]-\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01]-\d{5})$/;
+    
+    if(expreg.test(m))
+      alert("el codigo de solicitud  es correcto"); 
+    else 
+    alert("el codigo de solicitud NO es correcto debe ser en formato AA-20171130-99999 "); 
+  }
+      
+  
+  
+  function ValidacionesNoDM() { 
+    var m = document.getElementById("DM").value;
+    var expreg = /^[A-Z][A-Z][A-Z][A-Z][A-Z]([A-Z][A-f0-9]{1})[-][\d]{2}[-]([\d]){6}$/;
+    
+    if(expreg.test(m))
+      alert("el codigo de solicitud  es correcto"); 
+    else 
+    alert("el codigo de solicitud NO es correcto debe ser en formato AAAAABB-99-999999  "); 
+  }
+      
+  
+  
+  let num=0;
+  
+  
+  function fech(e){
+  
+  if(num==10 || num==8 || num ==6 || num==2){
+  fec.value=fec.value + "-";
+  }
+  num++;
+  if(num>19){
+    fec.value="";
+    num=0;
+  }
+    }
+  
+  
+    
+  function espe(){
+    var m = document.getElementById("fec").value;
+    var expreg = /^[A-Z][A-Z]-\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01]-\d{5})$/;
+    
+    if(expreg.test(m))
+      alert("el codigo de Etiqueta Muestra  es correcto"); 
+    else 
+    alert("el codigo de Etiqueta Muestra NO es correcto debe ser en formato AA-2017-11-30-99999 "); 
+    }
+  
+  
