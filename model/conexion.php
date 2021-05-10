@@ -89,6 +89,12 @@ function verificarUsuario($a,$b){
     function guardarExpedienteUsuarioExterno($nombre, $apellido, $direccion, $dpi, $nit,$departamento, $fechaCreacion, $diagnostico, $descripcion, $archivo, $enfermedad, $doctor, $clinica, $telefono, $emails, $correlativo){
         mysqli_query($this->conectar, "INSERT INTO expedientes(nombre, apellido, direccion, dpi, nit, departamento, fec_creacion, diagnostico, descripcion, archivo, enfermedad, doctor, clinica, telefono, emails, id_us) VALUES  ('$nombre', '$apellido', '$direccion', '$dpi', '$nit', '$departamento', '$fechaCreacion', '$diagnostico', '$descripcion', '$archivo', '$enfermedad', '$doctor', '$clinica', '$telefono', '$emails','$correlativo')");
     }
+
+    //rene ruano 09/05/2021 funcion guardar muestra de analista
+    function guardarMuestraAnalista($codigoMuestra, $tipoMuestra, $codigoSolicitud, $noExpediente, $nit, $presentacion, $usuarioAsignacion, $usuarioCreacion, $fechaCreacion, $fechaRecepcion, $estadoSolicitud, $cantidadUnidades, $unidadMedida, $cantidadItems, $cantidadDocumentos, $adjunto){
+        mysqli_query($this->conectar, "INSERT INTO expedientes(id_muestra, cod_muestra, tipo, cod_solicitud, num_expediente, nit, presentacion, usu_asignacion, usu_creacion, fecha_creacion, fec_recepcion, estado, cantidad_uni, uni_medida, can_items, cant_doc, adjunto) VALUES  ('$codigoMuestra', '$tipoMuestra', '$codigoSolicitud', '$noExpediente', '$nit', '$presentacion', '$usuarioAsignacion', '$usuarioCreacion', '$fechaCreacion', '$fechaRecepcion', '$estadoSolicitud', '$cantidadUnidades', '$unidadMedida', '$cantidadItems', '$cantidadDocumentos', '$adjunto')");
+    }
+
     
     //rene ruano 1/04/2021 funcion guardar solicitud
     function guardarSolicitud($numSol, $tipoSol, $tipoSolicit, $descripSol){
@@ -112,6 +118,12 @@ function verificarUsuario($a,$b){
     $dato=mysqli_query($this->conectar,"select * from estados");
     return $dato;
     }
+
+    //extraer solicitudes2
+    function extraerSolicitudes($idUsuario){
+        $dato=mysqli_query($this->conectar,"select * from solicitudes where id_analista = '$idUsuario'");
+        return $dato;
+        }
 
 }
 
