@@ -13,10 +13,10 @@ class conexion{
     //constructor
     public function __construct()
     {
-        $this->servidor ="b6dpmzgps2e460gdzocd-mysql.services.clever-cloud.com" ;
-        $this->usuario ="urd254y6xslbel1s" ;
-        $this->clave="G6Gti9v1vkVffjbOBhhn";
-        $this->db="b6dpmzgps2e460gdzocd";
+        $this->servidor ="bzfbbfrcs3qo3w6nhjpb-mysql.services.clever-cloud.com" ;
+        $this->usuario ="uccpbmxtbvvnfqtc" ;
+        $this->clave="9pgDnYdW7PYOGGDpmASY";
+        $this->db="bzfbbfrcs3qo3w6nhjpb";
     }
 
     //funcion de conxino mysqli
@@ -113,6 +113,12 @@ function verificarUsuario($a,$b){
     return $dato;
     }
 
+
+     //extraer solicitudes2
+     function extraerSolicitudes($idUsuario){
+        $dato=mysqli_query($this->conectar,"select * from solicitudes where id_analista = '$idUsuario'");
+        return $dato;
+        }
 }
 
 ?>
