@@ -90,8 +90,14 @@ $con->cerrarConexion();
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">DATOS DE NUESTRA</h5>
-        <p class="card-text">INGRESA LOS DATOS PARA CREAr UNA MUESTRA </p>
+        <p class="card-text">INGRESA LOS DATOS PARA CREA UNA MUESTRA </p>
 <!--INGRESO DE DATOS --->
+
+<form action = "../controller/C_analista.php" method="POST">
+<div class="form-floating mb-3">
+  <input type="num" class="form-control " id="cod_muesra" placeholder="name@example.com" name="cod_solicitud">
+  <label for="floatingInput">Codigo de solicitud</label>
+</div>
 
 <div class="form-floating mb-3">
   <input type="num" class="form-control " id="cod_muesra" placeholder="name@example.com" name="cod_muestra">
@@ -104,17 +110,12 @@ $con->cerrarConexion();
 </div>
 
 <div class="form-floating mb-3">
-  <input type="num" class="form-control " id="cod_solicitud" placeholder="name@example.com" name="cod_solicitud">
-  <label for="floatingInput">Codigo de la solicitud</label>
-</div>
-
-<div class="form-floating mb-3">
   <input type="num" class="form-control " id="no_expediente" placeholder="name@example.com" name="no_expediente">
   <label for="floatingInput">Numero Expediente</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="num" class="form-control " id="nit" placeholder="name@example.com" name="nit">
+  <input type="num" class="form-control " id="numnitt" placeholder="name@example.com" name="nits">
   <label for="floatingInput">Nit</label>
 </div>
 
@@ -134,13 +135,13 @@ $con->cerrarConexion();
 </div>
 
 <div class="form-floating mb-3">
-  <input type="date" class="form-control " id="fech_creacion" placeholder="name@example.com" name="fech_creacion">
+  <input type="text" class="form-control " id="fech_creacion" placeholder="name@example.com" name="fech_creacion">
   <label for="floatingInput">Fecha Creacion</label>
 </div>
 
 
 <div class="form-floating mb-3">
-  <input type="date" class="form-control " id="fech_recepcion" placeholder="name@example.com" name="fech_recepcion">
+  <input type="text" class="form-control " id="fech_recepcion" placeholder="name@example.com" name="fech_recepcion">
   <label for="floatingInput">Fecha Recepcion</label>
 </div>
 
@@ -172,8 +173,9 @@ $con->cerrarConexion();
 <!--FIND E DATOS --->
 
 
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <input type = "submit" class="btn btn-primary" value = "guardar">
       </div>
+      </form>
     </div>
   </div>
 </div>

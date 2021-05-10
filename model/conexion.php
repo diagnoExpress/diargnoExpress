@@ -91,13 +91,17 @@ function verificarUsuario($a,$b){
     }
 
     //rene ruano 09/05/2021 funcion guardar muestra de analista
-    function guardarMuestraAnalista($codigoMuestra, $tipoMuestra, $codigoSolicitud, $noExpediente, $nit, $presentacion, $usuarioAsignacion, $usuarioCreacion, $fechaCreacion, $fechaRecepcion, $estadoSolicitud, $cantidadUnidades, $unidadMedida, $cantidadItems, $cantidadDocumentos, $adjunto){
-        mysqli_query($this->conectar, "INSERT INTO expedientes(id_muestra, cod_muestra, tipo, cod_solicitud, num_expediente, nit, presentacion, usu_asignacion, usu_creacion, fecha_creacion, fec_recepcion, estado, cantidad_uni, uni_medida, can_items, cant_doc, adjunto) VALUES  ('$codigoMuestra', '$tipoMuestra', '$codigoSolicitud', '$noExpediente', '$nit', '$presentacion', '$usuarioAsignacion', '$usuarioCreacion', '$fechaCreacion', '$fechaRecepcion', '$estadoSolicitud', '$cantidadUnidades', '$unidadMedida', '$cantidadItems', '$cantidadDocumentos', '$adjunto')");
+    function guardarMuestraAnalista(                                                                                                                                                                                                                                                                                     $codigoMuestra, $tipoMuestra, $codigoSolicitud, $noExpediente, $nits, $presentacion, $usuarioAsignacion, $usuarioCreacion, $fechaCreacion, $fechaRecepcion, $estadoSolicitud, $cantidadUnidades, $unidadMedida, $cantidadItems,$cantidadDocumentos){
+        $datoss="INSERT INTO muestras (cod_muestra,tipo_muestra,cod_solicitud,     num_expediente,nit,   presetacion,     us_asignacion,    us_creacion,    fec_creacion,     fec_recepcion,   estado_sol,        cant_uni,        uni_medida,      cant_intems,    cant_documentos, adjunto,   num_solicitud) VALUES ('$codigoMuestra','$tipoMuestra','$codigoSolicitud','$noExpediente','$nits','$presentacion','$usuarioAsignacion','$usuarioCreacion','$fechaCreacion','$fechaRecepcion','$estadoSolicitud','$cantidadUnidades','$unidadMedida','$cantidadItems','$cantidadDocumentos','archivo','$codigoSolicitud')";
+        
+        mysqli_query($this->conectar, $datoss);        
+        return $datoss;
     }
 
     
     //rene ruano 1/04/2021 funcion guardar solicitud
     function guardarSolicitud($numSol, $tipoSol, $tipoSolicit, $descripSol){
+     
         mysqli_query($this->conectar,"insert into solicitudes(num_solicitud, tipo_solicitud, tipo_solicitante, descripcion, num_expediente, id_estados) values ('$numSol', '$tipoSol', '$tipoSolicit', '$descripSol',1,1)" );  
     }
 
@@ -121,21 +125,12 @@ function verificarUsuario($a,$b){
     return $dato;
     }
 
-<<<<<<< HEAD
-    //extraer solicitudes2
-    function extraerSolicitudes($idUsuario){
-        $dato=mysqli_query($this->conectar,"select * from solicitudes where id_analista = '$idUsuario'");
-        return $dato;
-        }
-
-=======
 
      //extraer solicitudes2
      function extraerSolicitudes($idUsuario){
         $dato=mysqli_query($this->conectar,"select * from solicitudes where id_analista = '$idUsuario'");
         return $dato;
         }
->>>>>>> 869e30de25c22cb9c9ec91e06f4c839d66eec765
 }
 
 ?>
