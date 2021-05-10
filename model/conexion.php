@@ -101,6 +101,8 @@ function verificarUsuario($a,$b){
         mysqli_query($this->conectar,"insert into solicitudes(num_solicitud, tipo_solicitud, tipo_solicitante, descripcion, num_expediente, id_estados) values ('$numSol', '$tipoSol', '$tipoSolicit', '$descripSol',1,1)" );  
     }
 
+////generacion de cambio 
+
     //rene ruano 1/04/2021 funcion para extraer expdientes
     function extraerExpediente($idUsuario){
         $dato=mysqli_query($this->conectar,"select E.nombre, E.apellido, E.direccion, E.dpi, E.nit, E.departamento, E.fec_creacion, E.diagnostico, E.descripcion, E.archivo, E.enfermedad, E.doctor, E.clinica, E.telefono, E.emails from usuarios U INNER JOIN expedientes E on U.id_us = E.id_us where U.id_us = '$idUsuario'");
