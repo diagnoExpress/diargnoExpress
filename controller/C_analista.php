@@ -22,5 +22,5 @@ echo $_POST['cant_documentos']. "<br>";
 echo $_FILES['adjunto']['name'] . "<br>";
 $archivo=$_FILES['adjunto']['name'];
 move_uploaded_file($_FILES['ar']['tmp_name'] ,'../archivos/' . $archivo  );
-$con->guardarExpedienteAnalista($_POST['cod_muestra'], $_POST['tipo_muestra'], $_POST['cod_solicitud'], $_POST['no_expediente'], $_POST['nit'], $_POST['presentacion'], $_POST['us_asignacion'], $_POST['us_creacion'], $_POST['fech_creacion'], $archivo, $_POST['fech_recepcion'], $_POST['est_solicitud'], $_POST['cant_unidades'], $_POST['Uni_medida'], $_POST['cant_items'], $_POST['cod'], $_POST['cant_documentos'], $_POST['adjunto'] );
+$con->guardarMuestraAnalista($_POST['cod_muestra'], $_POST['tipo_muestra'], $_POST['cod_solicitud'], $_POST['no_expediente'], $_POST['nit'], $_POST['presentacion'], $_POST['us_asignacion'], $_POST['us_creacion'], $_POST['fech_creacion'], $archivo, $_POST['fech_recepcion'], $_POST['est_solicitud'], $_POST['cant_unidades'], $_POST['Uni_medida'], $_POST['cant_items'], $_POST['cod'], $_POST['cant_documentos'], $_POST['adjunto'] );
 ?>
