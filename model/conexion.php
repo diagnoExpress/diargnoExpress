@@ -89,11 +89,23 @@ function verificarUsuario($a,$b){
     function guardarExpedienteUsuarioExterno($nombre, $apellido, $direccion, $dpi, $nit,$departamento, $fechaCreacion, $diagnostico, $descripcion, $archivo, $enfermedad, $doctor, $clinica, $telefono, $emails, $correlativo){
         mysqli_query($this->conectar, "INSERT INTO expedientes(nombre, apellido, direccion, dpi, nit, departamento, fec_creacion, diagnostico, descripcion, archivo, enfermedad, doctor, clinica, telefono, emails, id_us) VALUES  ('$nombre', '$apellido', '$direccion', '$dpi', '$nit', '$departamento', '$fechaCreacion', '$diagnostico', '$descripcion', '$archivo', '$enfermedad', '$doctor', '$clinica', '$telefono', '$emails','$correlativo')");
     }
+
+    //rene ruano 09/05/2021 funcion guardar muestra de analista
+    function guardarMuestraAnalista(                                                                                                                                                                                                                                                                                     $codigoMuestra, $tipoMuestra, $codigoSolicitud, $noExpediente, $nits, $presentacion, $usuarioAsignacion, $usuarioCreacion, $fechaCreacion, $fechaRecepcion, $estadoSolicitud, $cantidadUnidades, $unidadMedida, $cantidadItems,$cantidadDocumentos){
+        $datoss="INSERT INTO muestras (cod_muestra,tipo_muestra,cod_solicitud,     num_expediente,nit,   presetacion,     us_asignacion,    us_creacion,    fec_creacion,     fec_recepcion,   estado_sol,        cant_uni,        uni_medida,      cant_intems,    cant_documentos, adjunto,   num_solicitud) VALUES ('$codigoMuestra','$tipoMuestra','$codigoSolicitud','$noExpediente','$nits','$presentacion','$usuarioAsignacion','$usuarioCreacion','$fechaCreacion','$fechaRecepcion','$estadoSolicitud','$cantidadUnidades','$unidadMedida','$cantidadItems','$cantidadDocumentos','archivo','$codigoSolicitud')";
+        
+        mysqli_query($this->conectar, $datoss);        
+        return $datoss;
+    }
+
     
     //rene ruano 1/04/2021 funcion guardar solicitud
     function guardarSolicitud($numSol, $tipoSol, $tipoSolicit, $descripSol){
+     
         mysqli_query($this->conectar,"insert into solicitudes(num_solicitud, tipo_solicitud, tipo_solicitante, descripcion, num_expediente, id_estados) values ('$numSol', '$tipoSol', '$tipoSolicit', '$descripSol',1,1)" );  
     }
+
+////generacion de cambio 
 
     //rene ruano 1/04/2021 funcion para extraer expdientes
     function extraerExpediente($idUsuario){
