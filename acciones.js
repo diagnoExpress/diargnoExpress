@@ -7,6 +7,10 @@ let fin="finfecha";
 let nits="fnit";
 let tisolid="ftiposolicitud";
 let estodos="fstados";
+
+
+
+
 function mensaje(){
 
     /*
@@ -206,5 +210,23 @@ function valdpi() {
     else 
     alert("el codigo de Etiqueta Muestra NO es correcto debe ser en formato AA-2017-11-30-99999 "); 
     }
+
+    function codigoGen(){
+
+      let p1= Math.floor(Math.random() * (9999 - 0000)) + 0000;
+      let pa2=Math.floor(Math.random() * (99 - 00)) + 00;
+      let pa3=Math.floor(Math.random() * (99 - 00)) + 00;
+      let pa4=Math.floor(Math.random() * (99 - 00)) + 00;
+      let pa5=Math.floor(Math.random() * (9999999 - 0000000)) + 0000000;
+      Cods.value= p1 + "-" + pa2 + "-" + pa3 + "-" + pa4 + "-" + pa5;
+    }
   
-  
+
+    function busExp(){
+      resexp.style.display="block";
+    }  
+
+
+   function asignarex(x){
+      codexp.value= x;
+    }

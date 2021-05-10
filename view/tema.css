@@ -3,6 +3,13 @@
     --rojo:#e9454c;
   }
 
+
+  #resexp{
+    display: none;
+}
+
+
+
   #solicitud{
     background-color: #999;
 }
@@ -174,6 +181,7 @@
         }
 
 }
+
 
 
 

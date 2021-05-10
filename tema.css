@@ -3,6 +3,10 @@
     --rojo:#e9454c;
   }
 
+  #resexp{
+    display: none;
+}
+
   #radiod{
       display:none;
       position:fixed;

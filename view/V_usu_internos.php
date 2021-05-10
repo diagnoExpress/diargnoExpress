@@ -13,7 +13,7 @@
 </head>
 
 
-  <body>
+  <body onload="codigoGen()">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e9454c;color:white;" >
       <div class="container-fluid" style="background-color: #e9454c;color:white;">
 
@@ -294,21 +294,24 @@
 
 
 <div class="card text-white bg-primary mb-3" style="max-width: 95%;">
-  <div class="card-header">Header</div>
+  <div class="card-header">Solicitud de Muestas</div>
   <div class="card-body">
-    <h5 class="card-title">Primary card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
+    <h5 class="card-title">Expedientes Cargados</h5>
+    <p class="card-text">lista de expedientes Medicos</p>
+<br>
 <form action="../controller/C_solicitudes.php" method="POST">
 
-<input type="button" value="buscar expediene" onclick="busExp()"> 
+<input type="button" value="ver Expedientes" onclick="busExp()"> 
         <div id="resexp">
        <?php
        require_once('../controller/C_busExp.php');
        ?> 
 
         </div>
-
+        <div class="mb-4">
+                    <label for="exampleFormControlInput3" class="form-label">No. Expedeente Asignado</label>
+                    <input type="text" class="form-control"  placeholder=" "required name="nexp" onchange="validacion_CodSolicitud()"  id="codexp">
+    </div>
 
     <div class="mb-4">
                     <label for="exampleFormControlInput3" class="form-label">Numero Solicitud</label>
@@ -387,7 +390,7 @@
             <form action="../controller/C_Expedientes.php" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">No. Expediente</label>
-              <input type="text" class="form-control"  placeholder="Expediente" name="ex" id="Cods" onchange="validacion_Nexpediente()">
+              <input type="text" class="form-control"  placeholder="Expediente" name="ex" id="Cods" onchange="validacion_Nexpediente()" disabled>
             </div>
 
             
@@ -496,7 +499,7 @@
               <input type="email" class="form-control"  placeholder="Correo"required name="cor">
             </div>
             
-            <div class="mb-3">
+            <div class="mb-3" style="display:none;">
               <label for="exampleFormControlInput1" class="form-label">Codigo usuario</label>
               <?php             
               echo '<input type="text" class="form-control"  placeholder="Codigo"required name="cod" value="'. $_SESSION["id_usuario"]  . '">';
