@@ -197,6 +197,9 @@
 <!--cuerpo de la pagina-->
 
 <div id="pelon">pelon</div>
+
+
+<a href="https://api.whatsapp.com/send?phone=50242320752&text=ok,%20¿meparece%20bien%20gracias">Mensaje</a>
 <!-- crear soporte y contacto Douglas Hernandez-->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample2" aria-labelledby="offcanvasExampleLabel" style="width:100%;">
   <div class="offcanvas-header">
