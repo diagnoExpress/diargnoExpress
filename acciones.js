@@ -219,6 +219,17 @@ function valdpi() {
       let pa4=Math.floor(Math.random() * (99 - 00)) + 00;
       let pa5=Math.floor(Math.random() * (9999999 - 0000000)) + 0000000;
       Cods.value= p1 + "-" + pa2 + "-" + pa3 + "-" + pa4 + "-" + pa5;
+
+        //segundo codigo solicitud
+      
+      let so1=Math.floor(Math.random() * (99999999 - 00000000)) + 00000000;
+      let so2=Math.floor(Math.random() * (99999 - 00000)) + 00000;
+      let cod3=Math.floor(Math.random() * (90 - 65)) + 65;
+      let cod4=Math.floor(Math.random() * (90 - 65)) + 65;
+    let letra1= String.fromCharCode(cod3);
+    let letra2= String.fromCharCode(cod4);
+    Codsolicitud.value=letra1 + letra2 + "-" + so1 + "-" + so2;
+
     }
   
 

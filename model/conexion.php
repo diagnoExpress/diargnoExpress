@@ -46,6 +46,11 @@ function extraerUsuaro($a,$b){
 $dato=mysqli_query($this->conectar,"select * from usuarios where correo_us='$a' and clave='$b'");
 return $dato;
 }
+
+function extraerUsuaro2($a){
+    $dato=mysqli_query($this->conectar,"select correo_us from usuarios where id_us='$a'");
+    return $dato;
+    }
 /*
 rene ruano 24/03/2021  
 fucnion guardar en mysql insertadno datos 
@@ -100,9 +105,9 @@ function verificarUsuario($a,$b){
 
     
     //rene ruano 1/04/2021 funcion guardar solicitud
-    function guardarSolicitud($numSol, $tipoSol, $tipoSolicit, $descripSol){
+    function guardarSolicitud($numSol, $tipoSol, $tipoSolicit, $descripSol,$espd){
      
-        mysqli_query($this->conectar,"insert into solicitudes(num_solicitud, tipo_solicitud, tipo_solicitante, descripcion, num_expediente, id_estados) values ('$numSol', '$tipoSol', '$tipoSolicit', '$descripSol',1,1)" );  
+        mysqli_query($this->conectar,"insert into solicitudes(num_solicitud, tipo_solicitud, tipo_solicitante, descripcion, num_expediente, id_estados) values ('$numSol', '$tipoSol', '$tipoSolicit', '$descripSol',$espd,1)" );  
     }
 
 ////generacion de cambio 
@@ -131,6 +136,12 @@ function verificarUsuario($a,$b){
         $dato=mysqli_query($this->conectar,"select * from solicitudes where id_analista = '$idUsuario'");
         return $dato;
         }
+
+
+        function exSolicitudes($idUsuario){
+            $dato=mysqli_query($this->conectar,"select so.num_solicitud,so.id_estados, so.descripcion,so.id_analista  from solicitudes so  INNER join expedientes ex on so.num_expediente=ex.num_expediente  where ex.emails ='$idUsuario'");
+            return $dato;
+            }
 }
 
 ?>

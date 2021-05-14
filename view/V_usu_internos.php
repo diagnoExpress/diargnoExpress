@@ -196,10 +196,27 @@
 
 <!--cuerpo de la pagina-->
 
+<br><br>
+<div class="card text-dark bg-light mb-3" style="max-width: 90%;margin-left:5%; box-shadow: 5px 5px 8px #999;">
+  <div class="card-header" style="background:#e9454c;color:white;">Mis Solicitudes</div>
+  <div class="card-body">
+    <h5 class="card-title">Lista de solicitudes</h5>
+    <p class="card-text">muestra las solicitudes y su estado actual</p>
+    <div class="row row-cols-1 row-cols-md-5 g-4">
+<?php
+require_once('../controller/C_solicitudes.php');
+mostarSolicitud($_SESSION["usuario"]);
+?>
+</div>
+
+  </div>
+</div>
+
+
 <div id="pelon">pelon</div>
 
 
-<a href="https://api.whatsapp.com/send?phone=50242320752&text=ok,%20¿meparece%20bien%20gracias">Mensaje</a>
+<a href="https://api.whatsapp.com/send?phone=56965894&text=Solicito,%20informaicon%20bien%20de%2mi%2solicitud%2att:luis">Mensaje</a>
 <!-- crear soporte y contacto Douglas Hernandez-->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample2" aria-labelledby="offcanvasExampleLabel" style="width:100%;">
   <div class="offcanvas-header">
@@ -310,17 +327,17 @@
         </div>
         <div class="mb-4">
                     <label for="exampleFormControlInput3" class="form-label">No. Expedeente Asignado</label>
-                    <input type="text" class="form-control"  placeholder=" "required name="nexp" onchange="validacion_CodSolicitud()"  id="codexp">
+                    <input type="text" class="form-control"  placeholder=" " required name="nexp" onchange="validacion_CodSolicitud()"  id="codexp" >
     </div>
 
     <div class="mb-4">
                     <label for="exampleFormControlInput3" class="form-label">Numero Solicitud</label>
-                    <input type="text" class="form-control"  placeholder=" "required name="nSolicitud" onchange="validacion_CodSolicitud()"  id="Codsolicitud">
+                    <input type="text" class="form-control"  placeholder=" "required name="nSolicitud" onchange="validacion_CodSolicitud()"  id="Codsolicitud" >
     </div>
 
     <div class="mb-5">
-                    <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitante</label>
-                    <select class="form-select" aria-label="Default select example"required name="tSolicitud"> 
+                    <label for="exampleFormControlInput2" class="form-label" >Seleccione Tipo Solicitante</label>
+                    <select class="form-select" aria-label="Default select example"required name="tSolicitud" > 
                     <?php
                        require_once('../controller/C_solicitudes.php');
                        extraerTipoUsuario('tipo_solicitante');
@@ -516,6 +533,7 @@
       </div>
     </div>
 
+ <!--inicio solicitudes--> 
 
 
   </body>

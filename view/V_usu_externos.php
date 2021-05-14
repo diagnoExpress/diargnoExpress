@@ -11,8 +11,8 @@
 </head>
 
 
-  <body onload="codigoGen()>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e9454c;color:white;" >
+  <body onload="codigoGen()">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e9454c;color:white;">
       <div class="container-fluid" style="background-color: #e9454c;color:white;">
 
     
