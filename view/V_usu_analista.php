@@ -94,79 +94,78 @@ $con->cerrarConexion();
 <!--INGRESO DE DATOS --->
 
 <form action = "../controller/C_analista.php" method="POST">
-<div class="form-floating mb-3">
-  <input type="num" class="form-control " id="cod_muesra" placeholder="name@example.com" name="cod_solicitud">
-  <label for="floatingInput">Codigo de solicitud</label>
+<div class="mb-3">
+<label for="floatingInput">Codigo de solicitud</label>
+  <input type="num" class="form-control " id="cod_muesra" placeholder="Ingrese codigo de solicitud" required name="cod_solicitud">  
 </div>
 
-<div class="form-floating mb-3">
-  <input type="num" class="form-control " id="cod_muesra" placeholder="name@example.com" name="cod_muestra">
+<div class="mb-3">  
   <label for="floatingInput">Codigo de la muestra</label>
+  <input type="num" class="form-control " id="cod_muesra" placeholder="Ingrese codigo de muestra" required name="cod_muestra">
 </div>
 
-<div class="form-floating mb-3">
-  <input type="text" class="form-control " id="tipo_muesra" placeholder="name@example.com" name="tipo_muestra">
+<div class="mb-3">
   <label for="floatingInput">Tipo de la muestra</label>
+  <input type="text" class="form-control " id="tipo_muesra" placeholder="Ingrese tipo de la muestra" required name="tipo_muestra">  
 </div>
 
-<div class="form-floating mb-3">
-  <input type="num" class="form-control " id="no_expediente" placeholder="name@example.com" name="no_expediente">
+<div class="mb-3">
   <label for="floatingInput">Numero Expediente</label>
+  <input type="num" class="form-control " id="no_expediente" placeholder="Ingrese numero de Expediente" required name="no_expediente" >  
 </div>
 
-<div class="form-floating mb-3">
-  <input type="num" class="form-control " id="numnitt" placeholder="name@example.com" name="nits">
+<div class="mb-3">
   <label for="floatingInput">Nit</label>
+  <input type="num" class="form-control " id="numnitt" placeholder="Ingrese NIt" required name="nits">
 </div>
 
-<div class="form-floating mb-3">
-  <input type="text" class="form-control " id="presentacion" placeholder="name@example.com" name="presentacion">
+<div class="mb-3">
   <label for="floatingInput">Presentacion</label>
+  <input type="text" class="form-control " id="presentacion" placeholder="Presentacion" required name="presentacion">
 </div>
 
-<div class="form-floating mb-3">
-  <input type="text" class="form-control " id="us_asignacion" placeholder="name@example.com" name="us_asignacion">
+<div class="mb-3">
   <label for="floatingInput">Usuario Asignacion</label>
+  <input type="text" class="form-control " id="us_asignacion" placeholder="Ingrese usuario Asignacion" required name="us_asignacion">
 </div>
 
 <div class="form-floating mb-3">
-  <input type="text" class="form-control " id="us_creacion" placeholder="name@example.com" name="us_creacion">
-  <label for="floatingInput">Usuario Creacion</label>
+  <input type="text" class="form-control " id="us_creacion" placeholder="Ingrese usuario Creacion" required name="us_creacion">  
 </div>
 
 <div class="form-floating mb-3">
-  <input type="text" class="form-control " id="fech_creacion" placeholder="name@example.com" name="fech_creacion">
+  <input type="text" class="form-control " id="fech_creacion" placeholder="Fecha Creacion" required name="fech_creacion">
   <label for="floatingInput">Fecha Creacion</label>
 </div>
 
 
 <div class="form-floating mb-3">
-  <input type="text" class="form-control " id="fech_recepcion" placeholder="name@example.com" name="fech_recepcion">
+  <input type="text" class="form-control " id="fech_recepcion" placeholder="Fecha Recepcion" required name="fech_recepcion">
   <label for="floatingInput">Fecha Recepcion</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="text" class="form-control " id="est_solicitud" placeholder="name@example.com" name="est_solicitud">
+  <input type="text" class="form-control " id="est_solicitud" placeholder="Estado Solicitud" required name="est_solicitud">
   <label for="floatingInput">Estado solicitud</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="num" class="form-control " id="cant_unidades" placeholder="name@example.com" name="cant_unidades">
+  <input type="num" class="form-control " id="cant_unidades" placeholder="Cantidad de Unidades" required name="cant_unidades">
   <label for="floatingInput">Cantidad de Unidades</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="num" class="form-control " id="Uni_medida" placeholder="name@example.com" name="Uni_medida">
+  <input type="num" class="form-control " id="Uni_medida" placeholder="Unidad de Medida" required name="Uni_medida">
   <label for="floatingInput">Unidad de Medida</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="num" class="form-control " id="cant_items" placeholder="name@example.com" name="cant_items">
+  <input type="num" class="form-control " id="cant_items" placeholder="Cantidad Items" required name="cant_items">
   <label for="floatingInput">Cantidad Items</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="num" class="form-control " id="cant_documentos" placeholder="name@example.com" name="cant_documentos">
+  <input type="num" class="form-control " id="cant_documentos" placeholder="Cantidad de Documentos" required name="cant_documentos">
   <label for="floatingInput">Cantidad de Documentos</label>
 </div>
 
