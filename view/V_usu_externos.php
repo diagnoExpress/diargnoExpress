@@ -427,7 +427,7 @@ mostarSolicitud($_SESSION["usuario"]);
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Apellido</label>
-              <input type="text" class="form-control"  placeholder="Ingrese Apellido" name="ap">
+              <input type="text" class="form-control"  placeholder="Ingrese Apellido"required name="ap">
             </div>
 
             <div class="mb-3">
@@ -444,7 +444,7 @@ mostarSolicitud($_SESSION["usuario"]);
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">NIT no utilizar guiones</label>
-              <input type="text" class="form-control"  placeholder="NIT" name="nit">
+              <input type="text" class="form-control"  placeholder="NIT"required name="nit">
             </div>
 
             

@@ -109,6 +109,7 @@ $con->cerrarConexion();
 <!--INGRESO DE DATOS --->
 
 <form action = "../controller/C_analista.php" method="POST">
+<<<<<<< HEAD
 <div class="form-floating mb-3">
   <input type="num" class="form-control " id="cod_muesra" placeholder="name@example.com" name="cod_solicitud" require>
   <label for="floatingInput">Codigo de solicitud</label>
@@ -116,35 +117,70 @@ $con->cerrarConexion();
 
 <div class="form-floating mb-3">
   <input type="num" class="form-control " id="cod_muesra2" placeholder="name@example.com" name="cod_muestra" require>
-  <label for="floatingInput">Codigo de la muestra</label>
+=======
+<div class="mb-3">
+<label for="floatingInput">Codigo de solicitud</label>
+  <input type="num" class="form-control " id="cod_muesra" placeholder="Ingrese codigo de solicitud" required name="cod_solicitud">  
 </div>
 
+<div class="mb-3">  
+>>>>>>> 4b66324a99cd7d5fd338c52ee3909334f3c0286b
+  <label for="floatingInput">Codigo de la muestra</label>
+  <input type="num" class="form-control " id="cod_muesra" placeholder="Ingrese codigo de muestra" required name="cod_muestra">
+</div>
+
+<<<<<<< HEAD
 <div class="form-floating mb-3">
   <input type="text" class="form-control " id="tipo_muesra" placeholder="name@example.com" name="tipo_muestra" require>
+=======
+<div class="mb-3">
+>>>>>>> 4b66324a99cd7d5fd338c52ee3909334f3c0286b
   <label for="floatingInput">Tipo de la muestra</label>
+  <input type="text" class="form-control " id="tipo_muesra" placeholder="Ingrese tipo de la muestra" required name="tipo_muestra">  
 </div>
 
+<<<<<<< HEAD
 <div class="form-floating mb-3">
   <input type="num" class="form-control " id="no_expediente" placeholder="name@example.com" name="no_expediente" require>
+=======
+<div class="mb-3">
+>>>>>>> 4b66324a99cd7d5fd338c52ee3909334f3c0286b
   <label for="floatingInput">Numero Expediente</label>
+  <input type="num" class="form-control " id="no_expediente" placeholder="Ingrese numero de Expediente" required name="no_expediente" >  
 </div>
 
+<<<<<<< HEAD
 <div class="form-floating mb-3">
   <input type="num" class="form-control " id="numnitt" placeholder="name@example.com" name="nits" require>
+=======
+<div class="mb-3">
+>>>>>>> 4b66324a99cd7d5fd338c52ee3909334f3c0286b
   <label for="floatingInput">Nit</label>
+  <input type="num" class="form-control " id="numnitt" placeholder="Ingrese NIt" required name="nits">
 </div>
 
+<<<<<<< HEAD
 <div class="form-floating mb-3">
   <input type="text" class="form-control " id="presentacion" placeholder="name@example.com" name="presentacion" require>
+=======
+<div class="mb-3">
+>>>>>>> 4b66324a99cd7d5fd338c52ee3909334f3c0286b
   <label for="floatingInput">Presentacion</label>
+  <input type="text" class="form-control " id="presentacion" placeholder="Presentacion" required name="presentacion">
 </div>
 
+<<<<<<< HEAD
 <div class="form-floating mb-3">
   <input type="text" class="form-control " id="us_asignacion" placeholder="name@example.com" name="us_asignacion" require>
+=======
+<div class="mb-3">
+>>>>>>> 4b66324a99cd7d5fd338c52ee3909334f3c0286b
   <label for="floatingInput">Usuario Asignacion</label>
+  <input type="text" class="form-control " id="us_asignacion" placeholder="Ingrese usuario Asignacion" required name="us_asignacion">
 </div>
 
 <div class="form-floating mb-3">
+<<<<<<< HEAD
   <input type="text" class="form-control " id="us_creacion" placeholder="name@example.com" name="us_creacion" require><svg onclick="chat()" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
   <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
   <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
@@ -154,37 +190,68 @@ $con->cerrarConexion();
 
 <div class="form-floating mb-3">
   <input type="text" class="form-control " id="fech_creacion" placeholder="name@example.com" name="fech_creacion" require>
+=======
+  <input type="text" class="form-control " id="us_creacion" placeholder="Ingrese usuario Creacion" required name="us_creacion">  
+</div>
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control " id="fech_creacion" placeholder="Fecha Creacion" required name="fech_creacion">
+>>>>>>> 4b66324a99cd7d5fd338c52ee3909334f3c0286b
   <label for="floatingInput">Fecha Creacion</label>
 </div>
 
 
 <div class="form-floating mb-3">
+<<<<<<< HEAD
   <input type="text" class="form-control " id="fech_recepcion" placeholder="name@example.com" name="fech_recepcion" require>
+=======
+  <input type="text" class="form-control " id="fech_recepcion" placeholder="Fecha Recepcion" required name="fech_recepcion">
+>>>>>>> 4b66324a99cd7d5fd338c52ee3909334f3c0286b
   <label for="floatingInput">Fecha Recepcion</label>
 </div>
 
 <div class="form-floating mb-3">
+<<<<<<< HEAD
   <input type="text" class="form-control " id="est_solicitud" placeholder="name@example.com" name="est_solicitud" require>
+=======
+  <input type="text" class="form-control " id="est_solicitud" placeholder="Estado Solicitud" required name="est_solicitud">
+>>>>>>> 4b66324a99cd7d5fd338c52ee3909334f3c0286b
   <label for="floatingInput">Estado solicitud</label>
 </div>
 
 <div class="form-floating mb-3">
+<<<<<<< HEAD
   <input type="num" class="form-control " id="cant_unidades" placeholder="name@example.com" name="cant_unidades" require>
+=======
+  <input type="num" class="form-control " id="cant_unidades" placeholder="Cantidad de Unidades" required name="cant_unidades">
+>>>>>>> 4b66324a99cd7d5fd338c52ee3909334f3c0286b
   <label for="floatingInput">Cantidad de Unidades</label>
 </div>
 
 <div class="form-floating mb-3">
+<<<<<<< HEAD
   <input type="num" class="form-control " id="Uni_medida" placeholder="name@example.com" name="Uni_medida" require>
+=======
+  <input type="num" class="form-control " id="Uni_medida" placeholder="Unidad de Medida" required name="Uni_medida">
+>>>>>>> 4b66324a99cd7d5fd338c52ee3909334f3c0286b
   <label for="floatingInput">Unidad de Medida</label>
 </div>
 
 <div class="form-floating mb-3">
+<<<<<<< HEAD
   <input type="num" class="form-control " id="cant_items" placeholder="name@example.com" name="cant_items" require>
+=======
+  <input type="num" class="form-control " id="cant_items" placeholder="Cantidad Items" required name="cant_items">
+>>>>>>> 4b66324a99cd7d5fd338c52ee3909334f3c0286b
   <label for="floatingInput">Cantidad Items</label>
 </div>
 
 <div class="form-floating mb-3">
+<<<<<<< HEAD
   <input type="num" class="form-control " id="cant_documentos" placeholder="name@example.com" name="cant_documentos" require>
+=======
+  <input type="num" class="form-control " id="cant_documentos" placeholder="Cantidad de Documentos" required name="cant_documentos">
+>>>>>>> 4b66324a99cd7d5fd338c52ee3909334f3c0286b
   <label for="floatingInput">Cantidad de Documentos</label>
 </div>
 
