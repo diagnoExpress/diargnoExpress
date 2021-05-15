@@ -8,29 +8,34 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 <script src="../acciones.js"></script>
 <link rel="stylesheet" type="text/css" href="../tema.css">  
+<script src="https://code.jquery.com/jquery-3.3.0.min.js"></script>
+
 </head>
 
 
   <body onload="codigoGen()">
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e9454c;color:white;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e9454c;color:white;" >
       <div class="container-fluid" style="background-color: #e9454c;color:white;">
 
-    
+      <?php
+        session_start();
+       echo '<a class="navbar-brand" href="#" style="background-color: #e9454c;color:white;">' . '</a>';
+       ?> 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color:white;color:white;" >
           <span class="navbar-toggler-icon" style="background-color:white;color:white;"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: #e9454c;color:white;">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="background-color: #e9454c;color:white;">
-          <br>
-            <li class="nav-item" style="background-color: #e9454c;color:white;">
             
-              <a class="btn btn-primary btn-s" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" style="margin-left:5px;width:160px;margin-top:1px;" >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-spreadsheet" viewBox="0 0 16 16">
-  <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z"/>
+          <li class="nav-item" style="background-color: #e9454c;color:white;">
+            
+            <a class="btn btn-primary btn-s" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" style="margin-left:5px;width:160px;margin-top:1px;" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-spreadsheet" viewBox="0 0 16 16">
+<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z"/>
 </svg> expedientes
-               </a>
-       </li>
-               <li class="nav-item" style="background-color: #e9454c;color:white;">
+             </a>
+     </li>
+     <li class="nav-item" style="background-color: #e9454c;color:white;">
               <a class="btn btn-primary btn-s" data-bs-toggle="offcanvas" href="#offcanvasExample1" role="button" aria-controls="offcanvasExample" style="margin-left:5px;width:160px;margin-top:1px;">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-easel" viewBox="0 0 16 16">
   <path d="M8.5 6a.5.5 0 1 0-1 0h-2A1.5 1.5 0 0 0 4 7.5v2A1.5 1.5 0 0 0 5.5 11h.473l-.447 1.342a.5.5 0 1 0 .948.316L7.027 11H7.5v1a.5.5 0 0 0 1 0v-1h.473l.553 1.658a.5.5 0 1 0 .948-.316L10.027 11h.473A1.5 1.5 0 0 0 12 9.5v-2A1.5 1.5 0 0 0 10.5 6h-2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-2z"/>
@@ -39,13 +44,11 @@
                </a>
             </li>
             <li class="nav-item" style="background-color: #e9454c;color:white;">
-              <a class="btn btn-primary btn-s" data-bs-toggle="offcanvas" href="#offcanvasExample2" role="button" aria-controls="offcanvasExample" style="margin-left:5px;width:160px;margin-top:1px;" >
-              
+              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample2" role="button" aria-controls="offcanvasExample" style="margin-left:5px;" >
                 Soporte Contacto
                </a>
 
             </li>
-
 
 
           </ul>
@@ -53,7 +56,6 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
             <button class="btn btn-outline-success" type="submit" style="background-color: #009fe3;color:white;">Search</button>
             <?php
-        session_start();
         echo '';
        echo '<a class="navbar-brand" href="#" style="background-color: #e9454c;color:white;margin-left:5%;text-align:center;font-size:8pt;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge" viewBox="0 0 16 16">
        <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -65,6 +67,163 @@
       </div>
     </nav>
 
+
+    <!--cuerpo de la pagina-->
+    <br>
+    <div class="card border-danger mb-3" style="max-width:98%;margin-left:1%;display:none;" id="fillb">
+  <div class="card-header">Filtros De Busqueda <input type='button' value='cerrar filltros' class="btn btn-danger" onclick="cerfill()"></div>
+  <div class="card-body text-dark">
+    <h5 class="card-title">Seleccionar filtros</h5>
+    <p class="card-text">las busquedas se realizaran por la filtros seleccionados y que contengan un criterio de busquea no puede quedas vacio </p>
+
+<!--divicion de filtros-->
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <!--filltros de busqueda-->
+<div class="card" style="width: 100%">
+  <div class="card-header">
+  Filtros
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" id="ff1">
+    <div class="input-group">
+    <div class="input-group-text" id="btnGroupAddon">Solicitud</div>
+    <input type="text" class="form-control" placeholder="0000-00-00-0000000" aria-label="Input group example" aria-describedby="btnGroupAddon" id="fsol"> <a  class="btn btn-primary" onclick="AddFiltros(fsol.value,solicitud,'fsol')">+</a>
+  </div>
+    </li>
+    <li class="list-group-item" id="ff2">
+    <div class="input-group">
+    <div class="input-group-text" id="btnGroupAddon">Expediente</div>
+    <input type="text" class="form-control" placeholder="0000" aria-label="Input group example" aria-describedby="btnGroupAddon" id="fexp"> <a  class="btn btn-primary" onclick="AddFiltros(fexp.value,Expedientes,'fexp')">+</a>
+  </div>
+    </li>
+    <li class="list-group-item" id="ff3">
+    <div class="input-group">
+    <div class="input-group-text" id="btnGroupAddon">Soporte</div>
+    <input type="text" class="form-control" placeholder="0000-00-00-00-000000" aria-label="Input group example" aria-describedby="btnGroupAddon" id="fsop"> <a  class="btn btn-primary" onclick="AddFiltros(fsop.value,soportes,'fsop')">+</a>
+  </div>
+    </li>
+    <li class="list-group-item" id="ff4">
+    <div class="input-group">
+    <div class="input-group-text" id="btnGroupAddon">Usuario </div>
+    <input type="email" class="form-control" placeholder="correo" aria-label="Input group example" aria-describedby="btnGroupAddon" id="fcor"> <a href="#" class="btn btn-primary" onclick="AddFiltros(fcor.value,correos,'fcor')">+</a>
+  </div>
+    </li>
+    
+    </li>
+    <li class="list-group-item" id="ff5">
+    <div class="input-group">
+    <div class="input-group-text" id="btnGroupAddon">Fecha incio </div>
+    <input type="date" class="form-control" placeholder="correo" aria-label="Input group example" aria-describedby="btnGroupAddon" id="fini"> <a href="#" class="btn btn-primary" onclick="AddFiltros(fini.value,inicio,'fini')">+</a>
+  </div>
+    </li>
+    
+
+    </li>
+    <li class="list-group-item" id="ff6">
+    <div class="input-group">
+    <div class="input-group-text" id="btnGroupAddon">Fecha Fin</div>
+    <input type="date" class="form-control" placeholder="correo" aria-label="Input group example" aria-describedby="btnGroupAddon" id="ffin"> <a href="#" class="btn btn-primary" onclick="AddFiltros(ffin.value,fin,'ffin')">+</a>
+  </div>
+    </li>
+    
+    </li>
+    <li class="list-group-item" id="ff7">
+    <div class="input-group">
+    <div class="input-group-text" id="btnGroupAddon">Nit</div>
+    <input type="text" class="form-control" placeholder="0000000" aria-label="Input group example" aria-describedby="btnGroupAddon" id="fnit"> <a href="#" class="btn btn-primary" onclick="AddFiltros(fnit.value,nits,'fnit')">+</a>
+  </div>
+    </li>
+    
+    </li>
+    <li class="list-group-item" id="ff8">
+    <div class="input-group">
+    <div class="input-group-text" id="btnGroupAddon">tipo solicitud</div>
+    <select class="form-control"  aria-label="Input group example" aria-describedby="btnGroupAddon" id="ftsol"> 
+    <option value="MM">Muestra Medica</option>
+    <option value="LQ">Laboratorio</option>
+    </select>
+    <a  class="btn btn-primary" onclick="AddFiltros(ftsol.value,tisolid,'ftsol')">+</a>
+  </div>
+    </li>
+
+
+
+    <li class="list-group-item" id="ff9">
+    <div class="input-group">
+    <div class="input-group-text" id="btnGroupAddon">estado solicitud</div>
+    <select class="form-control"  aria-label="Input group example" aria-describedby="btnGroupAddon" id="festado"> 
+    <option value="1">Creado</option>
+    <option value="2">Enviado</option>
+    <option value="2">Enviado</option>
+    <option value="2">Asignado</option>
+    <option value="2">Analisis</option>
+    <option value="2">Enviado</option>
+    <option value="2">Espera</option>
+    <option value="2">Revision</option>
+    </select>
+    <a href="#" class="btn btn-primary" onclick="AddFiltros(festado.value,estodos,'festado')">+</a>
+  </div>
+    </li>
+  </ul>
+</div>
+<!--fin filtros de busquda-->
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Filtros agregados para la Busqueda </h5>
+        <p class="card-text">los valores se usaran como referencia para la busqueda de solicitudes</p>
+
+
+ <div class="card text-dark bg-light mb-3" style="max-width: 100%;">
+ <form action="../controller/C_filtros.php" method="GET">
+  <div class="card-header">Filtros a aplicar</div>
+  
+  <div class="card-body" id="lfiltros">
+ 
+    <h5 class="card-title">lista de filtros</h5>
+   
+  </div>
+  <input type="submit" value="enviar" class="btn btn-primary">
+</form>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--fin divicion de filtros-->
+  </div>
+</div>
+
+<!--cuerpo de la pagina-->
+
+<br><br>
+<div class="card text-dark bg-light mb-3" style="max-width: 90%;margin-left:5%; box-shadow: 5px 5px 8px #999;">
+  <div class="card-header" style="background:#e9454c;color:white;">Mis Solicitudes</div>
+  <div class="card-body">
+    <h5 class="card-title">Lista de solicitudes</h5>
+    <p class="card-text">muestra las solicitudes y su estado actual</p>
+    <div class="row row-cols-1 row-cols-md-5 g-4">
+<?php
+require_once('../controller/C_solicitudes.php');
+mostarSolicitud($_SESSION["usuario"]);
+?>
+</div>
+
+  </div>
+</div>
+
+
+<div id="pelon"></div>
+
+
+
 <!-- crear soporte y contacto Douglas Hernandez-->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample2" aria-labelledby="offcanvasExampleLabel" style="width:100%;">
   <div class="offcanvas-header">
@@ -72,11 +231,11 @@
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <!-- INICIO DE CARD-->
-  <div class="card text-white bg-primary mb-3" style="max-width: 95%;">
+  <div class="card text-dark bg-light mb-3" style="max-width: 90%;margin-left:5%; box-shadow: 5px 5px 8px #999;">
   <div class="card-header">SOPORTE Y CONTACTO</div>
   <div class="card-body">
-    <h5 class="card-title">Primary card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title">Informacion De contacto </h5>
+    <p class="card-text">Esta informacion permite contactar con el usuario cuando una muestara se encuentre analizada.</p>
 
 <form action="../controller/C_suportContac.php" method="POST">
 
@@ -88,22 +247,22 @@
                     <option value = "FP-Factura">Factura</option> 
                     <option value = "HO-Hoja de Oficio">Hoja de Oficio</option>
                     </select>
-                    
-    </div>
+                                        
+                        </div>
 
-    <div class="mb-3">
+                        <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Ingrese Numero de Soporte</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese Numero soporte"required name="numsop">             
+              <input type="text" class="form-control" placeholder="Ingrese Numero soporte"required name="numsop">             
             </div>
 
     <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Telefonos</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese numero de telefono"required name="numtel">
+              <input type="text" class="form-control"  placeholder="Ingrese numero de telefono"required name="numtel">
             </div>
 
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Correo</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese correo"required name="correo">
+              <input type="text" class="form-control"  placeholder="Ingrese correo"required name="correo">
             </div>     
 
             <input type="submit" value="siguiente" name="sig">
@@ -141,52 +300,55 @@
   </div>
   <div class="offcanvas-body">
     <div>
-    Creacion, Consulta de solicitudes
+    Creacion: para crear una solicitud asigne un numero de expediente seleccionando el check.
     </div>
+
     <div class="dropdown mt-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-       Menu Solicitudes
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <li><a class="dropdown-item" href="#">Crear Solicitud</a></li>
-              <li><a class="dropdown-item" href="#">Consulta Solicitud</a></li>
-              <li><a class="dropdown-item" href="#">Ingreso ??</a></li>
-      </ul>
-    </div>
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Operaciones con Expedientes
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li onclick="most2()"><a class="dropdown-item" href="#" >crear Socitud</a></li>
+          </ul>
+<br><br><br>
+        </div>
+
+
 <br><br>
 <!--card-->
 
 
 
-<div class="card text-white bg-primary mb-3" style="max-width: 95%;">
-  <div class="card-header">Header</div>
+<div class="card text-dark bg-light mb-3" style="max-width: 90%;display:none;margin-left:5%; box-shadow: 5px 5px 8px #999;" id="sod">
+  <div class="card-header" style="background:#e9454c;color:white;"> Solicitud de Muestas</div>
   <div class="card-body">
-    <h5 class="card-title">Primary card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
+    <h5 class="card-title">Expedientes Cargados</h5>
+    <p class="card-text">lista de expedientes Medicos</p>
+<br>
 <form action="../controller/C_solicitudes.php" method="POST">
 
-<input type="button" value="buscar expediene" onclick="busExp()"> 
+<input type="button" value="ver Expedientes" onclick="busExp()"> 
+<br><br>
         <div id="resexp">
        <?php
        require_once('../controller/C_busExp.php');
        ?> 
 
         </div>
-
+        <div class="mb-4">
+                    <label for="exampleFormControlInput3" class="form-label">No. Expedeente Asignado</label>
+                    <input type="text" class="form-control"  placeholder=" " required name="nexp" onchange="validacion_CodSolicitud()"  id="codexp" >
+    </div>
 
     <div class="mb-4">
                     <label for="exampleFormControlInput3" class="form-label">Numero Solicitud</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput3" placeholder=" " required name="nSolicitud" onchange="validacion_CodSolicitud()">
+                    <input type="text" class="form-control"  placeholder=" "required name="nSolicitud" onchange="validacion_CodSolicitud()"  id="Codsolicitud" >
     </div>
 
     <div class="mb-5">
-                    <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitante</label>
-                    <select class="form-select" aria-label="Default select example"required name="tSolicitud"> 
-                    <?php
-                       require_once('../controller/C_solicitudes.php');
-                       extraerTipoUsuario('tipo_solicitante');
-                       ?>  
+                    <label for="exampleFormControlInput2" class="form-label" >Seleccione Tipo Solicitante</label>
+                    <select class="form-select" aria-label="Default select example"required name="tSolicitud" > 
+                   <option value="EX-usuario Externo" >EX-usuario Externo</option>
                        </select> 
         </div>
 
@@ -203,7 +365,7 @@
 
         <div class="mb-6">   
                     <label for="exampleFormControlTextarea2" class="form-label">Descripcion de la Solicitud</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea2" rows="8" required name="dSolicitud"></textarea>
+                    <textarea class="form-control"  rows="8" required name="dSolicitud"></textarea>
         </div>
       
 
@@ -241,8 +403,9 @@
           </ul>
 <br><br><br>
         </div>
-        <div class="card text-white bg-danger mb-3" style="max-width: 100%;display:none;background-color: #e9454c;" id="ffr1">
-          <div class="card-header">Datos de Expediente</div>
+       
+        <div  id="ffr1" class="card text-dark bg-light mb-3" style="max-width: 90%;margin-left:5%; box-shadow: 5px 5px 8px #999;display:none;">
+          <div class="card-header" style="background:#e9454c;color:white;">Datos de Expediente</div>
           <div class="card-body">
             <h5 class="card-title">Datos solicitante</h5>
             <p class="card-text">llene el formulario con la siguiente informacion</p>
@@ -252,7 +415,7 @@
             <form action="../controller/C_Expedientes.php" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">No. Expediente</label>
-              <input type="text" class="form-control"  placeholder="Expediente" name="ex"  onchange="validacion_Nexpediente() disabled">
+              <input type="text" class="form-control"  placeholder="Expediente" name="ex" id="Cods" onchange="validacion_Nexpediente()" >
             </div>
 
             
@@ -275,7 +438,7 @@
 
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">DPI numeracion de 13 digitos</label>
-              <input type="text" class="form-control"  placeholder="DPI"required name="dpi">
+              <input type="text" class="form-control"  placeholder="DPI"required name="dpi" onchange="valdpi()" id="ndpi">
             </div>
 
             
@@ -328,7 +491,7 @@
             
             <div class="mb-3">
               <label for="exampleFormControlTextarea1" class="form-label">Descripcion de diagnostico</label>
-              <textarea class="form-control"  rows="3" required name="des"></textarea  >
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required name="des"></textarea  >
             </div>
 
             <div class="mb-3">
@@ -353,7 +516,7 @@
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Numero de Telefonos</label>
-              <input type="text" class="form-control" placeholder="Telefono" name="tel">
+              <input type="text" class="form-control"  required placeholder="Telefono" name="tel" id="tel1" onchange="valteli()">
             </div>
             
             <div class="mb-3">
@@ -364,10 +527,15 @@
             <div class="mb-3" style="display:none;">
               <label for="exampleFormControlInput1" class="form-label">Codigo usuario</label>
               <?php             
-              echo '<input type="text" class="form-control"  placeholder="Codigo"required name="cod" value="'. $_SESSION["id_usuario"]  . '">';
+              echo '<input type="text" class="form-control"  placeholder="Codigo"required name="cod" value="';
+              require_once('../controller/C_login2.php');
+            
+             exter($_SESSION["usuario"]);
+              // echo $codi;
+                echo  '">';
             ?>
               </div>
-              <input type="submit" value="Crear Solicitud"><!--esto sirve para para aplicar required-->
+              <input class="btn btn-primary" type="submit" value="Guardar"><!--esto sirve para para aplicar required-->
 
       </form>
            <!--fin de formulario--> 
@@ -377,5 +545,9 @@
         </div>
       </div>
     </div>
+
+ <!--inicio solicitudes--> 
+
+
   </body>
 </html>

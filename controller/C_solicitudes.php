@@ -30,7 +30,7 @@ function mostarSolicitud($id_usuario){
     $con = new conexion();
     $con->conectar();
     $con2 = new conexion();
-    $con2->conectar();
+  
     $tabla=$con->exSolicitudes($id_usuario);
     while ($fila=mysqli_fetch_array($tabla)){
         echo '<div class="col">
@@ -51,15 +51,13 @@ function mostarSolicitud($id_usuario){
     </div>
     <div class="card-footer">
       <small class="text-muted"><b>Estado '. $estado . '</b><br>';
-if($fila['id_analista']==NULL){
-    echo 'Analista No asignado';
-}else{
+      $con2->conectar();
     $tabla2=$con2->extraerUsuaro2($fila['id_analista']);
     while ($fila2=mysqli_fetch_array($tabla2)){
-        echo 'Analista:<a href="https://api.whatsapp.com/send?phone=50256965894&text=Solicito,%20informaicon%20bien%20de%2mi%20solicitud%20att:luis" target="_blank">  ' . $fila2['correo_us'] . '</a>';
+        echo 'Analista:<a href="https://api.whatsapp.com/send?phone=502' . $fila2['telefono'] . '&text=Solicito,%20informaicon%20bien%20de%2mi%20solicitud%20att:luis" target="_blank">Contacar analista</a>';
     }
     $con2->cerrarConexion();
-}
+
       echo '</small>
     </div>
   </div>
@@ -74,11 +72,15 @@ if($fila['id_analista']==NULL){
 if (isset($_POST['sig'])){    
 $con = new conexion();
 $con->conectar();
-echo $_POST['nexp']. "<br>";
-echo $_POST['nSolicitud']. "<br>";
-echo $_POST['tSolicitud']. "<br>";
-echo $_POST['tSolicitante']. "<br>";
-echo $_POST['dSolicitud']. "<br>";
+echo "numero expediente: " . $_POST['nexp']. "<br>";
+echo  "numero Solicitud: " .$_POST['nSolicitud']. "<br>";
+echo "tipo solicitud: " . $_POST['tSolicitud']. "<br>";
+echo "tipo solicitante: " . $_POST['tSolicitante']. "<br>";
+echo "descripcon : " .$_POST['dSolicitud']. "<br>";
 $con->guardarSolicitud($_POST['nSolicitud'], $_POST['tSolicitud'], $_POST['tSolicitante'], $_POST['dSolicitud'],$_POST['nexp']);
-    }
+  
+$con->cerrarConexion();
+header('location:../view/V_usu_internos.php');
+
+}
 ?>

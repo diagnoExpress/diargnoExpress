@@ -1,7 +1,5 @@
 <?php
-session_cache_expire(30);
-$cache_expire = session_cache_expire(); 
-session_start();
+
 require_once('../model/conexion.php');
 $con = new conexion();
 $con->conectar();
@@ -51,7 +49,9 @@ if(isset($_POST['f2'])){
 echo $_POST['user'];
 $con->guardarUsuario($_POST['user']);
 $con->cerrarConexion();
-$_SESSION["id_usuario"] = '5';
+$eso=$con->listarext($_POST['user'])
+
+$_SESSION["id_usuario"] = $eso;
 $_SESSION["usuario"] = $_POST['user'];
 $con->guardarUsuario($_POST['user']);
 $con->cerrarConexion();
@@ -59,12 +59,14 @@ header('location:../view/V_usu_externos.php');
 }
 
 function exter($nume){ 
-  $tabla=$con->listarext($nume);
-  $filas;
-  while($fila=mysqli_fetch_array($tabla)){
-    $filas=$fila['id_us'];
-  }
+  $connn=mysqli_connect("bzfbbfrcs3qo3w6nhjpb-mysql.services.clever-cloud.com","uccpbmxtbvvnfqtc","9pgDnYdW7PYOGGDpmASY","bzfbbfrcs3qo3w6nhjpb");
+  $dato=mysqli_query($connn,"select * from usuarios where correo_us='$nume'");
+  $ids;
+  while($ff=mysqli_fetch_array($dato)){
 
-  return $filas;
+    $ads=$ff['id_us'];
+  }
+  $_SESSION["id_usuario"] =$ads;
+  echo $ads;
 }
 ?>

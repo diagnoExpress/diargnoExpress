@@ -11,7 +11,7 @@
 </head>
 
 
-  <body>
+  <body onload="muet()">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e9454c;color:white;" >
       <div class="container-fluid" style="background-color: #e9454c;color:white;">
 
@@ -36,7 +36,7 @@
   <path d="M8.5 6a.5.5 0 1 0-1 0h-2A1.5 1.5 0 0 0 4 7.5v2A1.5 1.5 0 0 0 5.5 11h.473l-.447 1.342a.5.5 0 1 0 .948.316L7.027 11H7.5v1a.5.5 0 0 0 1 0v-1h.473l.553 1.658a.5.5 0 1 0 .948-.316L10.027 11h.473A1.5 1.5 0 0 0 12 9.5v-2A1.5 1.5 0 0 0 10.5 6h-2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-2z"/>
   <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
 
-</svg> Trabajar Solicitudes
+</svg> Est. Muestras
                </a>
 
             </li>
@@ -69,18 +69,33 @@
 require_once('../model/conexion.php');
 $con = new conexion();
 $con->conectar();
-$tabla=$con->extraerSolicitudes(3);
+
+$tabla=$con->extraerSolicitudes($_SESSION["id_usuario"]);
 while ($fila=mysqli_fetch_array($tabla)){
     echo "numero solicitud: " . $fila['num_solicitud'] . "<br>";
     echo "tipo solicitud  : " . $fila['tipo_solicitud'] . "<br>";
-    echo "tipo solicitante : " . $fila['tipo_solicitante'] . "<br>";
     echo "descripcion : " . $fila['descripcion'] . "<br>";
+    $tiposolis;
+    if($fila['tipo_solicitante']==1){
+      $tiposolis="'Muestra medica'";
+    }else{
+      $tiposolis="'laboratroio'";
+    }
+
+    $nsol= "'" . $fila['num_solicitud'] . "'";
+    $nexpd= "'" . $fila['num_expediente'] . "'";
+    $nnit= "'" . $fila['nit'] . "'";
+    $usasi="'" . $_SESSION["usuario"]. "'";
+    $uscre="'" . $fila['emails']. "'";
+    $fecre="'" . $fila['fec_creacion']. "'";
+    $est="'Activo'";
+     echo '<input type="button" value="asignar muestra" onclick="assolid(' . $nsol . ', ' .  $tiposolis . ',' . $nexpd  . ','. $nnit . ',' . $usasi . ',' . $uscre . ',' . $fecre . ',' . $est .')"><br><hr>';
 }
 $con->cerrarConexion();
 ?>
 
 
-        <a href="#" class="btn btn-primary">Ver solicitudes asignada</a>
+      
 
         
       </div>
@@ -95,85 +110,85 @@ $con->cerrarConexion();
 
 <form action = "../controller/C_analista.php" method="POST">
 <div class="form-floating mb-3">
-  <input type="num" class="form-control " id="cod_muesra" placeholder="name@example.com" name="cod_solicitud">
+  <input type="num" class="form-control " id="cod_muesra" placeholder="name@example.com" name="cod_solicitud" require>
   <label for="floatingInput">Codigo de solicitud</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="num" class="form-control " id="cod_muesra" placeholder="name@example.com" name="cod_muestra">
+  <input type="num" class="form-control " id="cod_muesra2" placeholder="name@example.com" name="cod_muestra" require>
   <label for="floatingInput">Codigo de la muestra</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="text" class="form-control " id="tipo_muesra" placeholder="name@example.com" name="tipo_muestra">
+  <input type="text" class="form-control " id="tipo_muesra" placeholder="name@example.com" name="tipo_muestra" require>
   <label for="floatingInput">Tipo de la muestra</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="num" class="form-control " id="no_expediente" placeholder="name@example.com" name="no_expediente">
+  <input type="num" class="form-control " id="no_expediente" placeholder="name@example.com" name="no_expediente" require>
   <label for="floatingInput">Numero Expediente</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="num" class="form-control " id="numnitt" placeholder="name@example.com" name="nits">
+  <input type="num" class="form-control " id="numnitt" placeholder="name@example.com" name="nits" require>
   <label for="floatingInput">Nit</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="text" class="form-control " id="presentacion" placeholder="name@example.com" name="presentacion">
+  <input type="text" class="form-control " id="presentacion" placeholder="name@example.com" name="presentacion" require>
   <label for="floatingInput">Presentacion</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="text" class="form-control " id="us_asignacion" placeholder="name@example.com" name="us_asignacion">
+  <input type="text" class="form-control " id="us_asignacion" placeholder="name@example.com" name="us_asignacion" require>
   <label for="floatingInput">Usuario Asignacion</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="text" class="form-control " id="us_creacion" placeholder="name@example.com" name="us_creacion">
+  <input type="text" class="form-control " id="us_creacion" placeholder="name@example.com" name="us_creacion" require>
   <label for="floatingInput">Usuario Creacion</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="text" class="form-control " id="fech_creacion" placeholder="name@example.com" name="fech_creacion">
+  <input type="text" class="form-control " id="fech_creacion" placeholder="name@example.com" name="fech_creacion" require>
   <label for="floatingInput">Fecha Creacion</label>
 </div>
 
 
 <div class="form-floating mb-3">
-  <input type="text" class="form-control " id="fech_recepcion" placeholder="name@example.com" name="fech_recepcion">
+  <input type="text" class="form-control " id="fech_recepcion" placeholder="name@example.com" name="fech_recepcion" require>
   <label for="floatingInput">Fecha Recepcion</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="text" class="form-control " id="est_solicitud" placeholder="name@example.com" name="est_solicitud">
+  <input type="text" class="form-control " id="est_solicitud" placeholder="name@example.com" name="est_solicitud" require>
   <label for="floatingInput">Estado solicitud</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="num" class="form-control " id="cant_unidades" placeholder="name@example.com" name="cant_unidades">
+  <input type="num" class="form-control " id="cant_unidades" placeholder="name@example.com" name="cant_unidades" require>
   <label for="floatingInput">Cantidad de Unidades</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="num" class="form-control " id="Uni_medida" placeholder="name@example.com" name="Uni_medida">
+  <input type="num" class="form-control " id="Uni_medida" placeholder="name@example.com" name="Uni_medida" require>
   <label for="floatingInput">Unidad de Medida</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="num" class="form-control " id="cant_items" placeholder="name@example.com" name="cant_items">
+  <input type="num" class="form-control " id="cant_items" placeholder="name@example.com" name="cant_items" require>
   <label for="floatingInput">Cantidad Items</label>
 </div>
 
 <div class="form-floating mb-3">
-  <input type="num" class="form-control " id="cant_documentos" placeholder="name@example.com" name="cant_documentos">
+  <input type="num" class="form-control " id="cant_documentos" placeholder="name@example.com" name="cant_documentos" require>
   <label for="floatingInput">Cantidad de Documentos</label>
 </div>
 
 <!--FIND E DATOS --->
 
 
-        <input type = "submit" class="btn btn-primary" value = "guardar">
+        <input type = "submit" class="btn btn-primary" value = "Generar Muestra">
       </div>
       </form>
     </div>

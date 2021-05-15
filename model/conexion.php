@@ -36,7 +36,16 @@ function conectar(){
 }
 
  
+function listarext($knkk){
+    // $dato=mysqli_query($this->conectar,"select * from usuarios where correo_us='$nume'"); 
+    $dato=mysqli_query($this->conectar,"select * from usuarios where correo_us='$knkk'");
+    $ids;
+  while($ff=mysqli_fetch_array($dato)){
+    $ads=$ff['id_us'];
+  }
+    return $ads ;
 
+ }
 
 //extracion de datos de usuarios
 
@@ -48,9 +57,9 @@ return $dato;
 }
 
 function extraerUsuaro2($a){
-    $dato=mysqli_query($this->conectar,"select correo_us from usuarios where id_us='$a'");
+    $dato=mysqli_query($this->conectar,"select correo_us, telefono from usuarios where id_us='$a'");
     return $dato;
-    }
+}
 /*
 rene ruano 24/03/2021  
 fucnion guardar en mysql insertadno datos 
@@ -61,7 +70,7 @@ function verificarUsuario($a,$b){
     }
 
     function guardarUsuario($user){
-        mysqli_query($this->conectar,"insert into usuarios (correo_us, id_role) values ('$user',1)" );
+        mysqli_query($this->conectar,"insert into usuarios (correo_us,telefono, id_role) values ('$user','$user',2)" );
         
     }
 
@@ -92,8 +101,9 @@ function verificarUsuario($a,$b){
     //rene ruano 27/03/2021 funcion guardar expediente usuario externo
  
     function guardarExpedienteUsuarioExterno($expd,$nombre, $apellido, $direccion, $dpi, $nit,$departamento, $fechaCreacion, $diagnostico, $descripcion, $archivo, $enfermedad, $doctor, $clinica, $telefono, $emails, $correlativo){
+        echo " INSERT INTO expedientes(num_expediente, nombre, apellido, direccion, dpi, nit, departamento, fec_creacion, diagnostico, descripcion, archivo, enfermedad, doctor, clinica, telefono, emails, id_us) VALUES  ('$expd',   '$nombre',  '$apellido', '$direccion', '$dpi',     '$nit',   '$departamento', '$fechaCreacion', '$diagnostico', '$descripcion',  '$archivo',   '$enfermedad',  '$doctor', '$clinica', '$telefono',   '$emails',    '$correlativo')";
         mysqli_query($this->conectar, " INSERT INTO expedientes(num_expediente, nombre, apellido, direccion, dpi, nit, departamento, fec_creacion, diagnostico, descripcion, archivo, enfermedad, doctor, clinica, telefono, emails, id_us) VALUES  ('$expd',   '$nombre',  '$apellido', '$direccion', '$dpi',     '$nit',   '$departamento', '$fechaCreacion', '$diagnostico', '$descripcion',  '$archivo',   '$enfermedad',  '$doctor', '$clinica', '$telefono',   '$emails',    '$correlativo')");
-                        //               INSERT INTO expedientes(num_expediente, nombre, apellido, direccion, dpi, nit, departamento, fec_creacion, diagnostico, descripcion, archivo, enfermedad, doctor, clinica, telefono, emails, id_us) VALUES ([value-1],  [value-2],  [value-3],    [value-4],   [value-5],   [value-6],   [value-7],     [value-8],      [value-9],      [value-10],    [value-11],    [value-12],     [value-13], [value-14], [value-15],  [value-16],      [value-17])
+      
     
     }
 
@@ -108,8 +118,20 @@ function verificarUsuario($a,$b){
     
     //rene ruano 1/04/2021 funcion guardar solicitud
     function guardarSolicitud($numSol, $tipoSol, $tipoSolicit, $descripSol,$espd){
+        $pila = array();
+        $datos = mysqli_query($this->conectar,"select * from usuarios where id_role=4");
+        while($fila2= mysqli_fetch_array($datos)){
+            $variable= $fila2['id_us'];
+            echo $variable;
+            array_push($pila,$variable);
+        }
+      
+        $numero = count($pila); 
+        $d=rand(0,$numero);
      
-        mysqli_query($this->conectar,"insert into solicitudes(num_solicitud, tipo_solicitud, tipo_solicitante, descripcion, num_expediente, id_estados) values ('$numSol', '$tipoSol', '$tipoSolicit', '$descripSol',$espd,1)" );  
+    
+        mysqli_query($this->conectar,"insert into solicitudes(num_solicitud, tipo_solicitud,      tipo_solicitante,    descripcion,   num_expediente,   id_estados,   id_analista) values ('$numSol', '$tipoSol', '$tipoSolicit', '$descripSol','$espd',1,' $pila[$d]')" );  
+    //echo "INSERT INTO solicitudes(num_solicitud, tipo_solicitud, tipo_solicitante, descripcion, num_expediente, id_estados, id_analista) VALUES ('$numSol', '$tipoSol', '$tipoSolicit', '$descripSol',   $espd, 1,4)";
     }
 
 ////generacion de cambio 
@@ -135,7 +157,7 @@ function verificarUsuario($a,$b){
 
      //extraer solicitudes2
      function extraerSolicitudes($idUsuario){
-        $dato=mysqli_query($this->conectar,"select * from solicitudes where id_analista = '$idUsuario'");
+        $dato=mysqli_query($this->conectar,"select * from solicitudes so inner join expedientes es on so.num_expediente = es.num_expediente  where id_analista = '$idUsuario'");
         return $dato;
         }
 
@@ -144,6 +166,12 @@ function verificarUsuario($a,$b){
             $dato=mysqli_query($this->conectar,"select so.num_solicitud,so.id_estados, so.descripcion,so.id_analista  from solicitudes so  INNER join expedientes ex on so.num_expediente=ex.num_expediente  where ex.emails ='$idUsuario'");
             return $dato;
             }
+
+
+      
+
+          
+
 }
 
 ?>

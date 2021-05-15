@@ -263,3 +263,22 @@ function valdpi(){
    function asignarex(x){
       codexp.value="" + x + "";
     }
+
+    function assolid(solid,x2,x3,x4,x5,x6,x7,x8)
+    {
+      alert('Datas trasladados para muestra');
+      document.getElementById('cod_muesra').value=solid;
+      document.getElementById('tipo_muesra').value=x2;
+      document.getElementById('no_expediente').value=x3;
+      document.getElementById('numnitt').value=x4;
+      document.getElementById('us_asignacion').value=x5;
+      document.getElementById('us_creacion').value=x6;
+      document.getElementById('fech_creacion').value=x7;
+      document.getElementById('est_solicitud').value=x8;
+    }
+
+    function muet(){
+      let p1= Math.floor(Math.random() * (9999999 - 0000000)) + 0000000;
+      document.getElementById('cod_muesra2').value=p1;
+      
+    }

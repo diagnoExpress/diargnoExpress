@@ -34,7 +34,7 @@
             <input type="submit" value="Ingresar" class="bt" name="f1"><br>
         </form>
 
-<form id="solicitud" action="./controller/C_login.php" method="POST">
+<form id="solicitud" action="./controller/C_login2.php" method="POST">
 <br><br><br><br><br><br><br><br>
 
 <input type="num" placeholder="Num Telefonico" class="cajatxt" name="user" required>
