@@ -237,7 +237,7 @@ mostarSolicitud($_SESSION["usuario"]);
     <h5 class="card-title">Informacion De contacto </h5>
     <p class="card-text">Esta informacion permite contactar con el usuario cuando una muestara se encuentre analizada.</p>
 
-<form action="../controller/C_suportContac.php" method="POST">
+<form action="../controller/C_suportContac2.php" method="POST">
 
     <div class="mb-3">
                     <label for="exampleFormControlInput3" class="form-label">FP-Factura</label>
@@ -325,7 +325,7 @@ mostarSolicitud($_SESSION["usuario"]);
     <h5 class="card-title">Expedientes Cargados</h5>
     <p class="card-text">lista de expedientes Medicos</p>
 <br>
-<form action="../controller/C_solicitudes.php" method="POST">
+<form action="../controller/C_solicitudes2.php" method="POST">
 
 <input type="button" value="ver Expedientes" onclick="busExp()"> 
 <br><br>
@@ -412,7 +412,7 @@ mostarSolicitud($_SESSION["usuario"]);
             
             <!--Erick Guerra / Edgar Patzan 24/03/2021-->
             <!--formulario de expedientes exter  24/03/2021-->
-            <form action="../controller/C_Expedientes.php" method="POST" enctype="multipart/form-data">
+            <form action="../controller/C_Expedientes2.php" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">No. Expediente</label>
               <input type="text" class="form-control"  placeholder="Expediente" name="ex" id="Cods" onchange="validacion_Nexpediente()" >
@@ -520,11 +520,11 @@ mostarSolicitud($_SESSION["usuario"]);
             </div>
             
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email</label>
-              <input type="email" class="form-control"  placeholder="Correo"required name="cor">
+              <label for="exampleFormControlInput1" class="form-label">Confirmar Telenos para contactarlo</label>
+              <input type="text" class="form-control"  placeholder="Correo"required name="cor">
             </div>
             
-            <div class="mb-3" style="display:none;">
+            <div class="mb-3" style="display:block;">
               <label for="exampleFormControlInput1" class="form-label">Codigo usuario</label>
               <?php             
               echo '<input type="text" class="form-control"  placeholder="Codigo"required name="cod" value="';

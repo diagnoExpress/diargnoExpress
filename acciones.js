@@ -146,10 +146,11 @@ function valdpi(){
     var expreg = /^[0-9]{13}$/;
     
     if(expreg.test(m)){
-      alert("el numero de DPI  es CORRECTO"); 
+     
     }
     else{ 
       alert("el el numero de DPI NO es correcto CONSTA DE 13 DIGITOS "); 
+      document.getElementById("ndpi").value="";
   }
 } 
   
@@ -186,10 +187,13 @@ function valdpi(){
     var m = document.getElementById("Codsolicitud").value;
     var expreg = /^[A-Z][A-Z]-\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01]-\d{5})$/;
     
-    if(expreg.test(m))
-      alert("el codigo de solicitud  es correcto"); 
-    else 
+    if(expreg.test(m)){
+
+    }
+    else {
     alert("el codigo de solicitud NO es correcto debe ser en formato AA-20171130-99999 "); 
+    document.getElementById("Codsolicitud").value="";
+  }
   }
       
   
@@ -198,10 +202,14 @@ function valdpi(){
     var m = document.getElementById("DM").value;
     var expreg = /^[A-Z][A-Z][A-Z][A-Z][A-Z]([A-Z][A-f0-9]{1})[-][\d]{2}[-]([\d]){6}$/;
     
-    if(expreg.test(m))
-      alert("el codigo de solicitud  es correcto"); 
-    else 
-    alert("el codigo de solicitud NO es correcto debe ser en formato AAAAABB-99-999999  "); 
+    if(expreg.test(m)){
+
+    }
+     
+    else {
+    alert("el codigo de solicitud NO es correcto debe ser en formato AAAAABB-99-999999  ");
+    document.getElementById("DM").value=""; 
+  }
   }
       
   
@@ -281,4 +289,12 @@ function valdpi(){
       let p1= Math.floor(Math.random() * (9999999 - 0000000)) + 0000000;
       document.getElementById('cod_muesra2').value=p1;
       
+    }
+
+    function chat(){
+  //    Analista:<a href="https://api.whatsapp.com/send?phone=502' . $fila2['telefono'] . '&text=Solicito,%20informaicon%20bien%20de%20mi%20solicitud%20att:luis" target="_blank">Contacar analista</a>'
+
+
+  document.location.href='https://api.whatsapp.com/send?phone=502' + document.getElementById('us_creacion').value  + 'text=' + 'diagnoExpese%20tu%20solictud%20fue%20creado%20consulta%20en%20en%20la%20url%20el%20codigo%20' + document.getElementById('cod_muesra').value + ' target="_blank">Contacar analista</a>';
+    
     }

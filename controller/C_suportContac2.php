@@ -9,10 +9,10 @@ echo $_POST['numsop']. "<br>";
 echo $_POST['numtel']. "<br>";
 echo $_POST['correo']. "<br>";
 echo $_SESSION["id_usuario"]. "<br>";
-$tipous = 'interno';
+$tipous = 'externo';
 echo $tipous;
 
 //llamando al metodo del objeto conexion 
 $con-> guardarSuportContac($tipous,$_POST["solMed"],$_POST["numsop"],$_POST["numtel"],$_POST["correo"],$_SESSION["id_usuario"]);
-header('location:../view/V_usu_internos.php');
+header('location:../view/V_usu_externos.php');
 ?>

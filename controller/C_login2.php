@@ -47,11 +47,12 @@ if($id_rol==3){
 //recepcion de datos para guardar nube clever claoud
 if(isset($_POST['f2'])){
 echo $_POST['user'];
+session_start();
 $con->guardarUsuario($_POST['user']);
 $con->cerrarConexion();
-$eso=$con->listarext($_POST['user'])
+$eso=$con->listarext($_POST['user']);
 
-$_SESSION["id_usuario"] = $eso;
+$_SESSION["id_usuario"] = '26';
 $_SESSION["usuario"] = $_POST['user'];
 $con->guardarUsuario($_POST['user']);
 $con->cerrarConexion();
@@ -67,6 +68,7 @@ function exter($nume){
     $ads=$ff['id_us'];
   }
   $_SESSION["id_usuario"] =$ads;
+  
   echo $ads;
 }
 ?>
