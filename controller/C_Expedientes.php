@@ -23,6 +23,26 @@ echo $_POST['clinic']. "<br>";
 echo $_POST['tel']. "<br>";
 echo $_POST['cor']. "<br>";
 echo $_POST['cod']. "<br>";
-$con->guardarExpedienteUsuarioExterno($_POST['nombre'], $_POST['ap'], $_POST['dir'], $_POST['dpi'], $_POST['nit'], $_POST['dep'], $_POST['fec'], $_POST['diag'], $_POST['des'], $archivo, $_POST['enf'], $_POST['doctor'], $_POST['clinic'], $_POST['tel'], $_POST['cor'], $_POST['cod'] );
+$con->guardarExpedienteUsuarioExterno(
+$_POST['ex'],
+$_POST['nombre'], 
+$_POST['ap'], 
+$_POST['dir'], 
+$_POST['dpi'],
+ $_POST['nit'], 
+ $_POST['dep'], 
+ $_POST['fec'], 
+ $_POST['diag'], 
+ $_POST['des'], 
+ $archivo, 
+ $_POST['enf'], 
+ $_POST['doctor'], 
+ $_POST['clinic'], 
+ $_POST['tel'], 
+ $_POST['cor'], 
+ $_POST['cod'] );
 //$con->guardarExpedienteUsuarioExterno();
+//echo '<script>alert("Datos almacenados Exitosamente")</script>';
+
+header('location:../view/V_usu_internos.php');
 ?>

@@ -91,8 +91,10 @@ function verificarUsuario($a,$b){
 
     //rene ruano 27/03/2021 funcion guardar expediente usuario externo
  
-    function guardarExpedienteUsuarioExterno($nombre, $apellido, $direccion, $dpi, $nit,$departamento, $fechaCreacion, $diagnostico, $descripcion, $archivo, $enfermedad, $doctor, $clinica, $telefono, $emails, $correlativo){
-        mysqli_query($this->conectar, "INSERT INTO expedientes(nombre, apellido, direccion, dpi, nit, departamento, fec_creacion, diagnostico, descripcion, archivo, enfermedad, doctor, clinica, telefono, emails, id_us) VALUES  ('$nombre', '$apellido', '$direccion', '$dpi', '$nit', '$departamento', '$fechaCreacion', '$diagnostico', '$descripcion', '$archivo', '$enfermedad', '$doctor', '$clinica', '$telefono', '$emails','$correlativo')");
+    function guardarExpedienteUsuarioExterno($expd,$nombre, $apellido, $direccion, $dpi, $nit,$departamento, $fechaCreacion, $diagnostico, $descripcion, $archivo, $enfermedad, $doctor, $clinica, $telefono, $emails, $correlativo){
+        mysqli_query($this->conectar, " INSERT INTO expedientes(num_expediente, nombre, apellido, direccion, dpi, nit, departamento, fec_creacion, diagnostico, descripcion, archivo, enfermedad, doctor, clinica, telefono, emails, id_us) VALUES  ('$expd',   '$nombre',  '$apellido', '$direccion', '$dpi',     '$nit',   '$departamento', '$fechaCreacion', '$diagnostico', '$descripcion',  '$archivo',   '$enfermedad',  '$doctor', '$clinica', '$telefono',   '$emails',    '$correlativo')");
+                        //               INSERT INTO expedientes(num_expediente, nombre, apellido, direccion, dpi, nit, departamento, fec_creacion, diagnostico, descripcion, archivo, enfermedad, doctor, clinica, telefono, emails, id_us) VALUES ([value-1],  [value-2],  [value-3],    [value-4],   [value-5],   [value-6],   [value-7],     [value-8],      [value-9],      [value-10],    [value-11],    [value-12],     [value-13], [value-14], [value-15],  [value-16],      [value-17])
+    
     }
 
     //rene ruano 09/05/2021 funcion guardar muestra de analista

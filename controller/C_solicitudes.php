@@ -13,6 +13,18 @@ echo '<option value = '. $fila['id_solicitud']  . '>' . $fila['tipo'] . '</optio
  $con->cerrarConexion();
 }
 
+function extraerTipoUsuario2($tab){ 
+    $con = new conexion();
+   $con->conectar();
+   
+   echo '<option value = '.$tab  . '>' . $tab . '</option>';
+    
+    $con->cerrarConexion();
+   }
+   
+
+
+
 
 function mostarSolicitud($id_usuario){
     $con = new conexion();

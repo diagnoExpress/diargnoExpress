@@ -68,6 +68,11 @@ function most(){
 document.getElementById("ffr1").style.display="block";
 }
 
+function most2(){
+  document.getElementById("sod").style.display="block";
+  }
+
+
 function verimg(archivo){
 document.getElementById("radiod").style.display="block";
 document.getElementById("pit").src="../archivos/" + archivo;
@@ -136,28 +141,45 @@ function cerfill(){
 
 
 
-function valdpi() { 
+function valdpi(){ 
     var m = document.getElementById("ndpi").value;
     var expreg = /^[0-9]{13}$/;
     
-    if(expreg.test(m))
+    if(expreg.test(m)){
       alert("el numero de DPI  es CORRECTO"); 
-    else 
+    }
+    else{ 
       alert("el el numero de DPI NO es correcto CONSTA DE 13 DIGITOS "); 
   }
-   
+} 
   
+  function valteli(){ 
+    var m = document.getElementById("tel1").value;
+    var expreg = /^[0-9]{8}$/;
+    
+    if(expreg.test(m)){
+  
+    }
+    else {
+      tel1.value="";
+   
+    }
+    
+  }
   
   
   function validacion_Nexpediente() { 
     var m = document.getElementById("Cods").value;
     var expreg = /[\d]{4}[-]([\d]){2}[-][\d]{2}[-][\d]{2}[-][\d]{7}$/;
     
-    if(expreg.test(m))
-      alert("el codigo de expediente  es correcto"); 
-    else 
-      alert("el codigo de expediente NO es correcto debe ser en formato estructura 9999-88-77-66-5555555 "); 
-  }
+    if(expreg.test(m)){
+
+    }
+     
+    else {
+      codigoGen();
+    }
+    }
    
   
   function validacion_CodSolicitud() { 
@@ -239,5 +261,5 @@ function valdpi() {
 
 
    function asignarex(x){
-      codexp.value= x;
+      codexp.value="" + x + "";
     }

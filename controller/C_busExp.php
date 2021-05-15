@@ -11,6 +11,7 @@ $con= new conexion();
 $con->conectar();
 //session_start();
 $tabla=$con->extraerExpediente($_SESSION["id_usuario"]);
+if(mysqli_num_rows($tabla)>0){
 echo "<table class='table table-dark table-striped'> <thead>
 <th>Codigo</th>
 <th>Direccion</th>
@@ -21,6 +22,7 @@ echo "<table class='table table-dark table-striped'> <thead>
 <th>Signar Solicutd</th>
 </tr></thead>";
 echo "<tbody>";
+
 while ($fila=mysqli_fetch_array($tabla))
 {
     echo "<tr>";
@@ -31,10 +33,15 @@ while ($fila=mysqli_fetch_array($tabla))
     $mos="'" . $fila["archivo"] . "'";
     echo "<td>" . '<img src="../archivos/' . $fila["archivo"] . '" width="50px" height="60" onclick="verimg( ' . $mos .')" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></td>';
     echo "<td>" . $fila["enfermedad"] . "</td>";
-    echo "<td><input type='checkbox' value='true' onclick='asignarex( " . $fila["num_expediente"]  . ")'></td>";
+    $gras='"' . $fila["num_expediente"] . '"';
+    echo "<td><input type='checkbox' value='true' onclick='asignarex( " . $gras  . ")'></td>";
     echo "</tr>";
 }
 echo "</tbody></table>";
 $con->conectar();
+}
+else{
+ echo "<h3>No hay expedientes registrados</h3>";
+}
 ?>
 
