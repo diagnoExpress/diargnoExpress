@@ -1,7 +1,5 @@
 <?php
 require_once('../model/conexion.php');
-
-
 //$con->cerrarConexion();
 function extraerTipoUsuario($tab){ 
  $con = new conexion();
@@ -69,7 +67,8 @@ function mostarSolicitud($id_usuario){
 
 
 //rene ruano 1/04/2021 funcion guardar solicitud 
-if (isset($_POST['sig'])){    
+if (isset($_POST['nexp'])){    
+  session_start();
 $con = new conexion();
 $con->conectar();
 echo "numero expediente: " . $_POST['nexp']. "<br>";
@@ -79,8 +78,20 @@ echo "tipo solicitante: " . $_POST['tSolicitante']. "<br>";
 echo "descripcon : " .$_POST['dSolicitud']. "<br>";
 $con->guardarSolicitud($_POST['nSolicitud'], $_POST['tSolicitud'], $_POST['tSolicitante'], $_POST['dSolicitud'],$_POST['nexp']);
   
-$con->cerrarConexion();
-header('location:../view/V_usu_internos.php');
 
+echo $_POST['solMed']. "<br>";
+echo $_POST['numsop']. "<br>";
+echo $_POST['numtel']. "<br>";
+echo $_POST['correo']. "<br>";
+echo $_SESSION["id_usuario"]. "<br>";
+$tipous = 'interno';
+echo $tipous;
+
+//llamando al metodo del objeto conexion 
+$con-> guardarSuportContac($tipous,$_POST["solMed"],$_POST["numsop"],$_POST["numtel"],$_POST["correo"],$_SESSION["id_usuario"]);
+$con->cerrarConexion();
+
+
+header('location:../view/V_usu_internos.php');
 }
 ?>

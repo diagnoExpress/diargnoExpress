@@ -298,3 +298,17 @@ function valdpi(){
   document.location.href='https://api.whatsapp.com/send?phone=502' + document.getElementById('us_creacion').value  + 'text=' + 'diagnoExpese%20tu%20solictud%20fue%20creado%20consulta%20en%20en%20la%20url%20el%20codigo%20' + document.getElementById('cod_muesra').value + ' target="_blank">Contacar analista</a>';
     
     }
+
+    function alerta()
+    {
+    var mensaje;
+    var opcion = confirm("Desea Crea la solicitud ");
+    if (opcion == true) {
+        mensaje =  codexp.value;
+        alert("No. solicitud " + mensaje);
+        document.getElementById('soliddd').submit();
+	} else {
+	    mensaje = "Has clickado Cancelar";
+	}
+
+}

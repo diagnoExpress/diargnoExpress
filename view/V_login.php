@@ -27,6 +27,8 @@
         <div id="logotipo">
         </div>
         <h1 id="tit">DiagnoExpress</h1>
+
+
         <form id="log" action="./controller/C_login.php" method="POST">
         <br><br><br>
             <input type="email" placeholder="Usuario" class="cajatxt" name="us"><br><br>
@@ -42,6 +44,13 @@
 <input type="submit" value="Iniciar Solicitud" class="bt" name="f2"><br><br>
 </form>
 
+
+
+<!--nuevo loading -->
+
+
+
+<!--fin de login -->
 
 
 
