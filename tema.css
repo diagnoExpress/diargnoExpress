@@ -1,6 +1,6 @@
 :root {
     --azul:#009fe3 ;
-    --rojo:#e9454c;
+    --rojo:;
    
   }
 
@@ -110,7 +110,7 @@
 }
 #tit{
     position: absolute;
-    color:white;
+    color:#e9454c;
     top:68%;
     left:14%;
     transform: scale(1.7);

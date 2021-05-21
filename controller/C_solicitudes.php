@@ -88,7 +88,7 @@ $tipous = 'interno';
 echo $tipous;
 
 //llamando al metodo del objeto conexion 
-$con-> guardarSuportContac($tipous,$_POST["solMed"],$_POST["numsop"],$_POST["numtel"],$_POST["correo"],$_SESSION["id_usuario"]);
+$con-> guardarSuportContac($tipous,$_POST["solMed"],$_POST["numsop"],$_POST["numtel"],$_POST["correo"],$_SESSION["id_usuario"],$_POST['nSolicitud']);
 $con->cerrarConexion();
 
 

@@ -85,8 +85,12 @@ function cer(){
 
 
 function AddFiltros(atriburo,datos,ff){
+
+  
+
     if(ff=="fsol"){
         document.getElementById('ff1').style.display="none";
+        
     }
     if(ff=="fexp"){
         document.getElementById('ff2').style.display="none";
@@ -116,20 +120,62 @@ function AddFiltros(atriburo,datos,ff){
     if(ff=="festado"){
         document.getElementById('ff9').style.display="none";
     }
-
     lfiltros.innerHTML= lfiltros.innerHTML + datos +  "<input type='text' value='" + atriburo +"' id='"+ datos +"' name='" + datos + "' required disabled><input type='button' onlclik='cerrar(solicitud)' value='x' class='btn btn-danger'><br>";
+alert(datos);
 
+if(datos=="fsolicitud"){
     var code= $("#fsolicitud").val();
     var variable_post=document;
     
     $.post("../controller/C_filtros.php",{solicitud:code},function(data){
     $("#pelon").html(data);
     });
+}
 
-    alert ("Resustados de la busqueda");
+if(datos=="fexpediente"){
+var code= $("#fexpediente").val();
+var variable_post=document;
+
+$.post("../controller/C_filtros.php",{expediente:code},function(data){
+$("#pelon").html(data);
+});
+
+}
+
+
+if(datos=="fsoporte"){
+  var code= $("#fsoporte").val();
+  var variable_post=document;
+  
+  $.post("../controller/C_filtros.php",{soporte:code},function(data){
+  $("#pelon").html(data);
+  });
+  
+  }
+
+
+  if(datos=="fcorreo"){
+    var code= $("#fcorreo").val();
+    var variable_post=document;
+    
+    $.post("../controller/C_filtros.php",{correo:code},function(data){
+    $("#pelon").html(data);
+    });
+    
+    }
+
+
 
 
 }
+
+
+
+
+
+
+//busqueda por expedientes
+
 
 function mosfill(){
     document.getElementById('fillb').style.display="block";;
@@ -311,4 +357,38 @@ function valdpi(){
 	    mensaje = "Has clickado Cancelar";
 	}
 
+}
+
+
+
+function limpiar(){
+resu.innerHTML="";
+lfiltros.innerHTML="";
+document.getElementById('ff1').style.display="block";
+document.getElementById('ff2').style.display="block";
+document.getElementById('ff3').style.display="block";
+document.getElementById('ff4').style.display="block";
+document.getElementById('ff5').style.display="block";
+document.getElementById('ff6').style.display="block";
+document.getElementById('ff7').style.display="block";
+document.getElementById('ff8').style.display="block";
+document.getElementById('ff9').style.display="block";
+alert('Filtos Eliminados');
+}
+
+
+function Exportar(){
+  var code= $("#ex1").val();
+  var expd= $("#ex2").val();
+  var nuSopor=$("#ex3").val();
+  var tipsoli=$("#ex4").val();
+  var estad=$("#ex5").val();
+  var nits=$("#ex6").val();
+  var cor=$("#ex7").val();
+  var finic=$("#ex8").val();
+  var variable_post=document;
+  
+  $.post("../controller/exportar.php",{solicitud:code,expediente:expd,nsoporte:nuSopor,tiposolicitud:tipsoli,sestado:estad,nit:nits,correo:cor,finicio:finic},function(data){
+  $("#ports").html(data);
+  });
 }

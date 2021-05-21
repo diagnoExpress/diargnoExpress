@@ -142,8 +142,8 @@ function verificarUsuario($a,$b){
         return $dato;
         }
 
-        function guardarSuportContac($usuario,$tipo,$num_su,$num_tel,$correo,$idus){
-            mysqli_query($this->conectar, "INSERT INTO soporteExterno(usuario,tipo,num_soporte,num_tel,correo,id_us)VALUES ('$usuario','$tipo','$num_su','$num_tel','$correo','$idus')");
+        function guardarSuportContac($usuario,$tipo,$num_su,$num_tel,$correo,$idus,$id_sol){
+            mysqli_query($this->conectar, "INSERT INTO soporteExterno(usuario,tipo,num_soporte,num_tel,correo,id_us,id_solicitud)VALUES ('$usuario','$tipo','$num_su','$num_tel','$correo','$idus','$id_sol')");
             
         }
 

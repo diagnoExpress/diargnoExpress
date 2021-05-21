@@ -52,24 +52,7 @@
           </ul>
         </li>
 
-<!--fin de menu-->
-
-
-
-
-
-
-
- 
-
-           
-
-            <li class="nav-item" style="background-color: #e9454c;color:white;" onclick="mosfill()" >
-              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="" role="button" aria-controls="offcanvasExample" style="margin-left:5px;" >
-                Mantenimiento Solicitudes
-               </a>
-
-            </li>
+<!--fin de menu-->          
 
           </ul>
           <form class="d-flex" style="background-color: #e9454c;color:white;">
@@ -94,25 +77,37 @@
     </nav>
 
 
+    <div id="pelon"></div>
     <!--cuerpo de la pagina-->
     <br>
     <div class="card border-danger mb-3" style="max-width:98%;margin-left:1%;display:none;" id="fillb">
-  <div class="card-header">Filtros De Busqueda <input type='button' value='cerrar filltros' class="btn btn-danger" onclick="cerfill()"></div>
+  <div class="card-header">Filtros De Busqueda <input type='button' value='cerrar filltros' class="btn btn-danger" onclick="cerfill()" style="margin-left:60%"></div>
   <div class="card-body text-dark">
     <h5 class="card-title">Seleccionar filtros</h5>
     <p class="card-text">las busquedas se realizaran por la filtros seleccionados y que contengan un criterio de busquea no puede quedas vacio </p>
 
 <!--divicion de filtros-->
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-8">
     <div class="card">
       <div class="card-body">
         <!--filltros de busqueda-->
+
+
 <div class="card" style="width: 100%">
   <div class="card-header">
   Filtros
   </div>
-  <ul class="list-group list-group-flush">
+
+<!--division slicitud-->
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+      <!--parte 1-->
+
+      <ul class="list-group list-group-flush">
     <li class="list-group-item" id="ff1">
     <div class="input-group">
     <div class="input-group-text" id="btnGroupAddon">Solicitud</div>
@@ -146,6 +141,16 @@
   </div>
     </li>
     
+
+      <!--parte 1 fin-->
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+    <!--parte 2-->
+
 
     </li>
     <li class="list-group-item" id="ff6">
@@ -194,12 +199,28 @@
   </div>
     </li>
   </ul>
+
+    <!--parte 2 fin-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--fins divicionfil tos-->
+
+
+
+  
+  
+
 </div>
 <!--fin filtros de busquda-->
       </div>
     </div>
   </div>
-  <div class="col-sm-6">
+  <div class="col-sm-4">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Filtros agregados para la Busqueda </h5>
@@ -208,14 +229,13 @@
 
  <div class="card text-dark bg-light mb-3" style="max-width: 100%;">
  <form action="../controller/C_filtros.php" method="GET">
-  <div class="card-header">Filtros a aplicar</div>
+  <div class="card-header">Filtros Aplicados <input type="button" value="limpiar" onclick="limpiar()"></div>
   
   <div class="card-body" id="lfiltros">
  
     <h5 class="card-title">lista de filtros</h5>
    
   </div>
-  <input type="submit" value="enviar" class="btn btn-primary">
 </form>
 </div>
       </div>
@@ -267,6 +287,7 @@ mostarSolicitud($_SESSION["usuario"]);
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li onclick="most2()"><a class="dropdown-item" href="#" >Crear Socitud</a></li>
+            <li onclick="mosfill()"><a class="dropdown-item" href="#" data-bs-dismiss="modal" >Filtar</a></li>
           </ul>
 <br><br><br>
         </div>
@@ -394,7 +415,7 @@ mostarSolicitud($_SESSION["usuario"]);
 
             <input class="btn btn-primary" type="button" value="siguiente" name="sig" onclick="alerta()">
             <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Atras</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancelar</button>
 </form>
 
   </div>
@@ -421,7 +442,6 @@ mostarSolicitud($_SESSION["usuario"]);
 
 
 
-<div id="pelon"></div>
 
 
 <a href="https://api.whatsapp.com/send?phone=56965894&text=Solicito,%20informaicon%20bien%20de%2mi%2solicitud%2att:luis">Mensaje</a>
@@ -619,8 +639,6 @@ mostarSolicitud($_SESSION["usuario"]);
 
 
 <!--fin integracion-->
-
-
             
            
       </form>
@@ -633,14 +651,6 @@ mostarSolicitud($_SESSION["usuario"]);
     </div>
 
  <!--inicio solicitudes--> 
-
-
-
-
-
-
-
-
 
   </body>
 </html>
