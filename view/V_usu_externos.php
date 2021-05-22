@@ -35,26 +35,29 @@
 </svg> expedientes
              </a>
      </li>
-     <li class="nav-item" style="background-color: #e9454c;color:white;">
-              <a class="btn btn-primary btn-s" data-bs-toggle="offcanvas" href="#offcanvasExample1" role="button" aria-controls="offcanvasExample" style="margin-left:5px;width:160px;margin-top:1px;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-easel" viewBox="0 0 16 16">
-  <path d="M8.5 6a.5.5 0 1 0-1 0h-2A1.5 1.5 0 0 0 4 7.5v2A1.5 1.5 0 0 0 5.5 11h.473l-.447 1.342a.5.5 0 1 0 .948.316L7.027 11H7.5v1a.5.5 0 0 0 1 0v-1h.473l.553 1.658a.5.5 0 1 0 .948-.316L10.027 11h.473A1.5 1.5 0 0 0 12 9.5v-2A1.5 1.5 0 0 0 10.5 6h-2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-2z"/>
-  <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
-</svg> Solicitudes
-               </a>
-            </li>
-            <li class="nav-item" style="background-color: #e9454c;color:white;">
-              <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample2" role="button" aria-controls="offcanvasExample" style="margin-left:5px;" >
-                Soporte Contacto
-               </a>
 
-            </li>
+<!--nuevo menu-->
 
+<li class="nav-item dropdown" style="margin-left:5px;width:400px;margin-top:1px;">
+          <a class="btn btn-primary btn-s" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Análisis técnico de Muestras medica
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Clasificación</a></li>
+            <li><a class="dropdown-item" href="#">Mantenimiento</a></li>
+            <li> <a class="dropdown-item" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Mantenimiento de solicitudes</a></li>
+          
+           
+          
+          </ul>
+        </li>
+
+<!--fin de menu-->          
 
           </ul>
           <form class="d-flex" style="background-color: #e9454c;color:white;">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
-            <button class="btn btn-outline-success" type="submit" style="background-color: #009fe3;color:white;">Search</button>
+           
+   
             <?php
         echo '';
        echo '<a class="navbar-brand" href="#" style="background-color: #e9454c;color:white;margin-left:5%;text-align:center;font-size:8pt;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge" viewBox="0 0 16 16">
@@ -62,31 +65,49 @@
        <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z"/>
      </svg><br>' . $_SESSION["usuario"] . '</a>';
        ?> 
+
+<a href="../index.php"  class="btn btn-outline-success" type="button" style="border:none;background:none;color:white;">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+</svg>
+            </a>
           </form>
         </div>
       </div>
     </nav>
 
 
+    <div id="pelon"></div>
     <!--cuerpo de la pagina-->
     <br>
     <div class="card border-danger mb-3" style="max-width:98%;margin-left:1%;display:none;" id="fillb">
-  <div class="card-header">Filtros De Busqueda <input type='button' value='cerrar filltros' class="btn btn-danger" onclick="cerfill()"></div>
+  <div class="card-header">Filtros De Busqueda <input type='button' value='cerrar filltros' class="btn btn-danger" onclick="cerfill()" style="margin-left:60%"></div>
   <div class="card-body text-dark">
     <h5 class="card-title">Seleccionar filtros</h5>
     <p class="card-text">las busquedas se realizaran por la filtros seleccionados y que contengan un criterio de busquea no puede quedas vacio </p>
 
 <!--divicion de filtros-->
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-8">
     <div class="card">
       <div class="card-body">
         <!--filltros de busqueda-->
+
+
 <div class="card" style="width: 100%">
   <div class="card-header">
   Filtros
   </div>
-  <ul class="list-group list-group-flush">
+
+<!--division slicitud-->
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+      <!--parte 1-->
+
+      <ul class="list-group list-group-flush">
     <li class="list-group-item" id="ff1">
     <div class="input-group">
     <div class="input-group-text" id="btnGroupAddon">Solicitud</div>
@@ -120,6 +141,16 @@
   </div>
     </li>
     
+
+      <!--parte 1 fin-->
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+    <!--parte 2-->
+
 
     </li>
     <li class="list-group-item" id="ff6">
@@ -168,12 +199,28 @@
   </div>
     </li>
   </ul>
+
+    <!--parte 2 fin-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--fins divicionfil tos-->
+
+
+
+  
+  
+
 </div>
 <!--fin filtros de busquda-->
       </div>
     </div>
   </div>
-  <div class="col-sm-6">
+  <div class="col-sm-4">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Filtros agregados para la Busqueda </h5>
@@ -182,14 +229,13 @@
 
  <div class="card text-dark bg-light mb-3" style="max-width: 100%;">
  <form action="../controller/C_filtros.php" method="GET">
-  <div class="card-header">Filtros a aplicar</div>
+  <div class="card-header">Filtros Aplicados <input type="button" value="limpiar" onclick="limpiar()"></div>
   
   <div class="card-body" id="lfiltros">
  
     <h5 class="card-title">lista de filtros</h5>
    
   </div>
-  <input type="submit" value="enviar" class="btn btn-primary">
 </form>
 </div>
       </div>
@@ -219,25 +265,128 @@ mostarSolicitud($_SESSION["usuario"]);
   </div>
 </div>
 
-
-<div id="pelon"></div>
-
+<!--ingreso de modal-->
 
 
-<!-- crear soporte y contacto Douglas Hernandez-->
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample2" aria-labelledby="offcanvasExampleLabel" style="width:100%;">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">SOPORTE Y CONTACTO</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">MANTENIMIENTO DE SOLICITUDES</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+      <div>
+    Creacion: para crear una solicitud asigne un numero de expediente seleccionando el check.
+    </div>
+
+    <div class="dropdown mt-3">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+          OPCIONES DE SOLICITUDES
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li onclick="most2()"><a class="dropdown-item" href="#" >Crear Socitud</a></li>
+            <li onclick="mosfill()"><a class="dropdown-item" href="#" data-bs-dismiss="modal" >Filtar</a></li>
+            <li ><a onclick="asociar()" class="dropdown-item" data-bs-toggle="modal" href="#exampleModalToggle3" role="button">CREAR MUESTRAS</a></li>
+          </ul>
+<br><br><br>
+        </div>
+
+
+<br><br>
+<!--card-->
+
+
+
+<div class="card text-dark bg-light mb-3" style="max-width: 90%;display:none;margin-left:5%; box-shadow: 5px 5px 8px #999;" id="sod">
+  <div class="card-header" style="background:#e9454c;color:white;"> Solicitud de Muestas</div>
+  <div class="card-body">
+    <h5 class="card-title">Expedientes Cargados</h5>
+    <p class="card-text">lista de expedientes Medicos</p>
+<br>
+<form action="../controller/C_solicitudes.php" method="POST" id="soliddd">
+
+<input type="button" value="Buscar Expedientes" onclick="busExp()"> 
+<br><br>
+        <div id="resexp">
+       <?php
+       require_once('../controller/C_busExp.php');
+       ?> 
+
+        </div>
+        <div class="mb-4">
+                    <label for="exampleFormControlInput3" class="form-label">No. Expedeente Asignado</label>
+                    <input type="text" class="form-control"  placeholder=" " required name="nexp" onchange="validacion_CodSolicitud()"  id="codexp" >
+    </div>
+
+    <div class="mb-4">
+                    <label for="exampleFormControlInput3" class="form-label">Numero Solicitud</label>
+                    <input type="text" class="form-control"  placeholder=" "required name="nSolicitud" onchange="validacion_CodSolicitud()"  id="Codsolicitud" >
+    </div>
+
+    <div class="mb-5">
+                    <label for="exampleFormControlInput2" class="form-label" >Seleccione Tipo Solicitante</label>
+                    <select class="form-select" aria-label="Default select example"required name="tSolicitud"  id="tSolicitud"> 
+                    <?php
+                       require_once('../controller/C_solicitudes.php');
+                       extraerTipoUsuario2('IN-Usuario Interno');
+                       extraerTipoUsuario2('EX-Usuario Externos');
+                       ?>  
+                       </select> 
+        </div>
+
+        <div class="mb-5">
+                    <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitud</label>
+                    <select class="form-select" aria-label="Default select example"required name="tSolicitante" id="tSolicitante"> 
+                    <?php
+                       require_once('../controller/C_solicitudes.php');
+                       extraerTipoUsuario2('SM-Solicitud Medica');
+                       extraerTipoUsuario2('ET- Examén');
+                       ?>    
+                    </select> 
+        </div> 
+
+
+        <div class="mb-6">   
+                    <label for="exampleFormControlTextarea2" class="form-label">Descripcion de la Solicitud</label>
+                    <textarea class="form-control"  rows="8" required name="dSolicitud" id="dSolicitud"></textarea>
+        </div>
+      
+
+           
+        
+
+
   </div>
-  <!-- INICIO DE CARD-->
-  <div class="card text-dark bg-light mb-3" style="max-width: 90%;margin-left:5%; box-shadow: 5px 5px 8px #999;">
+</div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">SIGUIENTE</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered  modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">SOPORTE CONTACTO</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      
+      
+      <div class="card text-dark bg-light mb-3" style="max-width: 90%;margin-left:5%; box-shadow: 5px 5px 8px #999;">
   <div class="card-header">SOPORTE Y CONTACTO</div>
   <div class="card-body">
     <h5 class="card-title">Informacion De contacto </h5>
     <p class="card-text">Esta informacion permite contactar con el usuario cuando una muestara se encuentre analizada.</p>
 
-<form action="../controller/C_suportContac2.php" method="POST">
+<!--<form action="../controller/C_suportContac.php" method="POST">-->
 
     <div class="mb-3">
                     <label for="exampleFormControlInput3" class="form-label">FP-Factura</label>
@@ -265,10 +414,9 @@ mostarSolicitud($_SESSION["usuario"]);
               <input type="text" class="form-control"  placeholder="Ingrese correo"required name="correo">
             </div>     
 
-            <input type="submit" value="siguiente" name="sig">
-            <input type="button" value="cancelar">
-            <input type="button" value="Atras"><br>
-
+            <input class="btn btn-primary" type="button" value="siguiente" name="sig" onclick="alerta()">
+            <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Atras</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancelar</button>
 </form>
 
   </div>
@@ -276,10 +424,170 @@ mostarSolicitud($_SESSION["usuario"]);
 
 
 
-  <!-- FIN DE CARD-->
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Back to first</button>
+      </div>
+    </div>
   </div>
-  
-<!--fin soporte --->
+</div>
+
+
+<div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">CREACION DE MUESTAS</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+<!--progrmaicon de muestra-->
+
+
+    <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Solicitudes asignadas</h5>
+        <p class="card-text">Trabajar con las muestras y las solicitudes</p>
+
+<div id="sodt"></div>
+
+
+      
+
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">DATOS DE NUESTRA</h5>
+        <p class="card-text">INGRESA LOS DATOS PARA CREA UNA MUESTRA </p>
+<!--INGRESO DE DATOS --->
+
+<form action = "../controller/C_analista.php" method="POST">
+<div class="mb-3">
+  <label for="floatingInput">Tipo Muestra</label>
+  <select  class="form-select form-select-lg mb-3" id="tipo_muesra"  required name="tipo_muestra">
+ <option value="Cultivo">Cultivo</option>
+ <option value="Plaquetas">Plaquetas</option>
+ <option value="Eses">Eses</option>
+ <option value="Orina">Orina</option>
+ </select>   
+</div>
+
+<div class="mb-3">
+  <label for="floatingInput">Presentacion</label>
+  <input type="text" class="form-control " id="presentacion" placeholder="Presentacion" required name="presentacion">
+</div>
+
+<div class="form-floating mb-3">
+  <input type="num" class="form-control " id="cant_unidades" placeholder="Cantidad de Unidades" required name="cant_unidades">
+  <label for="floatingInput">Cantidad de Unidades</label>
+</div>
+
+<div class="mb-3">
+<label for="floatingInput">Unidad de Medida</label>
+  <select  class="form-select form-select-lg mb-3" id="Uni_medida" placeholder="Unidad de Medida" required name="Uni_medida">
+  <option value="militros">militros</option>
+  <option value="gramos">gramos</option>
+  <option value="miligramos">miligramos</option>
+  </select>
+ 
+</div>
+
+<div class="mb-3">
+  <label for="floatingInput">Topo de Solicitud</label>
+  <input type="text" class="form-control " id="tipo_sol" placeholder="Ingrese tipo de la muestra" required name="ttt">  
+</div>
+
+
+<div class="mb-3">
+<label for="floatingInput">Codigo de solicitud</label>
+  <input type="num" class="form-control " id="cod_muesra2" placeholder="Ingrese codigo de solicitud" required name="cod_solicitud">  
+</div>
+
+<div class="mb-3">  
+  <label for="floatingInput">Codigo de la muestra</label>
+  <input type="num" class="form-control " id="cod_muesra" placeholder="Ingrese codigo de muestra" required name="cod_muestra" onchange="ValidacionesNoDM()">
+</div>
+
+
+<div class="mb-3">
+  <label for="floatingInput">Numero Expediente</label>
+  <input type="num" class="form-control " id="no_expediente" placeholder="Ingrese numero de Expediente" required name="no_expediente" >  
+</div>
+
+<div class="mb-3">
+  <label for="floatingInput">Nit</label>
+  <input type="num" class="form-control " id="numnitt" placeholder="Ingrese NIt" required name="nits">
+</div>
+
+
+<div class="mb-3">
+  <label for="floatingInput">Usuario Asignacion</label>
+  <input type="text" class="form-control " id="us_asignacion" placeholder="Ingrese usuario Asignacion" required name="us_asignacion">
+</div>
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control " id="us_creacion" placeholder="Ingrese usuario Creacion" required name="us_creacion">  
+</div>
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control " id="fech_creacion" placeholder="Fecha Creacion" required name="fech_creacion">
+  <label for="floatingInput">Fecha Creacion</label>
+</div>
+
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control " id="fech_recepcion" placeholder="Fecha Recepcion" required name="fech_recepcion">
+  <label for="floatingInput">Fecha Recepcion</label>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control " id="est_solicitud" placeholder="Estado Solicitud" required name="est_solicitud">
+  <label for="floatingInput">Estado solicitud</label>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="num" class="form-control " id="cant_items" placeholder="Cantidad Items" required name="cant_items">
+  <label for="floatingInput">Cantidad Items</label>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="num" class="form-control " id="cant_documentos" placeholder="Cantidad de Documentos" required name="cant_documentos">
+  <label for="floatingInput">Cantidad de Documentos</label>
+</div>
+<!--FIND E DATOS --->
+
+
+        <input type = "submit" class="btn btn-primary" value = "Generar Muestra">
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--fin de muestra-->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Back to first</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!---final--->
 
 
 
@@ -288,99 +596,10 @@ mostarSolicitud($_SESSION["usuario"]);
 
 
 
-
+<!-- crear soporte y contacto Douglas Hernandez-->
 
 
 <!-- crear solicitudes-->
-
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample1" aria-labelledby="offcanvasExampleLabel" style="width:100%;">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">SOLICITUDES</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div>
-    Creacion: para crear una solicitud asigne un numero de expediente seleccionando el check.
-    </div>
-
-    <div class="dropdown mt-3">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-            Operaciones con Expedientes
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li onclick="most2()"><a class="dropdown-item" href="#" >crear Socitud</a></li>
-          </ul>
-<br><br><br>
-        </div>
-
-
-<br><br>
-<!--card-->
-
-
-
-<div class="card text-dark bg-light mb-3" style="max-width: 90%;display:none;margin-left:5%; box-shadow: 5px 5px 8px #999;" id="sod">
-  <div class="card-header" style="background:#e9454c;color:white;"> Solicitud de Muestas</div>
-  <div class="card-body">
-    <h5 class="card-title">Expedientes Cargados</h5>
-    <p class="card-text">lista de expedientes Medicos</p>
-<br>
-<form action="../controller/C_solicitudes2.php" method="POST">
-
-<input type="button" value="ver Expedientes" onclick="busExp()"> 
-<br><br>
-        <div id="resexp">
-       <?php
-       require_once('../controller/C_busExp.php');
-       ?> 
-
-        </div>
-        <div class="mb-4">
-                    <label for="exampleFormControlInput3" class="form-label">No. Expedeente Asignado</label>
-                    <input type="text" class="form-control"  placeholder=" " required name="nexp" onchange="validacion_CodSolicitud()"  id="codexp" >
-    </div>
-
-    <div class="mb-4">
-                    <label for="exampleFormControlInput3" class="form-label">Numero Solicitud</label>
-                    <input type="text" class="form-control"  placeholder=" "required name="nSolicitud" onchange="validacion_CodSolicitud()"  id="Codsolicitud" >
-    </div>
-
-    <div class="mb-5">
-                    <label for="exampleFormControlInput2" class="form-label" >Seleccione Tipo Solicitante</label>
-                    <select class="form-select" aria-label="Default select example"required name="tSolicitud" > 
-                   <option value="EX-usuario Externo" >EX-usuario Externo</option>
-                       </select> 
-        </div>
-
-        <div class="mb-5">
-                    <label for="exampleFormControlInput2" class="form-label">Seleccione Tipo Solicitud</label>
-                    <select class="form-select" aria-label="Default select example"required name="tSolicitante"> 
-                    <?php
-                       require_once('../controller/C_solicitudes.php');
-                       extraerTipoUsuario('tipo_solicitud');
-                       ?>    
-                    </select> 
-        </div> 
-
-
-        <div class="mb-6">   
-                    <label for="exampleFormControlTextarea2" class="form-label">Descripcion de la Solicitud</label>
-                    <textarea class="form-control"  rows="8" required name="dSolicitud"></textarea>
-        </div>
-      
-
-            <input type="submit" value="siguiente" name="sig">
-            <input type="button" value="cancelar"><br>
-
-</form>
-
-  </div>
-</div>
-<!--fin card-->
-
-
-  </div>
-</div>
 
 <!-- crear solicitudes-->
     
@@ -404,15 +623,22 @@ mostarSolicitud($_SESSION["usuario"]);
 <br><br><br>
         </div>
        
-        <div  id="ffr1" class="card text-dark bg-light mb-3" style="max-width: 90%;margin-left:5%; box-shadow: 5px 5px 8px #999;display:none;">
+        <div  id="ffr1" class="card text-dark bg-light mb-3" style="max-width: 98%;margin-left:1%; box-shadow: 5px 5px 8px #999;display:none;">
           <div class="card-header" style="background:#e9454c;color:white;">Datos de Expediente</div>
           <div class="card-body">
-            <h5 class="card-title">Datos solicitante</h5>
+<!--integracion divicin-->
+<form action="../controller/C_Expedientes.php" method="POST" enctype="multipart/form-data">
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+     
+
+    <h5 class="card-title">Datos solicitante</h5>
             <p class="card-text">llene el formulario con la siguiente informacion</p>
             
             <!--Erick Guerra / Edgar Patzan 24/03/2021-->
             <!--formulario de expedientes exter  24/03/2021-->
-            <form action="../controller/C_Expedientes2.php" method="POST" enctype="multipart/form-data">
+           
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">No. Expediente</label>
               <input type="text" class="form-control"  placeholder="Expediente" name="ex" id="Cods" onchange="validacion_Nexpediente()" >
@@ -427,7 +653,7 @@ mostarSolicitud($_SESSION["usuario"]);
             
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Apellido</label>
-              <input type="text" class="form-control"  placeholder="Ingrese Apellido"required name="ap">
+              <input type="text" class="form-control"  placeholder="Ingrese Apellido" required name="ap">
             </div>
 
             <div class="mb-3">
@@ -435,20 +661,30 @@ mostarSolicitud($_SESSION["usuario"]);
               <input type="text" class="form-control"  placeholder="Ingrese direccion" required name="dir" >
             </div>
 
-
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">DPI numeracion de 13 digitos</label>
               <input type="text" class="form-control"  placeholder="DPI"required name="dpi" onchange="valdpi()" id="ndpi">
             </div>
 
-            
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">NIT no utilizar guiones</label>
-              <input type="text" class="form-control"  placeholder="NIT"required name="nit">
-            </div>
+<br>
+
+      
+      </div>
+    </div>
+
+  <div class="col-sm-4">
+    <div class="card">
+     
+   
 
             
             <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">NIT no utilizar guiones</label>
+              <input type="text" class="form-control"  placeholder="NIT" required name="nit">
+            </div>
+
+    <div class="mb-3">
+
               <label for="exampleFormControlInput1" class="form-label">Seleccione el Departamento</label>
               <!-- esto sireve para agregar el tipo de estilo -->
               <select class="form-select" aria-label="Default select example"required name="dep"> 
@@ -495,16 +731,28 @@ mostarSolicitud($_SESSION["usuario"]);
             </div>
 
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Archivo</label>
+            
               <input type="file" class="form-control"  placeholder="Archivo" name="ar">
             </div>
+
+
+        
+   
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="card">
+
+    
             
-            <div class="mb-3">
+    <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Enfermedad</label>
               <input type="text" class="form-control"  placeholder="Enfermedad"required name="enf">
             </div>
             
-            <div class="mb-4">
+     
+    <div class="mb-4">
               <label for="exampleFormControlInput1" class="form-label">Nombre Doctor</label>
               <input type="text" class="form-control"  placeholder="Doctor"required name="doctor">
             </div>
@@ -520,23 +768,30 @@ mostarSolicitud($_SESSION["usuario"]);
             </div>
             
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Confirmar Telenos para contactarlo</label>
-              <input type="text" class="form-control"  placeholder="Correo"required name="cor">
+              <label for="exampleFormControlInput1" class="form-label">Email</label>
+              <input type="email" class="form-control"  placeholder="Correo"required name="cor">
             </div>
             
-            <div class="mb-3" style="display:block;">
+            <div class="mb-3" style="display:none;">
               <label for="exampleFormControlInput1" class="form-label">Codigo usuario</label>
               <?php             
-              echo '<input type="text" class="form-control"  placeholder="Codigo"required name="cod" value="';
-              require_once('../controller/C_login2.php');
-            
-             exter($_SESSION["usuario"]);
-              // echo $codi;
-                echo  '">';
+              echo '<input type="text" class="form-control"  placeholder="Codigo"required name="cod" value="'. $_SESSION["id_usuario"]  . '">';
             ?>
               </div>
+              <br><br>
               <input class="btn btn-primary" type="submit" value="Guardar"><!--esto sirve para para aplicar required-->
 
+    
+      </div>
+    </div>
+
+</div>
+
+
+
+<!--fin integracion-->
+            
+           
       </form>
            <!--fin de formulario--> 
       
@@ -547,6 +802,8 @@ mostarSolicitud($_SESSION["usuario"]);
     </div>
 
  <!--inicio solicitudes--> 
+
+
 
 
   </body>

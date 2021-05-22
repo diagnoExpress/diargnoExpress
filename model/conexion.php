@@ -157,20 +157,26 @@ function verificarUsuario($a,$b){
 
      //extraer solicitudes2
      function extraerSolicitudes($idUsuario){
-        $dato=mysqli_query($this->conectar,"select * from solicitudes so inner join expedientes es on so.num_expediente = es.num_expediente  where id_analista = '$idUsuario'");
+        $dato=mysqli_query($this->conectar,"select * from solicitudes so inner join expedientes es on so.num_expediente = es.num_expediente where so.num_solicitud='$idUsuario'");
         return $dato;
         }
 
 
         function exSolicitudes($idUsuario){
-            $dato=mysqli_query($this->conectar,"select so.num_solicitud,so.id_estados, so.descripcion,so.id_analista  from solicitudes so  INNER join expedientes ex on so.num_expediente=ex.num_expediente  where ex.emails ='$idUsuario'");
+            $dato=mysqli_query($this->conectar,"select so.num_solicitud,so.id_estados, so.descripcion,so.id_analista  from solicitudes so  INNER join expedientes ex on so.num_expediente=ex.num_expediente  where ex.emails ='$idUsuario' and so.id_estados<>9 ");
             return $dato;
             }
 
 
-      
+      function cambiarEstado($nsolcitud){
+        mysqli_query($this->conectar,"update solicitudes set id_estados = 9 where num_solicitud='$nsolcitud'");
+      }
 
-          
+      function rest($nmuesta){
+        $dato=mysqli_query($this->conectar,"select mu.cod_solicitud,so.descripcion from muestras mu inner join solicitudes so on mu.cod_solicitud = so.num_solicitud where cod_muestra='$nmuesta'");
+        return $dato;
+      }
+
 
 }
 

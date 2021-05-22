@@ -41,8 +41,8 @@ function registro(){
     document.getElementById("log").style.display="none";
     if (screen.height>700){
     document.getElementById("contenedor").style.backgroundImage='url("./imagenes/fondo2.png")';
-    document.getElementById("logotipo").style.top="46%";
-    document.getElementById("logotipo").style.left="61%";
+    document.getElementById("logotipo").style.top="10%";
+    document.getElementById("logotipo").style.left="15%";
     document.getElementById("logotipo").style.transitionDuration="2s";
 
 }
@@ -57,8 +57,8 @@ function logg(){
     document.getElementById("log").style.display="block";
     if (screen.height>700){
     document.getElementById("contenedor").style.backgroundImage='url("./imagenes/fondo.png")';
-    document.getElementById("logotipo").style.top="38%";
-    document.getElementById("logotipo").style.left="10%";
+    document.getElementById("logotipo").style.top="10%";
+    document.getElementById("logotipo").style.left="15%";
     document.getElementById("logotipo").style.width="25%";
     document.getElementById("logotipo").style.height="40%";
     }
@@ -121,7 +121,7 @@ function AddFiltros(atriburo,datos,ff){
         document.getElementById('ff9').style.display="none";
     }
     lfiltros.innerHTML= lfiltros.innerHTML + datos +  "<input type='text' value='" + atriburo +"' id='"+ datos +"' name='" + datos + "' required disabled><input type='button' onlclik='cerrar(solicitud)' value='x' class='btn btn-danger'><br>";
-alert(datos);
+
 
 if(datos=="fsolicitud"){
     var code= $("#fsolicitud").val();
@@ -245,7 +245,7 @@ function valdpi(){
   
   
   function ValidacionesNoDM() { 
-    var m = document.getElementById("DM").value;
+    var m = document.getElementById("cod_muesra").value;
     var expreg = /^[A-Z][A-Z][A-Z][A-Z][A-Z]([A-Z][A-f0-9]{1})[-][\d]{2}[-]([\d]){6}$/;
     
     if(expreg.test(m)){
@@ -253,7 +253,7 @@ function valdpi(){
     }
      
     else {
-    alert("el codigo de solicitud NO es correcto debe ser en formato AAAAABB-99-999999  ");
+    alert("el codigo de solicitud NO es correcto debe ser en formato AAAAABB-99-999999");
     document.getElementById("DM").value=""; 
   }
   }
@@ -305,9 +305,40 @@ function valdpi(){
     let letra1= String.fromCharCode(cod3);
     let letra2= String.fromCharCode(cod4);
     Codsolicitud.value=letra1 + letra2 + "-" + so1 + "-" + so2;
+//codigo de dm
+let dm1= String.fromCharCode(Math.floor(Math.random() * (90 - 65)) + 65);
+let dm2= String.fromCharCode(Math.floor(Math.random() * (90 - 65)) + 65);
+let dm3= String.fromCharCode(Math.floor(Math.random() * (90 - 65)) + 65);
+let dm4= String.fromCharCode(Math.floor(Math.random() * (90 - 65)) + 65);
+let dm5= String.fromCharCode(Math.floor(Math.random() * (90 - 65)) + 65);
+
+let dml1= String.fromCharCode(Math.floor(Math.random() * (90 - 65)) + 65);
+let dml2= String.fromCharCode(Math.floor(Math.random() * (90 - 65)) + 65);
+let dmn1=Math.floor(Math.random() * (9 - 0)) + 0;
+let dmn2=Math.floor(Math.random() * (9 - 0)) + 0;
+
+let dmn3=Math.floor(Math.random() * (9 - 0)) + 0;
+let dmn4=Math.floor(Math.random() * (9 - 0)) + 0;
+let dmn5=Math.floor(Math.random() * (9 - 0)) + 0;
+let dmn6=Math.floor(Math.random() * (9 - 0)) + 0;
+let dmn7=Math.floor(Math.random() * (9 - 0)) + 0;
+let dmn8=Math.floor(Math.random() * (9 - 0)) + 0;
+
+let numds= dm1+ dm2+dm3+dm4+dm5+ dml1 + dml2+ "-" + dmn1 + dmn2 + "-" + dmn3+ dmn4+dmn5+dmn6+dmn7+dmn8;
+document.getElementById('cod_muesra').value=numds;
 
     }
-  
+
+    
+
+    function asociar(){
+      var code= $("#ex1").val();
+      $.post("../controller/c_asigmuestra.php",{olid:code},function(data){
+      $("#sodt").html(data);
+      });
+
+    
+    }
 
     function busExp(){
       resexp.style.display="block";
@@ -321,8 +352,8 @@ function valdpi(){
     function assolid(solid,x2,x3,x4,x5,x6,x7,x8)
     {
       alert('Datas trasladados para muestra');
-      document.getElementById('cod_muesra').value=solid;
-      document.getElementById('tipo_muesra').value=x2;
+      document.getElementById('cod_muesra2').value=solid;
+      document.getElementById('tipo_sol').value=x2;
       document.getElementById('no_expediente').value=x3;
       document.getElementById('numnitt').value=x4;
       document.getElementById('us_asignacion').value=x5;
@@ -354,7 +385,8 @@ function valdpi(){
         alert("No. solicitud " + mensaje);
         document.getElementById('soliddd').submit();
 	} else {
-	    mensaje = "Has clickado Cancelar";
+	    mensaje = "Cancelado";
+      alert(mensaje);
 	}
 
 }
@@ -391,4 +423,24 @@ function Exportar(){
   $.post("../controller/exportar.php",{solicitud:code,expediente:expd,nsoporte:nuSopor,tiposolicitud:tipsoli,sestado:estad,nit:nits,correo:cor,finicio:finic},function(data){
   $("#ports").html(data);
   });
+}
+
+function eliminar(){
+
+  var mensaje;
+  var opcion = confirm("Desea Eliminar la solicitud ");
+  if (opcion == true) {
+  
+    var code = $("#ex1").val();
+    $.post("../controller/C_estado.php",{nsoliciutd:code},function(data){
+      $("#ports").html(data);
+      });
+      alert("soliciud " + code + "eliminado");
+      document.location.href="../view/V_usu_internos.php"
+} else {
+    mensaje = "Se a cancelado la eliminacion";
+    alert(mensaje);
+}
+
+
 }

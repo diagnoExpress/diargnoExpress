@@ -53,7 +53,10 @@ $_POST['Uni_medida'],
 $_POST['cant_items'], 
 $_POST['cant_documentos'] );
 $con->cerrarConexion();
-echo 'Codigo: <input id="text" type="text" value="' . $_POST['cod_muestra']  . '" style="width:10%;border:none;" /><br>';
+echo "<hr>";
+echo 'Codigo QR: <input id="text" type="text" value="http://practica-portafolio.great-site.net/controller/C_qr.php?nmuestra=' . $_POST['cod_muestra']  . '" style="width:10%;border:none;display:none;" /><br>';
+
+
 //header('location:../view/V_usu_analista.php');
 
 
@@ -64,7 +67,7 @@ echo 'Codigo: <input id="text" type="text" value="' . $_POST['cod_muestra']  . '
 <hr><br><br>
 <input type="button"  name="Submit" value="Imprimir" onclick="javascript:window.print()">
 <br><br>
-<a href="../view/V_usu_analista.php">salir Imprecion QR</a>
+<a href="../view/V_usu_internos.php">salir Imprecion QR</a>
 <script type="text/javascript">
 var qrcode = new QRCode(document.getElementById("qrcode"), {
 	width : 100,

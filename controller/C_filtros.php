@@ -1,14 +1,16 @@
 <div class="card border-dark mb-3" style="max-width: 90%;margin-left:5%;margin-top:2%;">
   <div class="card-header">Resultadod De la busqueda </div>
   <div class="card-body text-dark" id="resu">
+  
     <?php
+
    require_once('../model/conexion.php');
    if (isset($_POST["solicitud"])){
     echo " <br> <br>";
     $con = new conexion();
     $con->conectar();
     $sentencias="select * from solicitudes sol inner join soporteExterno sop on sol.num_solicitud=sop.id_solicitud  inner join estados es on sol.id_estados=es.id_estados inner join expedientes ex on ex.num_expediente=sol.num_expediente where num_solicitud = '$_POST[solicitud]'";
-
+$_SESSION["sessolicitud"]=$_POST['solicitud'];
     $tabla=$con->Extraersoliciutd($sentencias);
     $fi=mysqli_num_rows($tabla);
   if ($fi>0){
@@ -56,7 +58,7 @@
       echo '</div>';
       echo '</div>';
 
-      echo '<br><br><input type="button" value="exportar" onclick="Exportar()">';
+      echo '<br><br><input type="button" value="exportar" onclick="Exportar()"><input type="button" value="elimnar" onclick="eliminar()">';
       echo '<div id="ports"></div>';
      }
      
@@ -119,7 +121,7 @@ if ($fi>0){
       echo '</div>';
       echo '</div>';
 
-      echo '<br><br><input type="button" value="exportar" onclick="Exportar()">';
+      echo '<br><br><input type="button" value="exportar" onclick="Exportar()"><input type="button" value="elimnar" onclick="eliminar()">';
       echo '<div id="ports"></div>';
     
    }
@@ -185,7 +187,7 @@ if ($fi>0){
       echo '</div>';
       echo '</div>';
 
-      echo '<br><br><input type="button" value="exportar" onclick="Exportar()">';
+      echo '<br><br><input type="button" value="exportar" onclick="Exportar()"><input type="button" value="elimnar" onclick="eliminar()">';
       echo '<div id="ports"></div>';
     
    }

@@ -28,20 +28,57 @@ function mostarSolicitud($id_usuario){
     $con = new conexion();
     $con->conectar();
     $con2 = new conexion();
-  
+  $solit;
     $tabla=$con->exSolicitudes($id_usuario);
     while ($fila=mysqli_fetch_array($tabla)){
+      $solit=$fila['num_solicitud'];
         echo '<div class="col">
         <div class="card h-100">';
         $estado;
         if($fila['id_estados']==1){
             echo '<img src="creado.jpg" class="card-img-top" alt="estado" style="wid"><div class="card-body">';
             $estado="creado";
-        
         }
+
+        if($fila['id_estados']==2){
+          echo '<img src="creado.jpg" class="card-img-top" alt="estado" style="wid"><div class="card-body">';
+          $estado="enviado";
+      }
+      if($fila['id_estados']==3){
+        echo '<img src="creado.jpg" class="card-img-top" alt="estado" style="wid"><div class="card-body">';
+        $estado="asignado";
+    }
+    if($fila['id_estados']==4){
+      echo '<img src="creado.jpg" class="card-img-top" alt="estado" style="wid"><div class="card-body">';
+      $estado="analisis";
+  }
+  if($fila['id_estados']==5){
+    echo '<img src="creado.jpg" class="card-img-top" alt="estado" style="wid"><div class="card-body">';
+    $estado="espera";
+}
+
+if($fila['id_estados']==6){
+  echo '<img src="creado.jpg" class="card-img-top" alt="estado" style="wid"><div class="card-body">';
+  $estado="revicion";
+}
+
+if($fila['id_estados']==7){
+  echo '<img src="creado.jpg" class="card-img-top" alt="estado" style="wid"><div class="card-body">';
+  $estado="finalizado";
+}
+if($fila['id_estados']==8){
+  echo '<img src="creado.jpg" class="card-img-top" alt="estado" style="wid"><div class="card-body">';
+  $estado="rechazado";
+}
+        if($fila['id_estados']==9){
+          echo '<img src="creado.jpg" class="card-img-top" alt="estado" style="wid"><div class="card-body">';
+          $estado="eliminado";
+      }
+      /*
         else{
             echo '<img src="creado.jpg" class="card-img-top" alt="estado"><div class="card-body">';
         }
+        */
      echo '<h6 class="card-title">Solicitud: ' . $fila['num_solicitud'] . '</h6>';
     echo  ' <p class="card-text"> Descripcion: <br>'. $fila['descripcion'] . ' 
     
@@ -52,7 +89,7 @@ function mostarSolicitud($id_usuario){
       $con2->conectar();
     $tabla2=$con2->extraerUsuaro2($fila['id_analista']);
     while ($fila2=mysqli_fetch_array($tabla2)){
-        echo 'Analista:<a href="https://api.whatsapp.com/send?phone=502' . $fila2['telefono'] . '&text=Solicito,%20informaicon%20bien%20de%2mi%20solicitud%20att:luis" target="_blank">Contacar analista</a>';
+        echo 'Analista:<a href="https://api.whatsapp.com/send?phone=502' . $fila2['telefono'] . '&text=mi numero de solicitud es '. $solit .' a sido creada verificar en http://practica-portafolio.great-site.net/controller/C_qr.php?nsolicitud=' .  $solit .  '" target="_blank">Contacar analista</a>';
     }
     $con2->cerrarConexion();
 

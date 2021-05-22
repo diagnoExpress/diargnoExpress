@@ -288,6 +288,7 @@ mostarSolicitud($_SESSION["usuario"]);
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li onclick="most2()"><a class="dropdown-item" href="#" >Crear Socitud</a></li>
             <li onclick="mosfill()"><a class="dropdown-item" href="#" data-bs-dismiss="modal" >Filtar</a></li>
+            <li ><a onclick="asociar()" class="dropdown-item" data-bs-toggle="modal" href="#exampleModalToggle3" role="button">CREAR MUESTRAS</a></li>
           </ul>
 <br><br><br>
         </div>
@@ -435,7 +436,158 @@ mostarSolicitud($_SESSION["usuario"]);
 </div>
 
 
-<!--final--->
+<div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">CREACION DE MUESTAS</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+<!--progrmaicon de muestra-->
+
+
+    <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Solicitudes asignadas</h5>
+        <p class="card-text">Trabajar con las muestras y las solicitudes</p>
+
+<div id="sodt"></div>
+
+
+      
+
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">DATOS DE NUESTRA</h5>
+        <p class="card-text">INGRESA LOS DATOS PARA CREA UNA MUESTRA </p>
+<!--INGRESO DE DATOS --->
+
+<form action = "../controller/C_analista.php" method="POST">
+<div class="mb-3">
+  <label for="floatingInput">Tipo Muestra</label>
+  <select  class="form-select form-select-lg mb-3" id="tipo_muesra"  required name="tipo_muestra">
+ <option value="Cultivo">Cultivo</option>
+ <option value="Plaquetas">Plaquetas</option>
+ <option value="Eses">Eses</option>
+ <option value="Orina">Orina</option>
+ </select>   
+</div>
+
+<div class="mb-3">
+  <label for="floatingInput">Presentacion</label>
+  <input type="text" class="form-control " id="presentacion" placeholder="Presentacion" required name="presentacion">
+</div>
+
+<div class="form-floating mb-3">
+  <input type="num" class="form-control " id="cant_unidades" placeholder="Cantidad de Unidades" required name="cant_unidades">
+  <label for="floatingInput">Cantidad de Unidades</label>
+</div>
+
+<div class="mb-3">
+<label for="floatingInput">Unidad de Medida</label>
+  <select  class="form-select form-select-lg mb-3" id="Uni_medida" placeholder="Unidad de Medida" required name="Uni_medida">
+  <option value="militros">militros</option>
+  <option value="gramos">gramos</option>
+  <option value="miligramos">miligramos</option>
+  </select>
+ 
+</div>
+
+<div class="mb-3">
+  <label for="floatingInput">Topo de Solicitud</label>
+  <input type="text" class="form-control " id="tipo_sol" placeholder="Ingrese tipo de la muestra" required name="ttt">  
+</div>
+
+
+<div class="mb-3">
+<label for="floatingInput">Codigo de solicitud</label>
+  <input type="num" class="form-control " id="cod_muesra2" placeholder="Ingrese codigo de solicitud" required name="cod_solicitud">  
+</div>
+
+<div class="mb-3">  
+  <label for="floatingInput">Codigo de la muestra</label>
+  <input type="num" class="form-control " id="cod_muesra" placeholder="Ingrese codigo de muestra" required name="cod_muestra" onchange="ValidacionesNoDM()">
+</div>
+
+
+<div class="mb-3">
+  <label for="floatingInput">Numero Expediente</label>
+  <input type="num" class="form-control " id="no_expediente" placeholder="Ingrese numero de Expediente" required name="no_expediente" >  
+</div>
+
+<div class="mb-3">
+  <label for="floatingInput">Nit</label>
+  <input type="num" class="form-control " id="numnitt" placeholder="Ingrese NIt" required name="nits">
+</div>
+
+
+<div class="mb-3">
+  <label for="floatingInput">Usuario Asignacion</label>
+  <input type="text" class="form-control " id="us_asignacion" placeholder="Ingrese usuario Asignacion" required name="us_asignacion">
+</div>
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control " id="us_creacion" placeholder="Ingrese usuario Creacion" required name="us_creacion">  
+</div>
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control " id="fech_creacion" placeholder="Fecha Creacion" required name="fech_creacion">
+  <label for="floatingInput">Fecha Creacion</label>
+</div>
+
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control " id="fech_recepcion" placeholder="Fecha Recepcion" required name="fech_recepcion">
+  <label for="floatingInput">Fecha Recepcion</label>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control " id="est_solicitud" placeholder="Estado Solicitud" required name="est_solicitud">
+  <label for="floatingInput">Estado solicitud</label>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="num" class="form-control " id="cant_items" placeholder="Cantidad Items" required name="cant_items">
+  <label for="floatingInput">Cantidad Items</label>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="num" class="form-control " id="cant_documentos" placeholder="Cantidad de Documentos" required name="cant_documentos">
+  <label for="floatingInput">Cantidad de Documentos</label>
+</div>
+<!--FIND E DATOS --->
+
+
+        <input type = "submit" class="btn btn-primary" value = "Generar Muestra">
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--fin de muestra-->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Back to first</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!---final--->
 
 
 
@@ -444,7 +596,6 @@ mostarSolicitud($_SESSION["usuario"]);
 
 
 
-<a href="https://api.whatsapp.com/send?phone=56965894&text=Solicito,%20informaicon%20bien%20de%2mi%2solicitud%2att:luis">Mensaje</a>
 <!-- crear soporte y contacto Douglas Hernandez-->
 
 
@@ -651,6 +802,9 @@ mostarSolicitud($_SESSION["usuario"]);
     </div>
 
  <!--inicio solicitudes--> 
+
+
+
 
   </body>
 </html>

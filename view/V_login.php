@@ -40,7 +40,7 @@
 <br><br><br><br><br><br><br><br>
 
 <input type="num" placeholder="Num Telefonico" class="cajatxt" name="user" required>
-<br>Utiliza correo como referencia de usuario<br><br>
+<br>Utiliza Num Telefono como referencia de usuario<br><br>
 <input type="submit" value="Iniciar Solicitud" class="bt" name="f2"><br><br>
 </form>
 
