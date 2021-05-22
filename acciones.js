@@ -362,6 +362,13 @@ document.getElementById('cod_muesra').value=numds;
       document.getElementById('est_solicitud').value=x8;
     }
 
+
+    function assolid2(solid)
+    {
+      alert('Datas trasladados para muestra');
+      document.getElementById('cod_muesra2').value=solid;
+    }
+
     function muet(){
       let p1= Math.floor(Math.random() * (9999999 - 0000000)) + 0000000;
       document.getElementById('cod_muesra2').value=p1;

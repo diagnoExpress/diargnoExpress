@@ -13,12 +13,13 @@
 <?php
 
 //rene ruano guardar expedientes creados por analista 09/05/2021
-require_once('../model/conexion2.php');
+require_once('../model/conexion.php');
 $con = new conexion();
 $con->conectar();
-/*
+
 echo $_POST['cod_solicitud']. "solicitud <br>";
-echo $_POST['cod_muestra'] . " muetra<br>";
+echo $_POST['est_solicitud'] . " muetra<br>";
+/*
 echo $_POST['tipo_muestra']. " tipomuesra<br>";
 echo $_POST['no_expediente']. " no. expediente<br>";
 echo $_POST['nits']. " numero nit<br>";
@@ -36,66 +37,14 @@ echo $_POST['cant_documentos']. " couemnteso<br>";
 //echo $_FILES['adjunto']['name'] . "<br>";
 //$archivo=$_FILES['adjunto']['name'];
 //move_uploaded_file($_FILES['ar']['tmp_name'] ,'../archivos/' . $archivo  );
-$con->guardarMuestraAnalista(
-$_POST['cod_muestra'], 
-$_POST['tipo_muestra'], 
-$_POST['cod_solicitud'], 
-$_POST['no_expediente'], 
-$_POST['nits'], 
-$_POST['presentacion'], 
-$_POST['us_asignacion'], 
-$_POST['us_creacion'], 
-$_POST['fech_creacion'], 
-$_POST['fech_recepcion'], 
-$_POST['est_solicitud'], 
-$_POST['cant_unidades'], 
-$_POST['Uni_medida'], 
-$_POST['cant_items'], 
-$_POST['cant_documentos'] );
+$con->campiarEstadoMuestra($_POST['cod_solicitud'], $_POST['est_solicitud']);
 $con->cerrarConexion();
-echo "<hr>";
-echo 'Codigo QR: <input id="text" type="text" value="http://practica-portafolio.great-site.net/controller/C_qr.php?nmuestra=' . $_POST['cod_muestra']  . '" style="width:10%;border:none;display:none;" /><br>';
 
-
-//header('location:../view/V_usu_analista.php');
+header('location:../view/V_usu_analista.php');
 
 
 
 
 ?>
-<div id="qrcode" style="width:100px; height:100px; margin-left:5px;margin-top: 15px;"></div><br>
-<hr><br><br>
-<input type="button"  name="Submit" value="Imprimir" onclick="javascript:window.print()">
-<br><br>
-<a href="../view/V_usu_internos.php">salir Imprecion QR</a>
-<script type="text/javascript">
-var qrcode = new QRCode(document.getElementById("qrcode"), {
-	width : 100,
-	height : 100
-});
 
-function makeCode () {		
-	var elText = document.getElementById("text");
-	
-	if (!elText.value) {
-		alert("Input a text");
-		elText.focus();
-		return;
-	}
-	
-	qrcode.makeCode(elText.value);
-}
-
-makeCode();
-
-$("#text").
-	on("blur", function () {
-		makeCode();
-	}).
-	on("keydown", function (e) {
-		if (e.keyCode == 13) {
-			makeCode();
-		}
-	});
-</script>
 </body>

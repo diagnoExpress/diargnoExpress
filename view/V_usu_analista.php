@@ -66,7 +66,7 @@
         <p class="card-text">Trabajar con las muestras y las solicitudes</p>
 
 <?php
-require_once('../model/conexion.php');
+require_once('../model/conexion2.php');
 $con = new conexion();
 $con->conectar();
 
@@ -75,6 +75,34 @@ while ($fila=mysqli_fetch_array($tabla)){
     echo "numero solicitud: " . $fila['num_solicitud'] . "<br>";
     echo "tipo solicitud  : " . $fila['tipo_solicitud'] . "<br>";
     echo "descripcion : " . $fila['descripcion'] . "<br>";
+    echo "<br><br>";
+
+    if($fila['id_estados']==1){
+    echo "Estado solicitud <b>Creado</b>";
+  }
+  if($fila['id_estados']==2){
+    echo "Estado solicitud <b>enviado</b>";
+  }
+  if($fila['id_estados']==3){
+    echo "Estado solicitud <b>Asignado</b>";
+  }
+  if($fila['id_estados']==4){
+    echo "Estado solicitud <b>analisis</b>";
+  }
+  if($fila['id_estados']==5){
+    echo "Estado solicitud <b>espera</b>";
+  }
+  if($fila['id_estados']==6){
+    echo "Estado solicitud <b>revision</b>";
+  }
+  if($fila['id_estados']==7){
+    echo "Estado solicitud <b>finalizado</b>";
+  }
+  if($fila['id_estados']==8){
+    echo "Estado solicitud <b>rechazado</b>";
+  }
+
+    echo "<br><br>";
     $tiposolis;
     if($fila['tipo_solicitante']==1){
       $tiposolis="'Muestra medica'";
@@ -89,7 +117,7 @@ while ($fila=mysqli_fetch_array($tabla)){
     $uscre="'" . $fila['emails']. "'";
     $fecre="'" . $fila['fec_creacion']. "'";
     $est="'Activo'";
-     echo '<input type="button" value="asignar muestra" onclick="assolid(' . $nsol . ', ' .  $tiposolis . ',' . $nexpd  . ','. $nnit . ',' . $usasi . ',' . $uscre . ',' . $fecre . ',' . $est .')"><br><hr>';
+     echo '<input type="button" value="asignar Socitud" onclick="assolid2(' . $nsol . ')"><br><hr>';
 }
 $con->cerrarConexion();
 ?>
@@ -108,86 +136,34 @@ $con->cerrarConexion();
         <p class="card-text">INGRESA LOS DATOS PARA CREA UNA MUESTRA </p>
 <!--INGRESO DE DATOS --->
 
-<form action = "../controller/C_analista.php" method="POST">
+<form action = "../controller/C_analista2.php" method="POST">
 <div class="mb-3">
 <label for="floatingInput">Codigo de solicitud</label>
-  <input type="num" class="form-control " id="cod_muesra" placeholder="Ingrese codigo de solicitud" required name="cod_solicitud">  
-</div>
-
-<div class="mb-3">  
-  <label for="floatingInput">Codigo de la muestra</label>
-  <input type="num" class="form-control " id="cod_muesra" placeholder="Ingrese codigo de muestra" required name="cod_muestra">
+  <input type="num" class="form-control " id="cod_muesra2" placeholder="Ingrese codigo de solicitud" required name="cod_solicitud">  
 </div>
 
 <div class="mb-3">
-  <label for="floatingInput">Tipo de la muestra</label>
-  <input type="text" class="form-control " id="tipo_muesra" placeholder="Ingrese tipo de la muestra" required name="tipo_muestra">  
-</div>
-
-<div class="mb-3">
-  <label for="floatingInput">Numero Expediente</label>
-  <input type="num" class="form-control " id="no_expediente" placeholder="Ingrese numero de Expediente" required name="no_expediente" >  
-</div>
-
-<div class="mb-3">
-  <label for="floatingInput">Nit</label>
-  <input type="num" class="form-control " id="numnitt" placeholder="Ingrese NIt" required name="nits">
-</div>
-
-<div class="mb-3">
-  <label for="floatingInput">Presentacion</label>
-  <input type="text" class="form-control " id="presentacion" placeholder="Presentacion" required name="presentacion">
-</div>
-
-<div class="mb-3">
-  <label for="floatingInput">Usuario Asignacion</label>
-  <input type="text" class="form-control " id="us_asignacion" placeholder="Ingrese usuario Asignacion" required name="us_asignacion">
-</div>
-
-<div class="form-floating mb-3">
-  <input type="text" class="form-control " id="us_creacion" placeholder="Ingrese usuario Creacion" required name="us_creacion">  
-</div>
-
-<div class="form-floating mb-3">
-  <input type="text" class="form-control " id="fech_creacion" placeholder="Fecha Creacion" required name="fech_creacion">
-  <label for="floatingInput">Fecha Creacion</label>
+<label for="floatingInput">Estados de solicitud</label>
+  <select  type="num" class="form-control " id="cod_muesra2" placeholder="Ingrese codigo de solicitud" required name="est_solicitud"> 
+  <option value="1">Creado</option>
+  <option value="2">enviado</option>
+  <option value="3">Asignado</option> 
+  <option value="4">analisis</option>
+  <option value="5">espera</option>
+  <option value="6">revision</option>
+  <option value="7">finalizado</option>
+  <option value="8">rechazado</option>
+  <option value="9">eliminado</option>
 </div>
 
 
-<div class="form-floating mb-3">
-  <input type="text" class="form-control " id="fech_recepcion" placeholder="Fecha Recepcion" required name="fech_recepcion">
-  <label for="floatingInput">Fecha Recepcion</label>
-</div>
 
-<div class="form-floating mb-3">
-  <input type="text" class="form-control " id="est_solicitud" placeholder="Estado Solicitud" required name="est_solicitud">
-  <label for="floatingInput">Estado solicitud</label>
-</div>
-
-<div class="form-floating mb-3">
-  <input type="num" class="form-control " id="cant_unidades" placeholder="Cantidad de Unidades" required name="cant_unidades">
-  <label for="floatingInput">Cantidad de Unidades</label>
-</div>
-
-<div class="form-floating mb-3">
-  <input type="num" class="form-control " id="Uni_medida" placeholder="Unidad de Medida" required name="Uni_medida">
-  <label for="floatingInput">Unidad de Medida</label>
-</div>
-
-<div class="form-floating mb-3">
-  <input type="num" class="form-control " id="cant_items" placeholder="Cantidad Items" required name="cant_items">
-  <label for="floatingInput">Cantidad Items</label>
-</div>
-
-<div class="form-floating mb-3">
-  <input type="num" class="form-control " id="cant_documentos" placeholder="Cantidad de Documentos" required name="cant_documentos">
-  <label for="floatingInput">Cantidad de Documentos</label>
-</div>
 
 <!--FIND E DATOS --->
 
-
-        <input type = "submit" class="btn btn-primary" value = "Generar Muestra">
+<br>
+<br>
+        <input type = "submit" class="btn btn-primary" value = "Cambiar Estado">
       </div>
       </form>
     </div>
